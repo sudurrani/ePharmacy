@@ -1,0 +1,47 @@
+﻿.bha-breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 6px 0px 5px;    
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+    .bha-breadcrumb li {
+        display: flex;
+        align-items: center;
+        color: #545454;
+        font-weight: 400;
+        font-size: 12px;       
+        margin-right:5px
+    }
+
+
+        .bha-breadcrumb li:not(:first-child) i {
+            color: #545454;
+            font-weight: 200;
+            font-size: 10px;
+            line-height: 1;
+            position: relative;
+            top: 0.8px;
+            font-weight: 500;
+            margin-right:6px
+        }
+        .bha-breadcrumb li:last-child::after {
+            content: none;
+        }
+
+        .bha-breadcrumb li.active {
+            color: #007E87;
+            font-weight: 500;
+        }
+
+.homeicon {
+    color: #00777F;
+    font-size: 15px;
+    margin-left:4px;
+    margin-right:9px;
+    
+}

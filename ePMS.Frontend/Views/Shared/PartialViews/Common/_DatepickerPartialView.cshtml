@@ -1,0 +1,237 @@
+﻿@model BHAERP.Models.ViewModels.InputViewModel.Common.DatepickerPartialViewInputViewModel
+@{
+    string IdAttribute = Model.IdAttribute;
+    string calendarGroup = $"{Model.IdAttribute ?? string.Empty}CalendarGroup";
+    string calendarDays = $"{Model.IdAttribute ?? string.Empty}CalendarDays";
+    string monthYear = $"{Model.IdAttribute ?? string.Empty}MonthYear";
+    string previous = $"{Model.IdAttribute ?? string.Empty}Previous";
+    string next = $"{Model.IdAttribute ?? string.Empty}Next";
+    string daysHeader = $"{Model.IdAttribute ?? string.Empty}DaysHeader";
+    string monthGrid = $"{Model.IdAttribute ?? string.Empty}MonthGrid";
+    string yearGrid = $"{Model.IdAttribute ?? string.Empty}YearGrid";
+    string bha_mb_vc = $"{Model.IdAttribute}BHA_MB_VC";
+    string gotoToday = $"{Model.IdAttribute}GotoToday";
+
+    string required = Model.IsRequired ? "required" : "";
+
+
+    //| Functions
+    string renderCalendarFunction = $"renderCalendar{Model.IdAttribute}";
+    string renderCalendarFunctionBody = $"renderCalendar{Model.IdAttribute}()";
+
+    string renderMonthPickerFunction = $"renderMonthPicker{Model.IdAttribute}";
+    string renderMonthPickerFunctionBody = $"renderMonthPicker{Model.IdAttribute}()";
+
+    string renderYearPickerFunction = $"renderYearPicker{Model.IdAttribute}";
+    string renderYearPickerFunctionBody = $"renderYearPicker{Model.IdAttribute}()";
+    //| Variables
+    string selectedDateInputId = $"{Model.IdAttribute}_SelectedDateInput";
+    string currentDateInputId = $"{Model.IdAttribute}_CurrentDateInput";
+
+
+}
+<input type="hidden" id="@selectedDateInputId" />
+<input type="hidden" id="@currentDateInputId" />
+<section class=""
+         id="@bha_mb_vc">
+    <label class="bha-label">
+        @Model.Label
+        <span class="required" @(Model.IsRequired ? "" : "hidden")>*</span>
+    </label>
+    <div class="bha-mb-vc-box w-100" id="calendar-trigger" style="margin-top:10px !important;">
+        <input type="text" id="@Model.IdAttribute" class="selected-date-input w-100" @required />
+        <i class="bi bi-calendar-date"
+           style="font-size: 18px; color: rgba(153, 153, 153, 1)"></i>
+    </div>
+
+    <div class="calendar-popup" id="@calendarGroup">
+        <div class="calendar-header">
+            <span id="@previous">&laquo;</span>
+            <span class="center-label" id="@monthYear"></span>
+            <span id="@next">&raquo;</span>
+        </div>
+
+        <div class="calendar-grid" id="@daysHeader">
+            <div class="day-name">Sun</div>
+            <div class="day-name">Mon</div>
+            <div class="day-name">Tue</div>
+            <div class="day-name">Wed</div>
+            <div class="day-name">Thu</div>
+            <div class="day-name">Fri</div>
+            <div class="day-name">Sat</div>
+        </div>
+
+        <div class="calendar-grid" id="@calendarDays"></div>
+        <div class="month-grid"
+             id="@monthGrid"
+             style="display: none"></div>
+        <div class="year-grid" id="@yearGrid" style="display: none"></div>
+
+        <div class="footer" id="@gotoToday">Go to Today</div>
+    </div>
+</section>
+<script src="~/Scripts/FunctionalityJS/common-script.js"></script>
+
+<script>
+
+    document.getElementById('@selectedDateInputId').value = new Date();
+    document.getElementById('@currentDateInputId').value = new Date();
+
+
+    var @renderCalendarFunction = function() {
+        document.getElementById("@calendarDays").style.display = "grid";
+        document.getElementById("@monthGrid").style.display = "none";
+        document.getElementById("@yearGrid").style.display = "none";
+        document.getElementById("@daysHeader").style.display = "grid";
+
+
+        const year = (new Date(document.getElementById('@currentDateInputId').value)).getFullYear();
+        const month = (new Date(document.getElementById('@currentDateInputId').value)).getMonth();
+        const firstDay = new Date(year, month, 1).getDay();
+        const lastDate = new Date(year, month + 1, 0).getDate();
+
+        document.getElementById("@calendarDays").innerHTML = "";
+        document.getElementById("@monthYear").textContent = (new Date(document.getElementById('@currentDateInputId').value)).toLocaleString("default", {
+            month: "long",
+            year: "numeric",
+        });
+
+        for (let i = 0; i < firstDay; i++) {
+            const empty = document.createElement("div");
+            document.getElementById("@calendarDays").appendChild(empty);
+        }
+
+        for (let d = 1; d <= lastDate; d++) {
+            const dateEl = document.createElement("div");
+            dateEl.className = "date";
+            dateEl.textContent = d;
+            const thisDate = new Date(year, month, d);
+
+            if (new Date(document.getElementById('@selectedDateInputId').value).toDateString() === thisDate.toDateString()) {
+                dateEl.classList.add("selected");
+            }
+
+            dateEl.onclick = () => {
+                document.getElementById('@selectedDateInputId').value = thisDate;
+                document.getElementById("@Model.IdAttribute").value = getFormattedDate(thisDate);
+                document.getElementById("@calendarGroup").style.display = "none";
+                @renderCalendarFunctionBody;
+            };
+            document.getElementById("@calendarDays").appendChild(dateEl);
+        }
+    }
+
+    var @renderMonthPickerFunction = function() {
+        document.getElementById("@calendarDays").style.display = "none";
+        document.getElementById("@monthGrid").style.display = "grid";
+        document.getElementById("@yearGrid").style.display = "none";
+        document.getElementById("@daysHeader").style.display = "none";
+
+        document.getElementById("@monthGrid").innerHTML = "";
+
+        const months = Array.from({ length: 12 }, (_, i) =>
+            new Date(2000, i).toLocaleString("default", { month: "short" })
+        );
+        months.forEach((m, idx) => {
+            const el = document.createElement("div");
+            el.textContent = m;
+            el.onclick = () => {
+                //(new Date(document.getElementById('@currentDateInputId').value)).setMonth(idx);
+                document.getElementById('@currentDateInputId').value = new Date((new Date(document.getElementById('@currentDateInputId').value)).setMonth(idx));
+                @renderYearPickerFunctionBody;
+            };
+            document.getElementById("@monthGrid").appendChild(el);
+        });
+
+        document.getElementById("@monthYear").textContent = (new Date(document.getElementById('@currentDateInputId').value)).getFullYear();
+    }
+
+    var @renderYearPickerFunction =  function() {
+        document.getElementById("@calendarDays").style.display = "none";
+        document.getElementById("@monthGrid").style.display = "none";
+        document.getElementById("@yearGrid").style.display = "grid";
+        document.getElementById("@daysHeader").style.display = "none";
+        debugger;
+        document.getElementById("@yearGrid").innerHTML = "";
+
+        const currentYear = (new Date(document.getElementById('@currentDateInputId').value)).getFullYear();
+        const startYear = currentYear - 6;
+
+        for (let y = startYear; y < startYear + 12; y++) {
+            const el = document.createElement("div");
+            el.textContent = y;
+            el.onclick = () => {
+                let dateValue = (new Date(document.getElementById('@currentDateInputId').value));
+                document.getElementById('@currentDateInputId').value = new Date(dateValue.setFullYear(y));
+                @renderCalendarFunctionBody;
+            };
+            document.getElementById("@yearGrid").appendChild(el);
+        }
+
+        document.getElementById("@monthYear").textContent = "Select Year";
+    }
+
+    // Toggle popup on input click
+    document.getElementById("@Model.IdAttribute").onclick = () => {
+        document.getElementById("@calendarGroup").style.display = document.getElementById("@calendarGroup").style.display === "block" ? "none" : "block";
+    };
+
+    document.getElementById("@monthYear").onclick = () => {
+        if (document.getElementById("@calendarDays").style.display === "grid") {
+            @renderMonthPickerFunctionBody;
+        } else if (document.getElementById("@monthGrid").style.display === "grid") {
+            @renderYearPickerFunctionBody;
+        }
+    };
+
+    document.getElementById("@previous").onclick = () => {
+        if (document.getElementById("@calendarDays").style.display === "grid") {
+            (new Date(document.getElementById('@currentDateInputId').value)).setMonth((new Date(document.getElementById('@currentDateInputId').value)).getMonth() - 1);
+            @renderCalendarFunctionBody;
+        } else if (document.getElementById("@monthGrid").style.display === "grid") {
+            (new Date(document.getElementById('@currentDateInputId').value)).setFullYear((new Date(document.getElementById('@currentDateInputId').value)).getFullYear() - 1);
+            @renderMonthPickerFunctionBody;
+        } else if (document.getElementById("@yearGrid").style.display === "grid") {
+            document.getElementById('@currentDateInputId').value = new Date((new Date(document.getElementById('@currentDateInputId').value)).getFullYear() - 12, (new Date(document.getElementById('@currentDateInputId').value)).getMonth());
+            @renderYearPickerFunctionBody;
+        }
+    };
+
+    document.getElementById("@next").onclick = () => {
+        if (document.getElementById("@calendarDays").style.display === "grid") {
+            (new Date(document.getElementById('@currentDateInputId').value)).setMonth((new Date(document.getElementById('@currentDateInputId').value)).getMonth() + 1);
+            @renderCalendarFunctionBody;
+        } else if (document.getElementById("@monthGrid").style.display === "grid") {
+            (new Date(document.getElementById('@currentDateInputId').value)).setFullYear((new Date(document.getElementById('@currentDateInputId').value)).getFullYear() + 1);
+            @renderMonthPickerFunctionBody;
+        } else if (document.getElementById("@yearGrid").style.display === "grid") {
+            document.getElementById('@currentDateInputId').value = new Date((new Date(document.getElementById('@currentDateInputId').value)).getFullYear() + 12, (new Date(document.getElementById('@currentDateInputId').value)).getMonth());
+            @renderYearPickerFunctionBody;
+        }
+    };
+
+    document.getElementById("@gotoToday").onclick = () => {
+        const today = new Date();
+        document.getElementById('@currentDateInputId').value = new Date(today.getFullYear(), today.getMonth());
+        document.getElementById('@selectedDateInputId').value = today;
+        document.getElementById("@Model.IdAttribute").value = getFormattedDate(today);
+        @renderCalendarFunctionBody;
+    };
+
+    window.onclick = function (e) {
+        if (!document.getElementById("@bha_mb_vc").contains(e.target)) {
+            document.getElementById("@calendarGroup").style.display = "none";
+        }
+    };
+
+    document.getElementById("@Model.IdAttribute").value = getFormattedDate(new Date(document.getElementById('@selectedDateInputId').value));
+    var getSelectedDate = function () {
+        return new Date();
+    }
+    @renderCalendarFunctionBody;
+    
+            document.getElementById('@Model.IdAttribute').value =  (@Model.IsSetToday.ToString().ToLower() == true ? document.getElementById('@Model.IdAttribute').value : null);
+
+
+</script>
+

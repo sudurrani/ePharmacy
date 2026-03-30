@@ -1,0 +1,240 @@
+﻿.bha-table {
+    border: 1px solid #00777F4D;
+    box-shadow: 0px 0.78px 2.35px 0px #00000026;
+    border-width: 1px;
+    padding-top: 16px;
+    padding-right: 12px;
+    padding-bottom: 22px;
+    padding-left: 12px;
+    background: #F6F7F8;
+}
+
+
+    .bha-table thead {
+        background-color: #F6F8F9;
+    }
+
+    .bha-table th {
+        border-bottom: 1px solid #E0E0E0;
+        height: 40px;
+        padding-top: 9.41px;
+        padding-right: 12.55px;
+        padding-bottom: 9.41px;
+        padding-left: 12.55px;
+        border-bottom-width: 0.8px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 12px;
+        vertical-align: middle;
+        color: #505C6D;
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        background: #f4f4f4
+    }
+
+    .bha-table td {
+        padding-top: 8.75px;
+        padding-right: 12.55px;
+        padding-bottom: 9.41px;
+        padding-left: 12.55px;
+        font-weight: 400;
+        font-size: 13px;
+        color: #212121;
+        border-top-width: 0.8px;
+        border-bottom-width: 0.8px;
+        border-color: #D3D6DA;
+    }
+
+    .bha-table tbody tr:hover {
+        background: #E4F7FA;
+    }
+    .tr_selected {
+        background: #E4F7FA;
+    }
+.map-link {
+    color: #212121;
+    text-decoration: underline;
+    cursor: default;
+}
+
+    .map-link:hover {
+        color: #212121;
+    }
+
+.sno-color {
+    color: #007E87 !important;
+}
+
+/* Sort icons */
+.sort-icon {
+    margin-left: 2.50px;
+    color: #505C6D;
+    cursor: pointer;
+}
+
+/* table action menue by clicking 3 dots start*/
+.action-menu-container {
+    position: relative;
+}
+
+.action-menu {
+    font-size: 18px;
+    color: #007E87;
+    cursor: pointer;
+    line-height: 1;
+    text-align: center;
+}
+
+.action-menu-dropdown {
+    display: none;
+    position: absolute;
+    right: 36px;
+    top: 8px;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 4px 3px #2121211A;
+    z-index: 1;
+    padding: 8px 0;
+    width: 227px;
+    height: 78px;
+    border: 0.7px solid #BABFC7;
+    border-radius: 2px;
+    border-width: 0.7px;
+}
+
+.action-menu-item {
+    display: flex;
+    align-items: center;
+    padding: 2px 15px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+    .action-menu-item:hover {
+        background: #E3F2F3;
+    }
+
+.action-menu-icon1 {
+    margin-right: 12px;
+    font-size: 14px;
+    color: #CEC738E5;
+}
+
+.action-menu-icon2 {
+    margin-right: 12px;
+    font-size: 14px;
+    color: #007E87
+}
+
+.action-menu-text {
+    color: #505C6D;
+    font-weight: 400;
+    font-size: 14px;
+    height: 19px;
+}
+/* table action menue end*/
+
+/*download & edit icon in action menue */
+.action-icon {
+    text-align: center;
+}
+
+.icon-eye {
+    color: #CEC738E5;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 6px;
+}
+
+.icon-download {
+    color: #007E87E5;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 6px;
+}
+.icon-remove {
+    color: #FF2D55;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 6px;
+}
+.bha-table .title {
+    color: #545454;
+    font-family: Segoe UI;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 13.18px;
+    margin-bottom: 18px;
+}
+
+/*header boxes input table css*/
+.bha-table-header {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    margin-bottom: 15px;
+    margin-top: 12px;
+}
+
+    .bha-table-header .title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #545454;
+        margin-right: 20px;
+        white-space: nowrap;
+    }
+
+.bha-table-header-boxes {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.bha-table-header-box {
+    border: 1px solid #00777F4D;
+    padding: 6px 12px;
+    width: 270px; 
+    max-width: fit-content;
+    height: 40px;
+    border-radius: 2px;
+    background-color: #f8fafa;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'Segoe UI', sans-serif;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    overflow: visible; 
+}
+
+.bha-table-header-box-label {
+    flex-shrink: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #212121;
+    white-space: nowrap;
+}
+
+
+.bha-table-header-box-value {
+    all: unset;
+    font-size: 14px;
+    color: #212121;
+    min-width: 0;
+    flex: 1 1 auto;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+/*header boxes input table css end*/
+.bha-table-td-input {
+    all: unset; /* remove default input styling */
+    width: 100%; /* fill the cell */
+}
+.bha-data-thead {
+    display: grid;
+    grid-template-columns: 30% 1fr 1fr;
+    margin: 0px 30px 0px 29px;
+    border-bottom: 1px solid #c6cacf;
+}

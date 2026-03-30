@@ -1,0 +1,4 @@
+
+<svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M3.86322 7.08329L1.08322 4.30329L0.136719 5.24329L3.86322 8.96979L11.8632 0.969785L10.9232 0.0297852L3.86322 7.08329Z" fill="currentColor" fill-opacity="0.9"/>
+</svg>

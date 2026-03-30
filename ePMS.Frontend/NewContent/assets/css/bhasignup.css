@@ -1,0 +1,667 @@
+body {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.logos-row {
+    padding: 32px 120px 32px 120px;
+}
+
+.logo-1 {
+    width: 84.46px;
+    height: 62.5px;
+}
+
+.logo-2 {
+    width: 320.81px;
+    height: 62.5px;
+    margin-left:-3px;
+}
+
+.logo-3 {
+    width: 189.05px;
+    height: 62.5px;
+}
+
+.form-info {
+    background-image: url(images/finalimg.png);
+    background-repeat: no-repeat;
+    background-size: contain; /* Fills the area, may crop the image */
+}
+/* bha form start */
+.bha-form {
+    margin-top: 59px;
+    margin-left: 107px;
+ margin-right:79px;
+}
+#forgetform{
+    text-decoration:none;
+}
+.bhaleadtext {
+    font-family: Segoe UI;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 110.00000000000001%;
+    letter-spacing: -4%;
+    color: #545454;
+}
+
+.smtext {
+    font-family: Segoe UI;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color: #969696;
+    margin-top: 20px;
+}
+
+.bha-inputC1 {
+    position: relative;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.bha-int1 {
+    border: 2px solid #333;
+    padding: 12px;
+    outline: none;
+    font-size: 14px;
+    border: 1px solid #dbdfe4;
+    height: 50px;
+    border-width: 1px;
+    gap: 103px;
+    padding: 16px;
+    font-family: Segoe UI;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color: #545454;
+    border-radius:0px !important;
+}
+
+    .bha-int1:focus {
+        border: 1px solid #07A6B1;
+    }
+
+.bha-lab1 {
+    position: absolute;
+    top: -10px;
+    left: 25px;
+    background-color: white;
+    padding: 0 5px;
+    color: #505c6d;
+    font-family: Segoe UI;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 0%;
+}
+
+.password-wrapper {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: 1.2rem;
+    color: #666;
+}
+/********************/
+.form-check {
+    margin-top: 10px;
+}
+
+.check-label {
+    font-family: Segoe UI;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color: #545454;
+}
+
+.form-check .form-check-input {
+    border-radius: 2px;
+    border-color: #8E8E8E;
+    /*margin-left: -11px;*/
+    margin-right: 5px;
+}
+
+    .form-check .form-check-input:checked {
+        background-color: hsl(184, 93%, 24%);
+    }
+
+    .form-check .form-check-input:focus {
+        box-shadow: none !important;
+        outline: 0px !important;
+    }
+
+.bhafrgtext {
+    font-family: Segoe UI;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color: #545454;
+}
+/******************************/
+.bha-btn {
+    width: 100%;
+    height: 50px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    gap: 8px;
+    margin-top: 20px;
+    background: #046F76;
+    border: 1px solid #046F76;
+    box-shadow: 0px 10px 20px 0px #00000033;
+    font-family: Segoe UI;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: -1%;
+    color: white;
+    border-radius: 8px;
+    /*margin-left: 10px;*/
+}
+
+    .bha-btn:hover {
+        background-color: #046F76;
+        color: white;
+    }
+
+/*****************************/
+.bhatext {
+    font-family: Segoe UI;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color: #6E6E6E;
+}
+
+.imagetxt {
+    font-family: Segoe UI;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 120%;
+    letter-spacing: -1%;
+    color: #545454;
+    margin-left: 226px;
+    margin-top: 25px;
+}
+
+.Createonetxt {
+    font-family: Segoe UI;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #007E87;
+    text-decoration: underline solid #00777f 2px;
+}
+
+.footertxt {
+    font-family: Segoe UI;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: left;
+    color: #545454;
+    margin-top: 25px;
+    /*margin-left: 15%;*/
+    /*margin-right: 15%;*/
+}
+/* side right side colum */
+.bha-info-bg {
+    background-color: #046F76;
+    border-radius: 24px;
+    padding: 70px 50px 45px 50px;
+    margin-top: 59px;
+    /*margin-left: 70px;*/
+    margin-right: 120px;
+    height: 404px;
+}
+
+.leadheading {
+    font-family: Segoe UI;
+    font-weight: 600;
+    font-size: 70px;
+    line-height: 80px;
+    letter-spacing: 0%;
+    color: white;
+}
+
+.leadpara  li{
+    font-family: Segoe UI;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 0%;
+    color: white;
+    margin-top: -5px;
+}
+.leadpara {
+    list-style-type: disc; /* default bullet */
+    padding-left: 20px; /* indent for bullets */
+}
+.bha-btn2 {
+    width: 399px;
+    height: 50px;
+    padding-top: 16px;
+    padding-right: 8px;
+    padding-bottom: 16px;
+    padding-left: 8px;
+    gap: 8px;
+    margin-top: 20px;
+    background: #ffffff;
+    border: 1px solid #D9D9D9;
+    box-shadow: 0px 1px 2px 0px #00000008;
+    font-family: Segoe UI;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 120%;
+    letter-spacing: -1%;
+    color: #545454;
+    border-radius: 0px;
+}
+.text-hr {
+   width: 28%;
+   margin-left: 4px;
+   background-color: white;
+   color: white; 
+   height: 3px;
+   border: none; 
+   margin-top:-27px;
+}
+/*===================Responsiveness with  media query=========================*/
+
+
+/* Small devices (landscape phones, 576px and up)*/
+@media (max-width: 576px) {
+    .logo-1 {
+        width: 38.46px;
+        height: 35.5px;
+    }
+
+    .logo-2 {
+        width: 161px;
+        height: 35.5px;
+    }
+
+        .logos-row{
+    padding: 32px 0px 2px 12px;
+}
+    .logo-3 {
+        width: 88.05px;
+        height: 35.5px;
+        margin-top: 0px;
+        margin-right: 9px;
+    }
+/*bha form start*/
+    .bha-form{
+        margin-left:12px;
+        margin-right:12px;
+    }
+    .bha-int1{
+    
+        height: 45px;
+    }
+    .bha-lab1 {
+        left: 21px;
+        font-size: 12px;
+        
+    }
+    .check-label{
+        font-size:12px;
+    }
+    .form-check .form-check-input{
+        width:13px;
+        height:13px;
+    }
+    .bha-btn {
+        height: 45px;
+    }
+
+    .bhafrgtext{
+    margin-left:-10px;
+        font-size:12px;
+    }
+    .footertxt {
+        font-size: 12px;
+        margin-top: 714px;
+        line-height: 19px;
+        position: absolute;
+        text-align:center;
+    }
+     
+    .smtext {
+        font-size: 16px;
+        padding-right: 20px;
+    
+
+    }
+    .bhaleadtext {
+        font-size: 35px;
+        line-height: 13%;
+    }
+  
+    /* bha form text section*/
+    .bha-info-bg {
+        padding: 30px 20px 30px 20px;
+        margin-top: 34px;
+        margin-left: 12px;
+        margin-right: 12px;
+        height: auto;
+    }
+
+    .leadheading {
+        font-size: 37px;
+        line-height: 47px;
+    }
+    .leadpara li {
+        font-size: 14px;
+        line-height: 33px;
+    }
+    .text-hr {
+        width: 68%;
+        margin-top: -10px;
+    }
+    }
+
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width:576px) and (max-width: 767px) {
+    body{
+       padding-bottom:100px;
+    }
+    .logo-1 {
+        width: 58.46px;
+        height: 43.5px;
+    }
+
+    .logo-2 {
+        width: 221px;
+        height: 43.5px;
+    }
+
+    .logos-row {
+        padding: 32px 0px 2px 12px;
+    }
+
+    .logo-3 {
+        width: 113.05px;
+        height: 43.5px;
+        margin-top: 0px;
+        margin-right: 13px;
+    }
+    /*bha form start*/
+    .bha-form {
+        margin-left: 12px;
+        margin-right:6px;
+    }
+
+    .bha-int1 {
+        height: 40px;
+    }
+    .check-label{
+        font-size:12px;
+        margin-left:-6px;
+    }
+    .form-check .form-check-input{
+        width:13px;
+        height:13px;
+    }
+    .bha-lab1 {
+        left: 21px;
+        font-size: 12px;
+    }
+
+    .bha-btn {
+     
+        height: 45px;
+    }
+
+    .bhafrgtext {
+        margin-left: 0px;
+        font-size: 12px;
+    }
+
+    .footertxt {
+        font-size: 14px;
+        text-align: center;
+        margin-top: 709px;
+        position: absolute;
+        line-height: 21px;
+    }
+
+    .smtext {
+        font-size: 16px;
+        padding-right: 20px;
+    }
+
+    .bhaleadtext {
+        font-size: 35px;
+        line-height: 13%;
+    }
+
+
+    /* bha form text section*/
+
+    .bha-info-bg {
+        padding: 29px 20px 33px 20px;
+        margin-top: 59px;
+        margin-left: 12px;
+        margin-right: 12px;
+        height: auto;
+    }
+
+    .leadheading {
+        font-size: 56px;
+        line-height: 70px;
+    }
+
+    .leadpara li {
+        font-size: 14px;
+        line-height: 33px;
+    }
+
+    .text-hr {
+        width: 68%;
+        margin-top: -10px;
+    }
+
+}
+
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width:768px) and (max-width: 992px) {
+    body{
+        padding-bottom:50px;
+    }
+    .logos-row{
+        padding:32px 20px;
+    }
+    .logo-1 {
+        width: 69.46px;
+        height: 55.5px;
+    }
+    .logo-2 {
+        width: 281.81px;
+        height: 55.5px;
+    }
+    .logo-3 {
+        width: 144.05px;
+        height: 55.5px;
+    }
+    .bha-form{
+        margin-left:10px;
+        margin-right:10px;
+    }
+    .check-label{
+        font-size:12px;
+        margin-left:-7px;
+    }
+    .footertxt {
+        font-size: 12px;
+        line-height: 21px;
+        margin-top: 0px;
+    }
+    .form-check .form-check-input{
+        width:13px;
+        height:13px;
+    }
+    .bhafrgtext{
+        font-size:12px;
+    }
+    /* form right side text */
+    .bha-info-bg {
+        height: auto;
+        margin-right: 15px;
+        padding: 40px 30px 50px 30px;
+    }
+    .leadheading{
+        font-size:55px;
+        line-height:72px;
+    }
+    .leadpara li{
+        line-height:40px;
+    }
+    .text-hr {
+        margin-top:6px;
+        width:59%;
+    }
+    }
+
+/* X-Large devices (large desktops, 1200px and up)*/
+@media (min-width:993px) and (max-width: 1200px) {
+    body {
+        padding-bottom: 50px;
+    }
+    .logos-row {
+        padding: 32px 20px;
+    }
+
+    .logo-1 {
+        width: 69.46px;
+        height: 55.5px;
+    }
+
+    .logo-2 {
+        width: 281.81px;
+        height: 55.5px;
+    }
+
+    .logo-3 {
+        width: 144.05px;
+        height: 55.5px;
+    }
+
+    .bha-form {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .footertxt {
+        font-size: 14px;
+        line-height: 21px;
+        margin-top: 0px;
+    }
+    /* form right side text */
+    .bha-info-bg {
+        height: auto;
+        margin-right: 15px;
+        padding: 40px 30px 50px 30px;
+    }
+
+    .leadheading {
+        font-size: 55px;
+        line-height: 72px;
+    }
+
+    .leadpara li {
+        line-height: 40px;
+    }
+
+    .text-hr {
+        margin-top: 6px;
+        width: 59%;
+    }
+
+}
+
+/* XX-Large devices (larger desktops, 1400px and up)*/
+@media (min-width:1201px) and (max-width: 1400px) {
+    body {
+        padding-bottom: 50px;
+    }
+    .logos-row {
+        padding: 32px 61px 32px 40px;
+    }
+
+    .logo-1 {
+        width: 69.46px;
+        height: 55.5px;
+    }
+
+    .logo-2 {
+        width: 281.81px;
+        height: 55.5px;
+    }
+
+    .logo-3 {
+        width: 144.05px;
+        height: 55.5px;
+    }
+
+    .bha-form {
+        margin-left: 40px;
+        margin-right: 109px;
+    }
+    .check-label{
+        font-size:16px;
+    }
+    .bhafrgtext{
+        font-size:16px;
+    }
+    .footertxt {
+        font-size: 16px;
+        line-height: 21px;
+        margin-top: 0px;
+    }
+    /* form right side text */
+    .bha-info-bg {
+        height: auto;
+        margin-left:-40px;
+        margin-right: 60px;
+        padding: 40px 30px 50px 30px;
+    }
+
+    .leadheading {
+        font-size: 55px;
+        line-height: 72px;
+    }
+
+    .leadpara li {
+        line-height: 40px;
+    }
+
+    .text-hr {
+        margin-top: 6px;
+        width: 59%;
+    }
+
+
+ 
+}

@@ -1,0 +1,80 @@
+﻿@using System.Reflection;
+@using System.ComponentModel.DataAnnotations;
+
+@model BHAERP.Models.ViewModels.InputViewModel.Common.DateTablePartialViewInputViewModel
+@{
+    var TableOutPutViewModel = Model.TableOutputViewModel;
+    var type = ((object)TableOutPutViewModel).GetType();
+    var properties = type.GetProperties();
+
+
+    string hideAction = Model.IsShowAction ? "" : "hidden";
+    string hideFilters = Model.Filterable ? "" : "hidden";
+}
+<style>
+    /*
+    #PropertiesTable {
+        border-collapse: separate !important;
+        border-spacing: 0;
+    }
+        #PropertiesTable thead th {
+            position: sticky;
+        }
+        */
+    .table-responsive {
+        overflow-y: auto;        
+        max-height: calc(100vh - 200px)
+    }
+</style>
+
+<table id="@Model.TableIdAttr" class="table bhaexampletable data-table table-bordered-less transparent-table">
+    <thead class="bha-th">
+        <tr class="bha-th1" @hideFilters>
+        </tr>
+        <tr class="bha-th">
+            @{
+                var dataIndex = 1;
+                foreach (var property in properties)
+                {
+                    var displayAttr = property.GetCustomAttribute<DisplayAttribute>();
+                    var widthAttr = property.GetCustomAttribute<BHAERP.Models.ViewModels.InputViewModel.Common.ColumnWidthAttribute>();
+
+                    var displayName = displayAttr?.Name ?? property.Name;
+                    var width = widthAttr?.Width;
+
+                    var hidden = "";
+                    var jsonIgnore = property.GetCustomAttributes(typeof(Newtonsoft.Json.JsonIgnoreAttribute), true).FirstOrDefault();
+                    if (jsonIgnore != null)
+                    {
+                        hidden = "hidden";
+                    }
+
+                    <td class="darked-blue bordertop"
+                        id="th@(property.Name)"
+                        style="@(width != null ? $"width: {width};" : "")"
+                        @(property.Name.Equals("ID") == true ? "hidden" : hidden)
+                        td-width="@width">
+                        @displayName @*<i class="bi bi-chevron-expand sort-icon" data-index="@dataIndex"></i>*@
+                    </td>
+
+                    dataIndex += 1;
+                }
+
+
+            }
+
+            <td class="darked-blue bordertop" style="width: 10%;" id="thAction" @hideAction>
+                Action
+            </td>
+        </tr>
+    </thead>
+    <tbody></tbody>
+
+
+</table>
+<script>
+    $(function () {
+        $('.table-responsive').addClass('bha-scroll');
+
+    });
+</script>

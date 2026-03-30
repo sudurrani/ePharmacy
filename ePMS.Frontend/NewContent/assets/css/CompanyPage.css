@@ -1,0 +1,13 @@
+.setting-form, .mailing-address-form, .general-Details {
+    border: 1px solid #00777f4d;
+    padding: 26px;
+}
+    .setting-form, .mailing-address-form h4, .general-Details h4 {
+        font-family: Segoe UI;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 13.18px;
+        letter-spacing: 0%;
+        vertical-align: middle;
+        color: #545454;
+    }

@@ -1,0 +1,147 @@
+﻿.body-content {
+    padding-top: 0;
+    margin: 0;
+    padding: 0px 48px 0px 48px;
+    /*background-color: #fff;*/
+    /*padding: 0px 24px;*/
+}
+
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Edge */
+}
+.page-contents {
+    background-color: #f8f9fb;
+    padding: 0px 24px;
+    margin: 0;
+    padding-bottom:23px;
+}
+
+.main-content {
+    background-color: white;
+    margin-bottom: 4px;
+    border-radius: 4px;
+    border: 1px solid #EEEFFF;
+    box-shadow: 0px 1px 3px 0px #00000026;
+    margin-bottom:2.5rem;
+}
+
+    .main-content h5 {
+        padding: 21.5px 0px 0px 15.15px;
+        font-family: 'Segoe UI';
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 13.18px;
+        letter-spacing: 0%;
+        vertical-align: middle;
+        color: #545454;
+    }
+
+        .main-content h5 span {
+            color: #007E87;
+        }
+.main-content-list {
+    
+    margin-bottom: 2.5rem;
+}
+.tab-content {
+    padding-top: 17.50px;
+}
+.bha-panel { /* bha-panel*/
+    border: 1.5px solid #00777F4D;
+    border-width: 1.5px;
+    margin: 0px 0px 15px 0px;
+    padding: 15px;
+}
+.mr-7_5px{
+    margin-right:7.5px;
+}
+.ml-7_5px {
+    margin-left: 7.5px;
+}
+.mr-15px {
+    margin-right: 15px;
+}
+
+.ml-15px {
+    margin-left: 15px;
+}
+.mt-15px {
+    margin-top: 15px !important;
+}
+.mb-15px {
+    margin-bottom: 15px !important;
+}
+.bha-panel-title {
+    color: #545454;
+    margin-left: -2px;
+    margin-bottom: 24px;
+}
+
+.bha-panel-feild-group {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 45px;
+    row-gap: 24px;
+    margin-bottom: 14px;
+    width: 1108px;
+    align-items: center;
+}
+/* info-field*/
+.bha-panel-field {
+    flex: 0 0 30%;
+    height: 34px;
+}
+
+.bha-panel-label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #212121;
+    white-space: nowrap;
+    width: 174px;
+    padding: 10px 0 10px 13px;
+    line-height: 100%;
+    vertical-align: middle;
+    margin: -3px 0 0 -2px;
+}
+
+.required {
+    color: #c40000;
+    margin-left: 0.5px;
+}
+
+.colon {
+    color: #212121;
+    margin-left: 3px;
+}
+
+.bha-panel-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-weight: 400;
+    font-size: 14px;
+    color: #212121;
+    width: 149px;
+    height: 34px;
+    padding: 7.25px 0 10px 8px;    
+}
+.bha-scroll::-webkit-scrollbar {
+    width: 4px;
+}
+
+.bha-scroll::-webkit-scrollbar-thumb {
+    background-color: rgb(7, 166, 177);
+    border-radius: 10px;
+}
+
+.bha-scroll::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+/* Firefox support */
+.bha-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(7, 166, 177) transparent;
+}
+
+
+

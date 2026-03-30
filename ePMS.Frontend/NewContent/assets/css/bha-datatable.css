@@ -1,0 +1,286 @@
+   /* Custom footer layout */
+    .custom-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+    }
+/* data table css */
+.dataTables_wrapper .dataTables_paginate {
+  text-align: right;
+  margin-top: 10px;
+}
+
+/* Pagination buttons */
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+  padding: 5px 10px;
+  margin: 0 2px;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  color: #333 !important;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.custom-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  font-weight: 500;
+  font-size: 12px;
+  color: #545454;
+  margin-left: -400px !important;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+}
+
+.custom-pagination button {
+  border: none;
+  background: none;
+  font-size: 14px;
+  cursor: pointer;
+  color: #555;
+}
+
+.custom-pagination button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.custom-pagination .page-text {
+  font-weight: 500;
+}
+.tblfooter {
+    border-top: none;
+    border-bottom: 1px solid #babfc7;
+    border-left: 1px solid #babfc7;
+    border-right: 1px solid #babfc7;
+    padding: 8px 20px 8px 20px;
+    background: white;
+    margin-top: 0rem !important;
+    width: 100%;
+    height: 40px;
+    margin: -2px 5px 0px 0px;
+}
+.dataTables_wrapper .dataTables_length,
+.dataTables_wrapper .dataTables_filter,
+.dataTables_wrapper .dataTables_info,
+.dataTables_wrapper .dataTables_processing,
+.dataTables_wrapper .dataTables_paginate {
+  color: inherit;
+  font-size: 12px;
+  margin-left: -20px;
+}
+.dataTables_wrapper .dataTables_length select {
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  font-size: 10px;
+  padding: 2px;
+  height: 21px;
+  background-color: transparent;
+  color: inherit;
+}
+  /* Hide DataTables default sorting arrows */
+  table.dataTable thead .sorting:after,
+  table.dataTable thead .sorting_asc:after,
+  table.dataTable thead .sorting_desc:after {
+    display: none !important;
+  }
+
+
+.bhaexample th {
+    font-family: Segoe UI;
+    font-weight: 400!important;
+    font-size: 11px!important;
+    line-height: 12px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #505C6D;
+}
+
+
+.bhaexample td {
+    font-family: Segoe UI;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: start;
+    color: #212121;
+    vertical-align: middle;
+}
+
+
+.bhaexample thead th,
+.bhaexample tbody td {
+    background-color: transparent !important;
+}
+
+   .green{
+  color: #007E87;
+ }
+ .bha-check-box .form-check-input:checked{
+background-color: #007E87;
+border-radius: 0px;
+ }
+ .bha-check-box .form-check-input:focus{
+  box-shadow: none !important;
+  outline: 0px !important;
+ }
+  .bha-check-box .form-check-input {
+border-radius: 0px;
+border-color: #8E8E8E;
+  }
+  .bha-button {
+  border: var(--bs-btn-border-width) none;
+  border-radius: var(--bs-btn-border-radius) 0px;
+  color: #007e87;
+  padding: 0px;
+}
+  .bha-button:hover{
+     color: #007e87;
+  }
+    .bha-button .show{
+        color: #007e87;
+    }
+.bha-contents-dropdown {
+  color: #505c6d;
+  font-family: Segoe UI;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+}
+.bha-dropdown-menu {
+  background: white;
+  border-radius: 0px;
+  width: 160px;
+  margin-left: -170px !important;
+margin: 0px  -20px  -120px  0px;
+  box-shadow: 0px 1px 4px 3px #2121211a;
+  --bs-dropdown-min-width: 8rem !important;
+  transform: translate3d(translate3d(22px, 24.6px, 0px)) !important;
+}
+.bha-dropdown-menu :hover {
+  background-color: #e3f2f3;
+}
+
+/* add new btn */
+.bha-addnew{
+            background-color: rgba(4, 111, 118, 1);
+            padding: 8px 16px;
+            width: 105px;
+            height: 40px;
+            border: none;
+            color: rgba(255, 255, 255, 1);
+            font-family: Segoe UI;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            border-radius: 0px;
+}
+
+
+ /* serch bar */
+ .tb-search input{
+font-family: Segoe UI;
+font-weight: 400;
+font-size: 14px;
+line-height: 24px;
+letter-spacing: 0%;
+  height: 40px;
+  padding: 8px 16px 8px 40px;
+  border: 1px solid rgba(141, 149, 160, 1);
+  width: 100%;
+  font-size: 14px;
+  font-family: Segoe UI;
+  color: rgba(84, 84, 84, 1);
+  border-radius: 0px;
+
+
+ }
+ .tb-search input:focus{
+  box-shadow: none !important;
+  outline: 0px !important;
+  border: 1px solid #00777F;
+ }
+ .tb-search  i{
+  position: absolute;
+font-size: 16px !important;
+margin: 12px;
+color: #007E87;
+
+ }
+/* item tracking css  */
+.outer-b{
+  padding: 16px;
+border: 1px solid #00777F4D ;
+}
+ .outer-b b{
+ font-family: Segoe UI;
+font-weight: 600;
+font-size: 18px;
+line-height: 13.18px;
+letter-spacing: 0%;
+vertical-align: middle;
+color: #545454;
+padding: 0px;
+
+ }
+.bha-addnew:hover {
+    background-color: rgba(4, 111, 118, 1);
+    padding: 8px 16px;
+    width: 105px;
+    height: 40px;
+    border: none;
+    color: rgba(255, 255, 255, 1);
+    font-family: Segoe UI;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border-radius: 0px;
+}
+
+.bha-addnew:focus-visible {
+    background-color: rgba(4, 111, 118, 1);
+    padding: 8px 16px;
+    width: 105px;
+    height: 40px;
+    border: none;
+    color: rgba(255, 255, 255, 1);
+    font-family: Segoe UI;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border-radius: 0px;
+}
+.bha-addnew:active {
+    background-color: rgba(4, 111, 118, 1);
+    padding: 8px 16px;
+    width: 105px;
+    height: 40px;
+    border: none;
+    color: rgba(255, 255, 255, 1);
+    font-family: Segoe UI;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border-radius: 0px;
+}
+.bha-addnew:focus {
+    outline: 0px !important;
+    box-shadow: none !important;
+}

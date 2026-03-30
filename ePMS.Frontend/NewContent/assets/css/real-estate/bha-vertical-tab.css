@@ -1,0 +1,120 @@
+﻿/* tab start*/
+.fophex-tab {
+    flex: 0 0 16.26%;
+    max-width: 30.26%;
+}
+
+.fophex-nav-item {
+    margin-top: 13px;
+    padding-left: 5px;
+}
+
+.fophex-nav-link {
+    border-radius: 6px;
+    font-weight: 600;
+    color: #545454;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    white-space: nowrap;
+    background-color: transparent;
+    border: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-left: 4px;
+    font-family: Segoe UI;
+    font-weight: 600;
+    font-size: 12px;
+    height: 42px;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+}
+
+    .fophex-nav-link:hover {
+        color: #545454;
+    }
+
+    .fophex-nav-link span {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: transform 0.3s ease;
+        position: relative;
+        padding-left: 2px;
+        padding-right: 26px;
+    }
+
+    .fophex-nav-link.active span::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1.40px;
+        height: 19.50px;
+        background-color: transparent;
+        transition: background-color 0.3s ease;
+        margin-left: -4px;
+        color: #00777F;
+        background-color: #00777F;
+    }
+
+    .fophex-nav-link.active {
+        background-color: rgba(117, 192, 196, 0.2);
+        color: #00777F;
+        margin-left: 10px;
+        width: 150.50px;
+    }
+
+        .fophex-nav-link.active span {
+            transition: background-color 3s ease;
+            transform: translateX(10px);
+            transition: transform 0.3s ease;
+        }
+
+    .fophex-nav-link.location-tab.active {
+        width: 200px !important;
+    }
+
+.tab-right-border {
+    border-right: 1.5px solid #00777F4D;
+    border-width: 1.5px;
+    height: 1028px;
+}
+
+/*Horizontal Tabs*/
+.fophex-tab-link {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+    position: relative;
+    text-decoration: none;
+}
+
+    .fophex-tab-link:hover {
+        color: #00777F;
+        text-decoration: none;
+    }
+
+
+
+    .fophex-tab-link span {
+        padding-left: 7px;
+        padding-right: 7px;
+        padding-bottom: 2px;
+        display: inline-block;
+        transform: translateY(8px); /* Push text down initially */
+        transition: transform 0.3s ease, border-bottom 0.3s ease;
+        border-bottom: 0 solid transparent;
+    }
+
+    .fophex-tab-link.active span {
+        color: #00777F;
+        transform: translateY(0);
+        border-bottom: 2px solid #00777F;
+    }
+
+.nav-tabs .nav-link {
+    border: none;
+}

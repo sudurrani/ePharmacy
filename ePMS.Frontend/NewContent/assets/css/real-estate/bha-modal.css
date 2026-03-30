@@ -1,0 +1,23 @@
+﻿.bha-modal-content {
+    border-radius: 3px;
+    min-height: 373px;
+    margin-top: 3rem;
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.2);
+}
+.bha-modal-header {
+    border-bottom: none;
+    padding-bottom: 0px !important;    
+    padding-top: .25rem !important;
+}
+.bha-modal-header-text {
+    letter-spacing: 0.4px;
+}
+.bha-modal-body{
+    padding-top:10px !important;
+}
+.bha-dropzone {
+    min-height: 160px !important;
+    background-color: rgba(217, 217, 217, 0.3);
+    border: 2px dashed rgba(16, 26, 60, 0.14);
+    align-content: center;
+}

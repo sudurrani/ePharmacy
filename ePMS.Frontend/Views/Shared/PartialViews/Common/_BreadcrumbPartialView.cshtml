@@ -1,0 +1,36 @@
+﻿@model List<BHAERP.Models.ViewModels.InputViewModel.Common.BreadcrumbInputViewModel>
+@{
+    var CID = Session["CurrencyID"];
+    var EntID = Session["CompanyID"];
+    var UID = Session["UserID"];
+    var PID = Session["ProjectID"];
+}
+
+<div class="row">
+    <div class="col">
+        <ol class="bha-breadcrumb">
+            @{
+                foreach (var item in Model)
+                {
+                        <li class="@(item.IsActive ? "active" : "")"
+                            >
+                            <a href="@(item.Url == "#" ? "#" : item.Url)"
+                               style="text-decoration:none;color:inherit;@(item.Url != "#" ? "cursor:pointer;" : "cursor:default")"
+                               >
+
+
+                                @if (item.Text.Equals("Home"))
+                                {
+                                    <i class="bi bi-house-door-fill homeicon"></i> @item.Text
+                                }
+                                else
+                                {
+                                    <i class="bi bi-chevron-right"></i> @item.Text
+                                }
+                            </a>
+                    </li>
+                }
+            }
+        </ol>
+    </div>
+</div>

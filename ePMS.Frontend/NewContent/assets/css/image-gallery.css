@@ -1,0 +1,533 @@
+.img-gal-container{
+    border: 1px solid #00777F4D;
+    padding: 16px;
+}
+.img-gal-container h4{
+  font-family: Segoe UI;
+font-weight: 600;
+font-size: 16px;
+line-height: 13.18px;
+letter-spacing: 0%;
+vertical-align: middle;
+color: #545454;
+}
+.imag-gal-row1 {
+  margin: 40px 20px 0px 20px}
+
+.img-container img{
+    width: 234px;
+    height: 160px;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    border: 1px solid #101A3C24;
+    border-radius: 4px;
+}
+.img-container span{
+    position: absolute;
+    margin-top: -57px;
+    padding-left: 31px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%);
+    width: 234px;
+    height: 57px;
+    padding-top: 16px;
+}
+.img-container span b{
+font-family: Segoe UI;
+font-weight: 700;
+font-size: 12px;
+line-height: 100%;
+letter-spacing: 0%;
+padding: 0px;
+color: white;
+}
+.img-container span p{
+font-family: Segoe UI;
+font-weight: 400;
+font-size: 10px;
+line-height: 100%;
+letter-spacing: 0%;
+padding-top: -2px;
+color:#C1C1C1;
+}
+
+.img-container {
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+}
+
+.overlay-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 234px;
+  height: 160px;
+  opacity: 0;
+  transition: 0.5s ease;
+  border-radius: 3px;
+  background-color: #046F76D9;
+  
+  display: flex;
+  align-items: center;
+}
+
+.img-container:hover .overlay-img {
+  opacity: 1;
+}
+.img-container:hover span{
+  display: none;
+}
+/* update description */
+.overlay-text  {
+  margin-top: -61px;
+}
+.overlay-text  button {
+  background-color: transparent;
+  padding: 0px;
+  border: none;
+  margin-left: 13px;
+  margin-top: 1px;
+}
+.overlay-text  button svg{
+  width: 16px;
+  height: 16px;
+}
+.overlay-text p{
+    font-family: Segoe UI;
+    font-weight: 400;
+    font-size: 10.5px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 4px 38px 0px -16px;
+}
+.btn-overlay button{
+background-color: transparent;
+    border: none;
+    margin-left: -147px;
+    position: absolute;
+    margin-top: 41px;
+        width: 30px;
+}
+.btn-overlay .carousel-btn{
+       margin-left: -182px;
+    position: absolute;
+    margin-top: 41px;
+    width: 30px;
+}
+/* add text image  */
+.overlay-add-text  {
+  margin-top: -122px;
+}
+.overlay-add-text button{
+border: none;
+background-color: transparent;
+margin-left: 7px;
+margin-top: -1px;
+}
+.overlay-add-text  p{
+font-family: Segoe UI;
+    font-weight: 400;
+    font-size: 10.5px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 8px 38px 0px -8px;
+}
+.overlay-add-text.carousel-btn{
+       margin-left: -182px;
+    position: absolute;
+    margin-top: 41px;
+    width: 30px;
+}
+.add-btn-overlay button{
+ background-color: transparent;
+    border: none;
+    margin-left: -147px;
+    position: absolute;
+    margin-top: 41px;
+        width: 30px;
+}
+/* carousel icon */
+.add-btn-overlay .carousel-btn{
+     margin-left: 34px;
+    position: absolute;
+    margin-top: 3px;
+    width: 30px;
+}
+/* add new text model */
+.add-btn-overlay button{
+    position: absolute;
+    margin-top: 42px;
+    margin-left: 33px;
+    width: 30px;
+}
+/* update description modal css */
+/* .bha-modelbody{
+    border-radius: 0px !important;
+  box-shadow: 0px 4px 6px 0px #00000040 !important;
+  width: 620px;
+  height: auto;
+  background-color: white;
+
+
+  }*/
+   .bha-modelbody h1{
+font-family: Segoe UI !important;
+font-weight: 600;
+font-size: 16px;
+line-height: 13.18px;
+letter-spacing: 0%;
+vertical-align: middle;
+color: #545454;
+   }
+   .bha-modelbody .btn-close{
+background-color: #D9F0F2;
+border-radius: 100px;
+color:#000000 !important;
+font-size: 12px;
+font-weight: 900;
+   }
+   .model-input input{
+    width: 524px;
+    height: 36px;
+   }
+   .bha-modelbody .modal-body{
+    padding:0px 17px;
+   }
+      .bha-modelbody .cancel-btn{
+border-radius: 0px;
+border: 1px solid #8D95A0;
+background-color:transparent;
+padding: 8px 16px;
+color:#212121;
+font-family: Segoe UI;
+font-weight: 600;
+font-size: 14px;
+line-height: 24px;
+letter-spacing: 0%;
+text-align: center-spacing 0%;
+text-align: center;
+
+   }
+   .bha-modelbody .save-btn{
+border-radius: 0px;
+background-color: #046F76;
+padding: 8px 16px;
+color: white;
+font-family: Segoe UI;
+font-weight: 600;
+font-size: 14px;
+line-height: 24px;
+letter-spacing: 0%;
+text-align: center-spacing 0%;
+text-align: center;
+
+   }
+   .bha-modelbody b{
+    font-family: Segoe UI;
+font-weight: 400;
+font-size: 18px;
+line-height: 24px;
+letter-spacing: 0%;
+text-align: center;
+color: #545454;
+   }
+   .modal-text{
+    margin-top: -10px;
+   }
+/* text area */
+  .bha-textbox label {
+    font-family: Segoe UI;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color: #505c6d;
+    background-color: white;
+    position: absolute;
+    margin-left: 16px;
+    margin-top: -9px;
+  }
+  .bha-textbox textarea {
+    border-radius: 0px;
+    margin-top: 20px;
+    font-family: Segoe UI;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    color: #545454;
+    padding: 16px 19px;
+    height: 97px;
+    width: 100%;
+  }
+  .bha-textbox textarea ::placeholder{
+    font-family: Segoe UI;
+font-weight: 400;
+font-size: 12px;
+line-height: 24px;
+letter-spacing: 0%;
+color: #545454;
+  }
+  .bha-textbox textarea:focus {
+    box-shadow: none !important;
+    border: 1px solid #07a6b1;
+  }
+
+  /* image carousel =============== */
+  /* carousel setting */
+
+.carousel_view .card{
+width: 700px;
+}
+.carousel_content{
+    height: 600px !important;
+}
+.carousel_slide img{
+    margin:0px;
+    height: 566px;
+    width:auto;
+    display: inline-block;
+}
+.carousel-crudbtn{
+    margin: 145px 0px 0px 813px;
+    position: fixed;
+}
+
+.carousel-crudbtn button{
+    padding-top:40px;
+}
+.carou_vedio{
+    height: 555px !important;
+    object-fit: fill;
+    width: 800px !important;
+
+}
+/* carousel indicator/thumnail */
+
+.carousel-indicators .active {
+  background-color:#00777F !important;
+  width: 36px !important;
+height: 12px !important;
+border-radius: 30px !important;
+
+}
+.carousel-indicators [data-bs-target] {
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
+  background-color:#C4C4C4;
+  border: none;
+  margin: 0 4px;
+  transition: background-color 0.3s ease;
+}
+  .carousel_prev::after {
+    content: '‹';
+    font-size: 60px !important;
+    color: white !important;
+    margin-top: -10px !important;
+    position: absolute;
+    margin-left: 70px !important;
+    
+  }
+
+  .carousel_next::after {
+    content: '›';
+    font-size: 60px !important;
+    color: white !important;
+    position: absolute;
+    margin-top: -15px !important;
+    margin-left: -90px !important;
+  }
+
+/* carousel modal */
+.bha-modal-cr{
+    width: 900px;
+    justify-self: center;
+    height: 637px;
+    border-radius: 0px;
+    padding: 0px !important;
+    margin-top:30px;
+}
+
+
+
+/* image upload btn */
+.upload-img-row{
+    margin: 40px 20px 0px 20px;
+}
+.upload-img-row > col {
+  padding: 0px !important;
+}
+    .img-upload-box {
+      width: 234px;
+      height: 160px;
+      border: 2px dashed #101A3C24;
+      border-radius: 3px;
+      background-color:#D9D9D94D;
+      overflow: hidden;
+      position: relative;
+      margin: 0px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: sans-serif;
+      color: #555;
+      
+    }
+    .img-upload-box.has-image {
+  border: 1px solid #101A3C24;
+  background-color: white;
+     box-shadow: 0px 4px 4px 0px #00000040;
+  transition: all 0.3s ease;
+}
+
+    .img-upload-box input {
+      display: none;
+    }
+
+    .img-preview {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: none;
+      z-index: 1;
+      
+    }
+
+    .imgbox-placholder {
+      z-index: 2;
+      font-size: 16px;
+      text-align: center;
+      color: #A6ACBE;
+      font-family: Segoe UI;
+font-weight: 600;
+font-size: 14px;
+line-height: 24px;
+
+    }
+
+    .imgbox-overlay {
+      position: absolute;
+      inset: 0;
+      background: #046F76D9;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 10px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      z-index: 8;
+      box-shadow: 0px 4px 4px 0px #00000040;
+
+    }
+
+    .img-upload-box.has-image:hover .imgbox-overlay {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .imgbox-header {
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .imgbox-modal {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+    }
+
+    .imgbox-modal button {
+      background:transparent;
+      border: none;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .imgbox-header > button{
+      font-size: 16px;
+      border: 1px solid white;
+      border-radius: 3px;
+      padding: 2px 6px;
+      background-color: transparent;
+      border: none;
+      margin-right: 3px;
+      margin-top: 0px;
+    }
+.imgbox-header > span{
+  font-family: Segoe UI;
+font-weight: 400;
+font-size: 10.5px;
+line-height: 100%;
+letter-spacing: 0%;
+text-align: center;
+color: #FFFFFF;
+margin-left: -5px;
+margin-top: 0px;
+
+}
+    .img-upload-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+.img-info {
+    position: absolute;
+    padding-left: 31px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%);
+    width: 234px;
+    height: 57px;
+    padding-top: 16px;
+    z-index: 100;
+    margin-top: 102px;
+}
+.img-info .name-sty{
+    font-family: Segoe UI;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    padding:10px 0px 0px 0px;
+    text-align: left;
+    color: white;
+}
+ .img-info .desc-sty{
+  font-family: Segoe UI;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    padding-top: 0px;
+    color: #C1C1C1;
+    text-align: left;
+    padding-top: 5px;
+ }
+ .img-upload-box:hover .img-info{
+  display: none !important;
+}
+.upload-row-m{
+  margin-top: 30px;
+}

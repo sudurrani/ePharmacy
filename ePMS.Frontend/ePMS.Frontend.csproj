@@ -1,0 +1,557 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EE04B3A4-4657-4CED-A442-91EFC144747F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ePMS.Frontend</RootNamespace>
+    <AssemblyName>ePMS.Frontend</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.2.0.1\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.9\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.9\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\UserManagement\Controllers\UserLoginController.cs" />
+    <Compile Include="Areas\UserManagement\UserManagementAreaRegistration.cs" />
+    <Compile Include="CommonClasses\URLcoding.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="NewContent\assets\css\2col-layout.css" />
+    <Content Include="NewContent\assets\css\bha-datatable.css" />
+    <Content Include="NewContent\assets\css\bhadashboard-old.css" />
+    <Content Include="NewContent\assets\css\bhadashboard.css" />
+    <Content Include="NewContent\assets\css\bhasignup.css" />
+    <Content Include="NewContent\assets\css\bhasignupold.css" />
+    <Content Include="NewContent\assets\css\CompanyPage.css" />
+    <Content Include="NewContent\assets\css\cost-centers.css" />
+    <Content Include="NewContent\assets\css\datatable.css" />
+    <Content Include="NewContent\assets\css\image-gallery.css" />
+    <Content Include="NewContent\assets\css\layout-old.css" />
+    <Content Include="NewContent\assets\css\layout.css" />
+    <Content Include="NewContent\assets\css\NewLayout\bootstrap-icons.css" />
+    <Content Include="NewContent\assets\css\NewLayout\bootstrap-icons.min.css" />
+    <Content Include="NewContent\assets\css\NewLayout\bootstrap.min.css" />
+    <Content Include="NewContent\assets\css\NewLayout\buttons.dataTables.min.css" />
+    <Content Include="NewContent\assets\css\NewLayout\choices.min.css" />
+    <Content Include="NewContent\assets\css\NewLayout\font-family-roboto.css" />
+    <Content Include="NewContent\assets\css\NewLayout\google-fonts.css" />
+    <Content Include="NewContent\assets\css\NewLayout\jquery.dataTables.min.css" />
+    <Content Include="NewContent\assets\css\organization-chart.css" />
+    <Content Include="NewContent\assets\css\product-general.css" />
+    <Content Include="NewContent\assets\css\real-estate\app.css" />
+    <Content Include="NewContent\assets\css\real-estate\bha-breadcrumb.css" />
+    <Content Include="NewContent\assets\css\real-estate\bha-menu-bar.css" />
+    <Content Include="NewContent\assets\css\real-estate\bha-modal.css" />
+    <Content Include="NewContent\assets\css\real-estate\bha-table.css" />
+    <Content Include="NewContent\assets\css\real-estate\bha-vertical-tab.css" />
+    <Content Include="NewContent\assets\css\real-estate\bootstrap-datepicker.min.css" />
+    <Content Include="NewContent\assets\css\real-estate\bootstrap-datetimepicker.min.css" />
+    <Content Include="NewContent\assets\css\real-estate\daterangepicker.css" />
+    <Content Include="NewContent\assets\css\real-estate\detail-view.css" />
+    <Content Include="NewContent\assets\css\real-estate\dropzone.min.css" />
+    <Content Include="NewContent\assets\css\real-estate\main-content.css" />
+    <Content Include="NewContent\assets\css\real-estate\pos-search-panel.css" />
+    <Content Include="NewContent\assets\css\real-estate\select2.css" />
+    <Content Include="NewContent\assets\css\sales-price.css" />
+    <Content Include="NewContent\assets\css\select2.css" />
+    <Content Include="NewContent\assets\css\sweetalert2\sweetalert2.min.css" />
+    <Content Include="NewContent\assets\css\variant.css" />
+    <Content Include="NewContent\assets\css\vendorcard.css" />
+    <Content Include="NewContent\assets\Datepicker\picker.css" />
+    <Content Include="NewContent\assets\img\act-cd-arrow.png" />
+    <Content Include="NewContent\assets\img\backimg.jpg" />
+    <Content Include="NewContent\assets\img\backimg1.png" />
+    <Content Include="NewContent\assets\img\bha-accounts.png" />
+    <Content Include="NewContent\assets\img\bha-avater1.png" />
+    <Content Include="NewContent\assets\img\bha-avater2.png" />
+    <Content Include="NewContent\assets\img\bha-avater3.png" />
+    <Content Include="NewContent\assets\img\bha-avater4.png" />
+    <Content Include="NewContent\assets\img\bha-avater5.png" />
+    <Content Include="NewContent\assets\img\bha-barcode.png" />
+    <Content Include="NewContent\assets\img\bha-chart1.png" />
+    <Content Include="NewContent\assets\img\bha-laptop-1.png" />
+    <Content Include="NewContent\assets\img\bha-laptop-2.png" />
+    <Content Include="NewContent\assets\img\bha-laptop-3.jpg" />
+    <Content Include="NewContent\assets\img\bha-laptop-4.png" />
+    <Content Include="NewContent\assets\img\bha-laptop-5.jpg" />
+    <Content Include="NewContent\assets\img\bha-laptop-6.png" />
+    <Content Include="NewContent\assets\img\bha-laptop-7.png" />
+    <Content Include="NewContent\assets\img\bha-laptop-8.png" />
+    <Content Include="NewContent\assets\img\bha-logo.png" />
+    <Content Include="NewContent\assets\img\bha-no-action.png" />
+    <Content Include="NewContent\assets\img\bha-qrcode.png" />
+    <Content Include="NewContent\assets\img\bha-yes-action.png" />
+    <Content Include="NewContent\assets\img\cardline.png" />
+    <Content Include="NewContent\assets\img\carousel-img%281%29.png" />
+    <Content Include="NewContent\assets\img\cdline.png" />
+    <Content Include="NewContent\assets\img\circle-chart.png" />
+    <Content Include="NewContent\assets\img\columns.png" />
+    <Content Include="NewContent\assets\img\company-pic.png" />
+    <Content Include="NewContent\assets\img\dasbordimg1.png" />
+    <Content Include="NewContent\assets\img\dashbaordimg10.png" />
+    <Content Include="NewContent\assets\img\dashbaordimg11.png" />
+    <Content Include="NewContent\assets\img\dashbaordimg12.png" />
+    <Content Include="NewContent\assets\img\dashbaordimg13.png" />
+    <Content Include="NewContent\assets\img\dashbaordimg14.png" />
+    <Content Include="NewContent\assets\img\dashbaordimg15.png" />
+    <Content Include="NewContent\assets\img\dashbaordimg2.png" />
+    <Content Include="NewContent\assets\img\dashbaordimg3.png" />
+    <Content Include="NewContent\assets\img\dashbaordimg4.png" />
+    <Content Include="NewContent\assets\img\dashbaordimg5.png" />
+    <Content Include="NewContent\assets\img\dashbaordimg6.png" />
+    <Content Include="NewContent\assets\img\dashbaordimg7.png" />
+    <Content Include="NewContent\assets\img\dashbaordimg8.png" />
+    <Content Include="NewContent\assets\img\dashbaordimg9.png" />
+    <Content Include="NewContent\assets\img\department-pic.png" />
+    <Content Include="NewContent\assets\img\division-cd-img.png" />
+    <Content Include="NewContent\assets\img\Fophex-1-2%402x.jpg" />
+    <Content Include="NewContent\assets\img\Frame 2147225552.png" />
+    <Content Include="NewContent\assets\img\function-pic.png" />
+    <Content Include="NewContent\assets\img\home-icon.png" />
+    <Content Include="NewContent\assets\img\hr-line.png" />
+    <Content Include="NewContent\assets\img\line1.png" />
+    <Content Include="NewContent\assets\img\realestate-img.png" />
+    <Content Include="NewContent\assets\img\row-grop-pic.png" />
+    <Content Include="NewContent\assets\img\side-nav.html" />
+    <Content Include="NewContent\assets\img\svg images\Account-svg.txt" />
+    <Content Include="NewContent\assets\img\svg images\attendence12-svg.txt" />
+    <Content Include="NewContent\assets\img\svg images\bha-assets-svg.txt" />
+    <Content Include="NewContent\assets\img\svg images\bha-change-password-svg.txt" />
+    <Content Include="NewContent\assets\img\svg images\bha-check-svg.txt" />
+    <Content Include="NewContent\assets\img\svg images\bha-copy-svg.txt" />
+    <Content Include="NewContent\assets\img\svg images\bha-cross-svg.txt" />
+    <Content Include="NewContent\assets\img\svg images\bha-csv-svg.txt" />
+    <Content Include="NewContent\assets\img\svg images\bha-edit-profile-svg.txt" />
+    <Content Include="NewContent\assets\img\svg images\bha-erp-core svg.txt" />
+    <Content Include="NewContent\assets\img\svg images\bha-excel-svg.txt" />
+    <Content Include="NewContent\assets\img\svg images\bha-fixedassets.txt" />
+    <Content Include="NewContent\assets\img\svg images\bha-help-&amp;-support-svg.txt" />
+    <Content Include="NewContent\assets\img\svg images\bha-hr-svg.txt" />
+    <Content Include="NewContent\assets\img\svg images\bha-logout-svg.txt" />
+    <Content Include="NewContent\assets\img\svg images\bha-payroll-svg.txt" />
+    <Content Include="NewContent\assets\img\svg images\bha-pdf-svg.txt" />
+    <Content Include="NewContent\assets\img\svg images\bha-print-svg.txt" />
+    <Content Include="NewContent\assets\img\svg images\bha-products-svg.txt" />
+    <Content Include="NewContent\assets\img\svg images\bha-supplychain.txt" />
+    <Content Include="NewContent\assets\img\svg images\bha-warehouse-svg.txt" />
+    <Content Include="NewContent\assets\img\user-pic.png" />
+    <Content Include="NewContent\assets\img\vectorimg.png" />
+    <Content Include="NewContent\assets\img\watermark.jpg" />
+    <Content Include="NewContent\assets\js\2col-layout.js" />
+    <Content Include="NewContent\assets\js\datatable-scripts.js" />
+    <Content Include="NewContent\assets\js\datatables.net-1.13.4-js-jquery.dataTables.min.js" />
+    <Content Include="NewContent\assets\js\Datepicker\picker.js" />
+    <Content Include="NewContent\assets\js\dropzone.min.js" />
+    <Content Include="NewContent\assets\js\layout.js" />
+    <Content Include="NewContent\assets\js\NewLayout\bootstrap.bundle.min.js" />
+    <Content Include="NewContent\assets\js\NewLayout\buttons.html5.min.js" />
+    <Content Include="NewContent\assets\js\NewLayout\buttons.print.min.js" />
+    <Content Include="NewContent\assets\js\NewLayout\choices.min.js" />
+    <Content Include="NewContent\assets\js\NewLayout\dataTables.buttons.min.js" />
+    <Content Include="NewContent\assets\js\NewLayout\jquery-3.7.0.min.js" />
+    <Content Include="NewContent\assets\js\NewLayout\jquery-3.7.1.min.js" />
+    <Content Include="NewContent\assets\js\NewLayout\jquery-ajax-3.7.1.min.js" />
+    <Content Include="NewContent\assets\js\NewLayout\jquery.dataTables.min.js" />
+    <Content Include="NewContent\assets\js\NewLayout\jszip.min.js" />
+    <Content Include="NewContent\assets\js\NewLayout\pdfmake.min.js" />
+    <Content Include="NewContent\assets\js\NewLayout\select2.min.js" />
+    <Content Include="NewContent\assets\js\NewLayout\vfs_fonts.js" />
+    <Content Include="NewContent\assets\js\real-estate\bootstrap-datepicker.min.js" />
+    <Content Include="NewContent\assets\js\real-estate\bootstrap-datetimepicker.min.js" />
+    <Content Include="NewContent\assets\js\real-estate\crypto-js.min.js" />
+    <Content Include="NewContent\assets\js\real-estate\daterangepicker.js" />
+    <Content Include="NewContent\assets\js\real-estate\moment.min.js" />
+    <Content Include="NewContent\assets\js\real-estate\select2.min.js" />
+    <Content Include="NewContent\assets\js\sweetalert2\sweetalert2.all.js" />
+    <Content Include="NewContent\assets\js\sweetalert2\sweetalert2.min.js" />
+    <Content Include="NewContent\assets\toastr\toastr.css" />
+    <Content Include="NewContent\assets\toastr\toastr.js" />
+    <Content Include="NewContent\bhalogjn\images\bha-logo%282%29.png" />
+    <Content Include="NewContent\bhalogjn\images\bha-logo.png" />
+    <Content Include="NewContent\bhalogjn\images\fophex-logo.png" />
+    <Content Include="NewContent\bhalogjn\images\google.png" />
+    <Content Include="NewContent\bhalogjn\images\logo.png" />
+    <Content Include="NewContent\bhalogjn\images\vector1.png" />
+    <Content Include="NewContent\bhalogjn\images\vector2.png" />
+    <Content Include="NewContent\DashboradImage\img\backimg.jpg" />
+    <Content Include="NewContent\DashboradImage\img\backimg1.png" />
+    <Content Include="NewContent\DashboradImage\img\bha-accounts.png" />
+    <Content Include="NewContent\DashboradImage\img\bha-logo.png" />
+    <Content Include="NewContent\DashboradImage\img\company-pic.png" />
+    <Content Include="NewContent\DashboradImage\img\dasbordimg1.png" />
+    <Content Include="NewContent\DashboradImage\img\dashbaordimg10.png" />
+    <Content Include="NewContent\DashboradImage\img\dashbaordimg11.png" />
+    <Content Include="NewContent\DashboradImage\img\dashbaordimg12.png" />
+    <Content Include="NewContent\DashboradImage\img\dashbaordimg13.png" />
+    <Content Include="NewContent\DashboradImage\img\dashbaordimg14.png" />
+    <Content Include="NewContent\DashboradImage\img\dashbaordimg15.png" />
+    <Content Include="NewContent\DashboradImage\img\dashbaordimg2.png" />
+    <Content Include="NewContent\DashboradImage\img\dashbaordimg3.png" />
+    <Content Include="NewContent\DashboradImage\img\dashbaordimg4.png" />
+    <Content Include="NewContent\DashboradImage\img\dashbaordimg5.png" />
+    <Content Include="NewContent\DashboradImage\img\dashbaordimg6.png" />
+    <Content Include="NewContent\DashboradImage\img\dashbaordimg7.png" />
+    <Content Include="NewContent\DashboradImage\img\dashbaordimg8.png" />
+    <Content Include="NewContent\DashboradImage\img\dashbaordimg9.png" />
+    <Content Include="NewContent\DashboradImage\img\Frame 2147225552.png" />
+    <Content Include="NewContent\DashboradImage\img\home-icon.png" />
+    <Content Include="NewContent\DashboradImage\img\vectorimg.png" />
+    <Content Include="NewContent\Spin%401x-1.0s-200px-200px %281%29.gif" />
+    <Content Include="NewContent\Spinner%401x-1.5s-211px-211px.gif" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="NewContent\assets\css\NewLayout\fonts\bootstrap-icons.woff" />
+    <Content Include="NewContent\assets\css\NewLayout\fonts\bootstrap-icons.woff2" />
+    <Content Include="NewContent\assets\img\bha-assets" />
+    <Content Include="NewContent\assets\img\bha-attendence" />
+    <Content Include="NewContent\assets\img\bha-copy" />
+    <Content Include="NewContent\assets\img\bha-csv" />
+    <Content Include="NewContent\assets\img\bha-excel" />
+    <Content Include="NewContent\assets\img\bha-fixed-assets" />
+    <Content Include="NewContent\assets\img\bha-hr" />
+    <Content Include="NewContent\assets\img\bha-payroll" />
+    <Content Include="NewContent\assets\img\bha-pdf" />
+    <Content Include="NewContent\assets\img\bha-print" />
+    <Content Include="NewContent\assets\img\bha-product-1" />
+    <Content Include="NewContent\assets\img\bha-product1" />
+    <Content Include="NewContent\assets\img\bha-products" />
+    <Content Include="NewContent\assets\img\bha-sales" />
+    <Content Include="NewContent\assets\img\bha-supplychain" />
+    <Content Include="NewContent\assets\img\bha-warehouse" />
+    <Content Include="NewContent\assets\img\colums-img" />
+    <Content Include="NewContent\assets\img\erp-core" />
+    <Content Include="NewContent\assets\img\filter-dp-down-pic" />
+    <Content Include="NewContent\assets\img\values-img" />
+    <Content Include="Scripts\FunctionalityJS\JobRequestCenter\MaintenanceRequest\README.md" />
+    <Content Include="menus.js" />
+    <Content Include="Areas\UserManagement\Views\web.config" />
+    <Content Include="Areas\UserManagement\Views\UserLogin\Index.cshtml" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\FunctionalityJS\Accounts\BankReceiptVoucher\bankreceiptvoucher-list.js" />
+    <Content Include="Scripts\FunctionalityJS\Accounts\common-dropdowns.js" />
+    <Content Include="Scripts\FunctionalityJS\CashCenter\BalanceSummary\balance-summary.js" />
+    <Content Include="Scripts\FunctionalityJS\CashCenter\CashSetup\assign-cash-handler-role.js" />
+    <Content Include="Scripts\FunctionalityJS\CashCenter\CashSetup\cash-handlers-role.js" />
+    <Content Include="Scripts\FunctionalityJS\CashCenter\common-dropdowns.js" />
+    <Content Include="Scripts\FunctionalityJS\CashCenter\list-view.js" />
+    <Content Include="Scripts\FunctionalityJS\common-dropdowns.js" />
+    <Content Include="Scripts\FunctionalityJS\common-script.js" />
+    <Content Include="Scripts\FunctionalityJS\CRM\common-dropdowns.js" />
+    <Content Include="Scripts\FunctionalityJS\FixedAssets\common-dropdowns.js" />
+    <Content Include="Scripts\FunctionalityJS\JobRequestCenter\common-dropdowns.js" />
+    <Content Include="Scripts\FunctionalityJS\JobRequestCenter\MaintenanceRequest\maintenance-request-add.js" />
+    <Content Include="Scripts\FunctionalityJS\JobRequestCenter\MaintenanceRequest\maintenance-request-update.js" />
+    <Content Include="Scripts\FunctionalityJS\JobRequestCenter\MaintenanceRequest\maintenance-request.js" />
+    <Content Include="Scripts\FunctionalityJS\LandlordPortal\landlord-portal-dropdowns.js" />
+    <Content Include="Scripts\FunctionalityJS\PointOfSale\common-dropdowns.js" />
+    <Content Include="Scripts\FunctionalityJS\PointOfSale\ProductSearch\product-search.js" />
+    <Content Include="Scripts\FunctionalityJS\PointOfSale\ProductSearch\sale-invoice-add.js" />
+    <Content Include="Scripts\FunctionalityJS\RealEstate\common-dropdowns.js" />
+    <Content Include="Scripts\FunctionalityJS\RealEstate\Lease\Agreement\add-lease-agreement.js" />
+    <Content Include="Scripts\FunctionalityJS\RealEstate\Lease\Agreement\from-quotation.js" />
+    <Content Include="Scripts\FunctionalityJS\RealEstate\Lease\Agreement\lease-agreement.js" />
+    <Content Include="Scripts\FunctionalityJS\RealEstate\Lease\Agreement\update-agreement.js" />
+    <Content Include="Scripts\FunctionalityJS\RealEstate\Lease\TermTemplate\lease-term-template.js" />
+    <Content Include="Scripts\FunctionalityJS\RealEstate\MoveOutRequest\move-out-receipt.js" />
+    <Content Include="Scripts\FunctionalityJS\RealEstate\MoveOutRequest\move-out-refund-security-deposit.js" />
+    <Content Include="Scripts\FunctionalityJS\RealEstate\Property\add-property-details.js" />
+    <Content Include="Scripts\FunctionalityJS\RealEstate\Property\add-property-structure-Old-Design-26Jun2025.js" />
+    <Content Include="Scripts\FunctionalityJS\RealEstate\Property\add-property-structure.js" />
+    <Content Include="Scripts\FunctionalityJS\RealEstate\Property\update-property-details.js" />
+    <Content Include="Scripts\FunctionalityJS\RealEstate\Property\update-property-structure.js" />
+    <Content Include="Scripts\FunctionalityJS\RealEstate\Quotation\add-quotation.js" />
+    <Content Include="Scripts\FunctionalityJS\RealEstate\Quotation\quotation.js" />
+    <Content Include="Scripts\FunctionalityJS\RealEstate\Quotation\update-quotation.js" />
+    <Content Include="Scripts\FunctionalityJS\RealEstate\RentInvoices\due-invoices-list.js" />
+    <Content Include="Scripts\FunctionalityJS\RealEstate\Tenant\attachment-file.js" />
+    <Content Include="Scripts\FunctionalityJS\RealEstate\Tenant\tenant-detail.js" />
+    <Content Include="Scripts\FunctionalityJS\RealEstate\Tenant\tenant.js" />
+    <Content Include="Scripts\FunctionalityJS\RealEstate\Unit\accounting-detail.js" />
+    <Content Include="Scripts\FunctionalityJS\RealEstate\Unit\contact.js" />
+    <Content Include="Scripts\FunctionalityJS\RealEstate\Unit\floor-plan.js" />
+    <Content Include="Scripts\FunctionalityJS\RealEstate\Unit\pictures-and-videos.js" />
+    <Content Include="Scripts\FunctionalityJS\RealEstate\Unit\property-available-units.js" />
+    <Content Include="Scripts\FunctionalityJS\RealEstate\Unit\TenancyDetail\add-tenancy-details.js" />
+    <Content Include="Scripts\FunctionalityJS\RealEstate\Unit\TenancyDetail\tenancy-paymentschedule-details.js" />
+    <Content Include="Scripts\FunctionalityJS\RealEstate\Unit\TenancyDetail\update-tenancy-details.js" />
+    <Content Include="Scripts\FunctionalityJS\RealEstate\Unit\unit-details.js" />
+    <Content Include="Scripts\FunctionalityJS\RealEstate\Unit\unit-features.js" />
+    <Content Include="Scripts\FunctionalityJS\RealEstate\Unit\unit-rent-detail.js" />
+    <Content Include="Scripts\FunctionalityJS\RealEstate\Unit\unit-utility-connections.js" />
+    <Content Include="Scripts\FunctionalityJS\RealEstate\Unit\utility-connections.js" />
+    <Content Include="Scripts\FunctionalityJS\Services\common-dropdowns.js" />
+    <Content Include="Scripts\FunctionalityJS\Services\Project\project-add.js" />
+    <Content Include="Scripts\FunctionalityJS\Services\Project\project-list.js" />
+    <Content Include="Scripts\FunctionalityJS\Services\Project\project-update.js" />
+    <Content Include="Scripts\FunctionalityJS\Services\Project\project.js" />
+    <Content Include="Scripts\FunctionalityJS\Services\ServiceItemInvoice\service-item-invoice-add.js" />
+    <Content Include="Scripts\FunctionalityJS\Services\ServiceItemInvoice\service-item-invoice-list.js" />
+    <Content Include="Scripts\FunctionalityJS\Services\ServiceItemInvoice\service-item-invoice-update.js" />
+    <Content Include="Scripts\FunctionalityJS\Services\ServiceItemInvoice\service-item-invoice.js" />
+    <Content Include="Scripts\FunctionalityJS\Services\ServiceItemQuotation\service-item-quotation-add.js" />
+    <Content Include="Scripts\FunctionalityJS\Services\ServiceItemQuotation\service-item-quotation-list.js" />
+    <Content Include="Scripts\FunctionalityJS\Services\ServiceItemQuotation\service-item-quotation-update.js" />
+    <Content Include="Scripts\FunctionalityJS\Services\ServiceItemQuotation\service-item-quotation.js" />
+    <Content Include="Scripts\FunctionalityJS\Services\ServiceItem\service-item-add.js" />
+    <Content Include="Scripts\FunctionalityJS\Services\ServiceItem\service-item-update.js" />
+    <Content Include="Scripts\FunctionalityJS\Services\ServiceItem\service-item.js" />
+    <Content Include="Scripts\FunctionalityJS\Services\Subcontractor\subcontractor-add.js" />
+    <Content Include="Scripts\FunctionalityJS\Services\Subcontractor\subcontractor-list.js" />
+    <Content Include="Scripts\FunctionalityJS\Services\Subcontractor\subcontractor-update.js" />
+    <Content Include="Scripts\FunctionalityJS\Services\Subcontractor\subcontractor.js" />
+    <Content Include="Scripts\FunctionalityJS\Services\Timesheet\timesheet-add.js" />
+    <Content Include="Scripts\FunctionalityJS\Services\Timesheet\timesheet-list.js" />
+    <Content Include="Scripts\FunctionalityJS\Services\Timesheet\timesheet-update.js" />
+    <Content Include="Scripts\FunctionalityJS\Services\Timesheet\timesheet.js" />
+    <Content Include="Scripts\FunctionalityJS\TenantPortal\tenant-portal-dropdowns.js" />
+    <Content Include="Scripts\FunctionalityJS\UsedCar\common-dropdowns.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\multi-select-rows-drag-drop\drag-drop.js" />
+    <Content Include="Scripts\multi-select-rows-drag-drop\jquery.table_multi_row_selectable_drag_drop.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_PharmacyLayout.cshtml" />
+    <Content Include="Views\Shared\PartialViews\Common\_BreadcrumbPartialView.cshtml" />
+    <Content Include="Views\Shared\PartialViews\Common\_DataTableFilterModalPartialView.cshtml" />
+    <Content Include="Views\Shared\PartialViews\Common\_DataTablePartialView.cshtml" />
+    <Content Include="Views\Shared\PartialViews\Common\_DatepickerPartialView.cshtml" />
+    <Content Include="Views\Shared\PartialViews\Common\_HomeViewsDropdownPartialView-Previous-PrintExport.cshtml" />
+    <Content Include="Views\Shared\PartialViews\Common\_HomeViewsDropdownPartialView.cshtml" />
+    <Content Include="Views\Shared\PartialViews\Common\_StylesReferencesPartialView.cshtml" />
+    <Content Include="Views\Shared\PartialViews\Charts\_DashboardPartialView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\UserManagement\Data\" />
+    <Folder Include="Areas\UserManagement\Views\Shared\" />
+    <Folder Include="CompanyLogos\" />
+    <Folder Include="Models\" />
+    <Folder Include="Scripts\FunctionalityJS\Accounts\CashPaymentVoucher\" />
+    <Folder Include="UserPics\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58410</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:58410/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

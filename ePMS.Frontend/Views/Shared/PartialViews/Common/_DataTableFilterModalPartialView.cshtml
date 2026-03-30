@@ -1,0 +1,165 @@
+﻿@model dynamic
+@{
+    var type = ((object)Model).GetType(); // Convert dynamic to object for Reflection
+    var properties = type.GetProperties();
+}
+<div class="dropdown-menu  filter-dp  " style="margin-top: 10px;">
+    <!-- Tabs UI -->
+    <div class="container">
+        <!-- Column Tab Content -->
+        <div id="ColumnTab" class="tabcontent">
+            <div class="bha-col">
+                <div class="dr-header">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+                        <label class="form-check-label" for="switchCheckDefault">Pivot Mode</label>
+                    </div>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Input Search</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+                <hr class="line-bha">
+                <span class="draggable" draggable="true"
+                      ondragstart="dragstartHandler(event, 'ID', 'bi bi-grid-3x3-gap-fill')" hidden>
+                    <input type="checkbox" class="custom-checkbox" data-column="0" checked>
+                    <i class="bi bi-grid-3x3-gap-fill"></i>
+                    <b>ID</b>
+                </span><br>
+                @{
+
+                    var itemCount = 1;
+                    foreach (var prop in properties)
+                    {
+                        if (!prop.Name.Equals("ID"))
+                        {
+                            //| Ingore if Property has JsonIgnore Data Annotation
+                            var jsonIgnore = prop.GetCustomAttributes(typeof(Newtonsoft.Json.JsonIgnoreAttribute), true).FirstOrDefault();
+                            if (jsonIgnore != null)
+                            {
+                                continue;
+                            }
+                            var displayAttr = prop.GetCustomAttributes(typeof(System.ComponentModel.DataAnnotations.DisplayAttribute), false)
+                                                          .FirstOrDefault() as System.ComponentModel.DataAnnotations.DisplayAttribute;
+
+                            string displayName = displayAttr != null ? displayAttr.Name : prop.Name;
+                            <span class="draggable" draggable="true"
+                                  ondragstart="dragstartHandler(event, @prop.Name, 'bi bi-grid-3x3-gap-fill')">
+                                <input type="checkbox" class="custom-checkbox" data-column="@itemCount" checked>
+                                <i class="bi bi-grid-3x3-gap-fill"></i>
+                                <b>@displayName</b>
+                            </span><br>
+
+                            itemCount += 1;
+                        }
+                    }
+                }
+
+
+
+                <!-- dragable div -->
+                <img src="~/NewContent/assets/img/row-grop-pic.png" style="width: 16px;height: 16px;"><span class="sm-text">Row Groups</span>
+                <div class="drop-container" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"
+                     ondragenter="dragenterHandler(event)" ondragleave="dragleaveHandler(event)">
+                    <div class="placeholder">Drag here to set row groups</div>
+                </div>
+
+
+                <!-- table head item end -->
+                <!-- row group end -->
+                <div class="p-t bha-grid-p">
+                    <img src="~/NewContent/assets/img/values-img">
+                    <b class="black">Values</b>
+                    <br />
+                    <input type="textbox" placeholder="Drag here to aggregate" />
+                </div>
+                <!-- values end -->
+                <div class="p-t bha-grid-p">
+                    <img src="~/NewContent/assets/img/colums-img">
+                    <b class="black">Columns</b>
+                    <br />
+                    <input type="textbox" placeholder="Drag here to set column labels" />
+                </div>
+                <!-- colums end -->
+            </div>
+        </div>
+
+        <!-- Filter Tab Content -->
+        <div id="FilterTab" class="tabcontent">
+            <div class="filter-tab">
+                <div class="dr-header">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+                        <label class="form-check-label" for="switchCheckDefault">Pivot Mode</label>
+                    </div>
+                    <select class="form-select " aria-label="Default select example">
+                        <option selected>Input Search</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+                <hr class="line-bha">
+                @{
+                    foreach (var prop in properties)
+                    {
+                        if (prop.Name.Equals("ID"))
+                        { continue; }
+                        var displayAttr = prop.GetCustomAttributes(typeof(System.ComponentModel.DataAnnotations.DisplayAttribute), false)
+                      .FirstOrDefault() as System.ComponentModel.DataAnnotations.DisplayAttribute;
+
+                        string displayName = displayAttr != null ? displayAttr.Name : prop.Name;
+
+                        
+                        <div class="custom-accordion">
+                            <i class="bi bi-chevron-right fs-7"></i>
+                            <span>@displayName</span>
+                        </div>
+
+                        <!-- Accordion Content -->
+                        <div class="custom-accordion-content">
+                            <div class="input-section">
+                                <select class="FilterType" id="bha-options">
+                                    <option id="123" value="Contains">Contains</option>
+                                    <option id="123" value="NotContains">Not contains</option>
+                                    <option value="Equals">Equals</option>
+                                    <option value="NotEquals">Not equal</option>
+                                    <option value="StartsWith">Starts with</option>
+                                    <option value="EndsWith">Ends with</option>
+                                    <option value="Blank">Blank</option>
+                                    <option value="NotBlank">Not blank</option>
+                                </select>
+
+                                <input class="filter-input textbox" type="text" placeholder="Filter...">
+
+                                <!-- Search Bar that will appear after pressing Enter -->
+                                <input type="text" class="search-bar textbox" placeholder="Search..." style="display:none;" />
+
+                                <!-- Results container -->
+                                <div class="results-container"></div>
+                            </div>
+                        </div>
+                    }
+                }
+
+
+
+
+            </div>
+
+        </div>
+
+        <!-- Rotated Tab Buttons -->
+        <div class="tab" style="margin-bottom: 212px;">
+            <button class="tablinks tab-mg1" onclick="openTab(event, 'ColumnTab')" id="defaultOpen">
+                <img src="~/NewContent/assets/img/columns.png">Columns
+            </button>
+            <button class="tablinks tab-mg2" onclick="openTab(event, 'FilterTab')">
+                <img src="~/NewContent/assets/img/filter-dp-down-pic">Filters
+            </button>
+        </div>
+
+    </div>
+</div>

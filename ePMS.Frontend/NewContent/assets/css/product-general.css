@@ -1,0 +1,748 @@
+  .item-det-form {
+    border: 1px solid #00777f4d;
+  }
+  /* selectbox styling */
+  .bha-selector {
+    position: relative;
+    width: 265px;
+  }
+  .bha-selector label {
+    font-family: Segoe UI;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    background-color: white;
+    padding: 0 5px;
+    font-size: 12px;
+    color: #505c6d;
+  }
+  .bha-sel-box {
+    font-family: Segoe UI;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    color: #545454;
+    border: 1px solid #dbdfe4;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 0px;
+    cursor: pointer;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 265px;
+    height: 40px;
+    padding: 16px;
+  }
+  .bha-sel-box:active {
+    border: 1px solid #07a6b1;
+  }
+  .bha-sel-options {
+    position: absolute;
+    width: 265px;
+    max-height: 180px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: 1px solid var(--color-ag-border-color, #babfc7);
+    border-radius: 0px;
+    background-color: white;
+    z-index: 10;
+    display: none;
+    font-family: Segoe UI;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 24px;
+    letter-spacing: 0%;
+  }
+  .bha-sel-options.active {
+    display: block;
+  }
+  .bha-sel-search {
+    border: 1px solid #dbdfe4;
+    width: 232px;
+    height: 30px;
+    border-width: 1px;
+    margin-left: 10px;
+    margin-top: 10px;
+    color: #545454;
+  }
+    .bha-sel-search:focus {
+     border: 1px solid #07a6b1 !important;
+    outline: 0px !important; 
+    border-radius: 0px; 
+  }
+
+  .bha-sel-option {
+    padding: 7px 10px !important;
+    cursor: pointer;
+    font-family: Segoe UI;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #545454;
+  }
+  .bha-sel-option:hover {
+    background-color: #e3f2f3;
+  }
+  .bha-sel-model {
+    background-color: #e4f7fa;
+    padding: 7px 20px 7px 10px;
+    width: 270px;
+    border-radius: 0px;
+    font-family: Segoe UI;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: start;
+    color: #545454;
+    margin-top: 7px;
+  }
+  .bha-sel-model:hover {
+    background-color: #e4f7fa !important;
+  }
+  .bha-sel-model:focus {
+    border: none !important;
+  }
+  .bha-sel-model i {
+    color: #046f76;
+    margin-right: 5px;
+  }
+  /*==================== selector end =======================*/
+  .item-det-form {
+    padding: 16px;
+  }
+.bha-field-Company label {
+    font-family: Segoe UI;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color: #505c6d;
+    background-color: white;
+    position: absolute;
+    margin-top: 11px;
+    margin-left: 16px;
+}
+
+
+  .item-det-form h4 {
+    font-family: Segoe UI;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 13.18px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #545454;
+    padding: 0px 7px 0px 2px;
+  }
+  .bha-field label {
+    font-family: Segoe UI;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color: #505c6d;
+    background-color: white;
+    position: absolute;
+    margin-top: 13px;
+    margin-left: 10px;
+  }
+  .bha-field label > span {
+    color: #f04a4a !important;
+  }
+.bha-field-Company input {
+    border: 1px solid #dbdfe4;
+    width: 365px;
+    height: 40px;
+    border-width: 1px;
+    padding: 16px;
+    font-family: Segoe UI;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    color: #545454;
+}
+
+  .bha-field input {
+    border: 1px solid #dbdfe4;
+    width: 265px;
+    height: 40px;
+    border-width: 1px;
+    padding: 10px;
+    font-family: Segoe UI;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    color: #545454;
+  }
+  .bha-field input:focus {
+    border: 1px solid #07a6b1 !important;
+    outline: 0px !important; 
+    border-radius: 0px; 
+  }
+  .d-input {
+    color: #00777f !important;
+  }
+  .bha-textbox label {
+    font-family: Segoe UI;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color: #505c6d;
+    background-color: white;
+    position: absolute;
+    margin-left: 16px;
+    margin-top: -9px;
+  }
+  .bha-textbox textarea {
+    border-radius: 0px;
+    margin-top: 20px;
+    font-family: Segoe UI;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    color: #545454;
+    padding: 16px 19px;
+    height: 97px;
+    width: 100%;
+  }
+  .bha-textbox textarea:focus {
+    box-shadow: none !important;
+    border: 1px solid #07a6b1;
+  }
+  /*=============UOM Details form 2 start========== */
+  .uom-form {
+    border: 1px solid #00777f4d;
+    padding: 16px;
+  }
+  .uom-form h4 {
+    font-family: Segoe UI;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 13.18px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #545454;
+    padding: 0px 7px 0px 2px;
+  }
+  .m-top {
+    margin-top: 24px;
+  }
+  .uom-form .bha-field {
+    margin-top: 11px;
+  }
+  .bha-check-f {
+    margin-top: 10px;
+  }
+  .bha-check-f input {
+    border-radius: 2px !important;
+  }
+  .bha-check-f > b {
+    font-family: Segoe UI;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    color: #545454;
+    margin-left: 5px;
+  }
+  .bha-check-f input:focus {
+    box-shadow: none;
+  }
+  /* ============uom detail form end=========== */
+  .account-form {
+    border: 1px solid #00777f4d;
+    padding: 16px;
+    margin-top: 34px;
+  }
+  .account-form h4 {
+    font-family: Segoe UI;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 13.18px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #545454;
+  }
+  .e-width {
+    width: 370px;
+  }
+  .s-width-in {
+    width: 336px;
+  }
+  .top-m{
+    margin-top: 7px;
+  }
+  /* =========account form ============ */
+  .item-type-m > .modal-content {
+    max-width: 564px !;
+    border-radius: 0px !important;
+  }
+  /* account end */
+  /* model start */
+  .bha-modelbody{
+    border-radius: 0px !important;
+  }
+.item-det-form {
+  border: 1px solid #00777f4d;
+}
+/* selectbox styling */
+.bha-selector {
+  position: relative;
+  width: 265px;
+}
+.bha-selector label {
+  font-family: Segoe UI;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  position: absolute;
+  top: -10px;
+  left: 15px;
+  background-color: white;
+  padding: 0 5px;
+  font-size: 12px;
+  color: #505c6d;
+}
+.bha-sel-box {
+  font-family: Segoe UI;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  color: #545454;
+  border: 1px solid #dbdfe4;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 0px;
+  cursor: pointer;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 265px;
+  height: 40px;
+  padding: 16px;
+}
+.bha-sel-box:active {
+  border: 1px solid #07a6b1;
+}
+.bha-sel-options {
+  position: absolute;
+  width: 265px;
+  max-height: 180px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border: 1px solid var(--color-ag-border-color, #babfc7);
+  border-radius: 0px;
+  background-color: white;
+  z-index: 10;
+  display: none;
+  font-family: Segoe UI;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 24px;
+  letter-spacing: 0%;
+}
+.bha-sel-options.active {
+  display: block !important;
+}
+.bha-sel-search {
+  border: 1px solid #dbdfe4;
+  width: 232px;
+  height: 30px;
+  border-width: 1px;
+  margin-left: 10px;
+  margin-top: 10px;
+  color: #545454;
+}
+.bha-sel-search:focus {
+  border: 1px solid red !important;
+}
+.bha-sel-option {
+  padding: 7px 10px !important;
+  cursor: pointer;
+  font-family: Segoe UI;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #545454;
+}
+.bha-sel-option:hover {
+  background-color: #e3f2f3;
+}
+.bha-sel-model {
+  background-color: #e4f7fa;
+  padding: 7px 20px 7px 10px;
+  width: 270px;
+  border-radius: 0px;
+  font-family: Segoe UI;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: start;
+  color: #545454;
+  margin-top: 7px;
+}
+.bha-sel-model:hover {
+  background-color: #e4f7fa !important;
+}
+.bha-sel-model:focus {
+  border: none !important;
+}
+.bha-sel-model i {
+  color: #046f76;
+  margin-right: 5px;
+}
+/*==================== selector end =======================*/
+.item-det-form {
+  padding: 16px;
+}
+.item-det-form h4 {
+  font-family: Segoe UI;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 13.18px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #545454;
+  padding: 0px 7px 0px 2px;
+}
+.bha-field label {
+  font-family: Segoe UI;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  color: #505c6d;
+  background-color: white;
+  position: absolute;
+  /*margin-top: 5px;*/
+  margin-left: 16px;
+}
+
+.bha-field label > span {
+  color: #f04a4a !important;
+}
+.bha-field input {
+  border: 1px solid #dbdfe4;
+  width: 265px;
+  height: 40px;
+  border-width: 1px;
+  padding: 16px;
+  font-family: Segoe UI;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  color: #545454;
+}
+.bha-field input:focus {
+  border: 1px solid #07a6b1 !;
+}
+.d-input {
+  color: #00777f !important;
+}
+.bha-textbox label {
+  font-family: Segoe UI;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  letter-spacing: 0%;
+  color: #505c6d;
+  background-color: white;
+  position: absolute;
+  margin-left: 16px;
+  margin-top: -9px;
+}
+.bha-textbox textarea {
+  border-radius: 0px;
+  margin-top: 20px;
+  font-family: Segoe UI;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  color: #545454;
+  padding: 16px 19px;
+  height: 97px;
+  width: 100%;
+}
+.bha-textbox textarea:focus {
+  box-shadow: none !important;
+  border: 1px solid #07a6b1;
+}
+/*=============UOM Details form 2 start========== */
+.uom-form {
+  border: 1px solid #00777f4d;
+  padding: 16px;
+}
+.uom-form h4 {
+  font-family: Segoe UI;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 13.18px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #545454;
+  padding: 0px 7px 0px 2px;
+}
+.m-top {
+  margin-top: 24px;
+}
+.uom-form .bha-field {
+  margin-top: 11px;
+}
+.bha-check-f {
+  margin-top: 10px;
+}
+.bha-check-f input {
+  border-radius: 2px !important;
+}
+.bha-check-f > b {
+  font-family: Segoe UI;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  color: #545454;
+  margin-left: 5px;
+}
+.bha-check-f input:focus {
+  box-shadow: none;
+}
+/* ============uom detail form end=========== */
+.account-form {
+  border: 1px solid #00777f4d;
+  padding: 16px;
+  margin-top: 34px;
+}
+.account-form h4 {
+  font-family: Segoe UI;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 13.18px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #545454;
+}
+.e-width {
+  width: 370px;
+}
+.s-width-in {
+  width: 336px;
+}
+.top-m {
+  margin-top: 7px;
+}
+/* =========account form ============ */
+.item-type-m > .modal-content {
+    max-width: 564px !important;
+    border-radius: 0px !important;
+}
+/* account end */
+/* model start */
+.bha-modelbody {
+    width: 100%;
+    background-color: white;
+    border-radius: 0px !important;
+    box-shadow: 0px 4px 6px 0px #00000040 !important;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+.modal-2col .modal-dialog {
+    max-width: 600px;
+}
+
+.modal-3col .modal-dialog {
+    max-width: 900px;
+}
+
+.modal-4col .modal-dialog {
+    max-width: 1200px;
+}
+.modal-5col .modal-dialog {
+    max-width:1400px;
+}
+/*.bha-modelbody {
+    border-radius: 0px !important;
+    box-shadow: 0px 4px 6px 0px #00000040 !important;
+    max-width: 90vw;
+    max-height: 90vh;*/ /* Grow with content up to 90% of screen height */
+    /*background-color: white;
+}*/
+
+
+.bha-modelbody-second {
+    border-radius: 0px !important;
+    box-shadow: 0px 4px 6px 0px #00000040 !important;
+    width: 750px;
+    height: 250px;
+    background-color: white;
+}
+
+.bha-modelbody h1 {
+  font-family: Segoe UI !important;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 13.18px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #545454;
+}
+.bha-modelbody .btn-close {
+  background-color: #d9f0f2;
+  border-radius: 100px;
+  color: #000000 !important;
+  font-size: 12px;
+  font-weight: 900;
+}
+.model-input input {
+  width: 524px;
+  height: 36px;
+}
+.bha-modelbody .modal-body {
+  padding: 0px 17px;
+}
+.bha-modelbody .save-btn {
+  border-radius: 0px;
+  background-color: #046f76;
+  padding: 8px 16px;
+  color: white;
+  font-family: Segoe UI;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  text-align: center;
+}
+.bha-modelbody .cancel-btn {
+  border-radius: 0px;
+  border: 1px solid #8d95a0;
+  padding: 8px 16px;
+  color: #212121;
+  font-family: Segoe UI;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+
+/* product type model end */
+.sm-sel-b {
+  width: 239px !important;
+  height: 36px;
+  margin-top: 20px;
+}
+.sm-sel-o {
+  width: 239px !important;
+  height: 258px;
+}
+.sm-sel-s {
+  width: 215px;
+  height: 24px;
+}
+.sm-input {
+  margin-top: 7px;
+}
+.sm-input input {
+  width: 270px !important;
+  height: 40px;
+}
+    .sm-input-2 input {
+        width: 240px !important;
+        height: 40px;
+    }
+/* ======account model st======= */
+.acc-h {
+  height: auto;
+}
+.sel-box-i i {
+  justify-self: end !important;
+}
+.m-sel {
+  margin-top: 30px !important;
+}
+.m-in {
+  margin-top: 20px !important;
+}
+/* check field of model */
+.m-check-f {
+  margin-top: 25px;
+}
+.m-check-f .form-check-input {
+  border-radius: 2px !important;
+  border: 1px solid #8e8e8e !important;
+  width: 14px;
+  height: 14px;
+}
+.m-check-f .form-check-input:checked {
+  background-color: #046f76 !important;
+  color: white !important;
+}
+
+.m-check-f b {
+  font-family: Segoe UI;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  color: #545454;
+  margin-left: 10px;
+}
+/* radio btn */
+.bha-radio-f.radio-input {
+  border: 1px solid #8e8e8e !important;
+  width: 14px;
+  height: 14px;
+}
+.bha-radio-f.radio-input:checked {
+  background-color: #046f76 !important;
+  color: white !important;
+}
+.bha-radio-f .form-check-input:not(:checked) {
+  border: 1px solid #8e8e8e !important;
+}
+.bha-radio-f label {
+  font-family: Segoe UI;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  color: #545454;
+  margin-left: -3px;
+}
+.bha-radio-f {
+  margin-top: 28px;
+}
+.inputsize {
+    border-radius: 0px;
+    height: 40px;
+    margin-top: 13px;
+    font-size: 0.8rem;
+}
+.inputsize2 {
+    border-radius: 0px;
+    height: 40px;
+    font-size: 0.8rem;
+    padding-left: 15px;
+}

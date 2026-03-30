@@ -1,0 +1,65 @@
+﻿
+.bha-menu-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    border-bottom: 1.5px solid #ccc;
+    background-color: #f8f9fb;
+    color: #333;
+    /*margin-left: 4px;*/
+    margin-bottom: 8px;    
+}
+
+    .bha-menu-bar .label {
+        font-weight: bold;
+        margin-right: 10px;
+        font-family: 'Segoe UI';
+        font-weight: 600;
+        font-size: 14px;
+        color: #545454;
+    }
+
+    .bha-menu-bar button,
+    .bha-menu-bar .dropdown,
+    .bha-menu-bar .edit,
+    .bha-menu-bar .close,
+    .bha-menu-bar .more {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #545454;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+    }
+
+    .bha-menu-bar .icon {
+        color: #007E87;        
+    }
+
+    .bha-menu-bar .right-icons {
+        margin-left: auto;
+        display: flex;
+    }
+
+        .bha-menu-bar .right-icons i {
+            cursor: pointer;
+            color: #007E87;
+            margin: 0px 10px;
+        }
+
+.line {
+    display: inline-block;
+    width: 1px;
+    height: 23px;
+    background-color: #C6CACF;
+    margin: 0px 7px 0px 10px;
+}
+
+.bha-menu-bar button i {
+    padding: 0px 0px;
+}
+.bi .bi-plus {
+       
+}
