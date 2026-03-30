@@ -120,6 +120,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Core\CoreAreaRegistration.cs" />
     <Compile Include="Areas\UserManagement\Controllers\UserLoginController.cs" />
     <Compile Include="Areas\UserManagement\UserManagementAreaRegistration.cs" />
     <Compile Include="CommonClasses\URLcoding.cs" />
@@ -363,6 +364,8 @@
     <Content Include="menus.js" />
     <Content Include="Areas\UserManagement\Views\web.config" />
     <Content Include="Areas\UserManagement\Views\UserLogin\Index.cshtml" />
+    <Content Include="Areas\Core\Views\web.config" />
+    <Content Include="Areas\Core\Views\_ViewStart.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\FunctionalityJS\Accounts\BankReceiptVoucher\bankreceiptvoucher-list.js" />
     <Content Include="Scripts\FunctionalityJS\Accounts\common-dropdowns.js" />
@@ -480,6 +483,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Core\Controllers\" />
+    <Folder Include="Areas\Core\Data\" />
+    <Folder Include="Areas\Core\Views\Shared\" />
     <Folder Include="Areas\UserManagement\Data\" />
     <Folder Include="Areas\UserManagement\Views\Shared\" />
     <Folder Include="CompanyLogos\" />
