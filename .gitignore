@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/ePMS.Frontend/bin
+/ePMS.Frontend/obj/Debug
+/packages
