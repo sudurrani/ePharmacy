@@ -6,7 +6,7 @@ using System.Security.Cryptography;
 using System.Web;
 using System.Text;
 
-namespace BHAERP.CommonClasses
+namespace ePMS.Frontend.CommonClasses
 {
     public class URLcoding
     {

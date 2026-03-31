@@ -45,10 +45,25 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.1.72\lib\net461\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Intertech.Facade.DapperParameters, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DapperParameters.1.0.4\lib\net40\Intertech.Facade.DapperParameters.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=9.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.9.0.1\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -110,6 +125,12 @@
       <Private>True</Private>
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="zxing, Version=0.16.11.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.11\lib\net47\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.11.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.11\lib\net47\zxing.presentation.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
@@ -123,11 +144,55 @@
     <Compile Include="Areas\Core\CoreAreaRegistration.cs" />
     <Compile Include="Areas\UserManagement\Controllers\UserLoginController.cs" />
     <Compile Include="Areas\UserManagement\UserManagementAreaRegistration.cs" />
+    <Compile Include="CommonClasses\BarcodeHelper.cs" />
+    <Compile Include="CommonClasses\BHAExceptionFilter.cs" />
+    <Compile Include="CommonClasses\EmailSender.cs" />
+    <Compile Include="CommonClasses\ERPMessages.cs" />
+    <Compile Include="CommonClasses\SqlDynamicParameters.cs" />
+    <Compile Include="CommonClasses\Test.cs" />
     <Compile Include="CommonClasses\URLcoding.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Repository\Repository.cs" />
+    <Compile Include="Models\ViewModels\InputViewModel\Common\AuditableInputModel.cs" />
+    <Compile Include="Models\ViewModels\InputViewModel\Common\BreadcrumbInputViewModel.cs" />
+    <Compile Include="Models\ViewModels\InputViewModel\Common\ColumnWidthAttribute.cs" />
+    <Compile Include="Models\ViewModels\InputViewModel\Common\CompanyIDInputViewModel.cs" />
+    <Compile Include="Models\ViewModels\InputViewModel\Common\CompanyIDUserIDInputViewModel.cs" />
+    <Compile Include="Models\ViewModels\InputViewModel\Common\DatepickerPartialViewInputViewModel.cs" />
+    <Compile Include="Models\ViewModels\InputViewModel\Common\DateTablePartialViewInputViewModel.cs" />
+    <Compile Include="Models\ViewModels\InputViewModel\Common\DropdownInputViewModel.cs" />
+    <Compile Include="Models\ViewModels\InputViewModel\Common\EmailCompanyIDInputViewModel.cs" />
+    <Compile Include="Models\ViewModels\InputViewModel\Common\ExceptionLogInputModel.cs" />
+    <Compile Include="Models\ViewModels\InputViewModel\Common\IDCompanyEntryUserViewModel.cs" />
+    <Compile Include="Models\ViewModels\InputViewModel\Common\IDCompanyIDInputViewModel.cs" />
+    <Compile Include="Models\ViewModels\InputViewModel\Common\IDCompanyUserInputViewModel.cs" />
+    <Compile Include="Models\ViewModels\InputViewModel\Common\IDEntryUserIDViewModel.cs" />
+    <Compile Include="Models\ViewModels\InputViewModel\Common\IDInputViewModel.cs" />
+    <Compile Include="Models\ViewModels\InputViewModel\Common\IntListType.cs" />
+    <Compile Include="Models\ViewModels\InputViewModel\Common\LandlordIDInputViewModel.cs" />
+    <Compile Include="Models\ViewModels\InputViewModel\Common\LeaseAgreementCompanyIDInputViewModel.cs" />
+    <Compile Include="Models\ViewModels\InputViewModel\Common\OneFieldInputViewModel.cs" />
+    <Compile Include="Models\ViewModels\InputViewModel\Common\RecordIdUserIdInputModel.cs" />
+    <Compile Include="Models\ViewModels\InputViewModel\Common\TypeInputViewModel.cs" />
+    <Compile Include="Models\ViewModels\InputViewModel\Setup\SetupDeleteInputModel.cs" />
+    <Compile Include="Models\ViewModels\InputViewModel\Setup\SetupGetInputModel.cs" />
+    <Compile Include="Models\ViewModels\InputViewModel\Setup\SetupMainContentViewModel.cs" />
+    <Compile Include="Models\ViewModels\InputViewModel\Setup\SetupModalPartialViewModel.cs" />
+    <Compile Include="Models\ViewModels\InputViewModel\Setup\SetupSaveInputModel.cs" />
+    <Compile Include="Models\ViewModels\OutputViewModel\Common\AuditableOutputModel.cs" />
+    <Compile Include="Models\ViewModels\OutputViewModel\Common\CommonOutputViewModel.cs" />
+    <Compile Include="Models\ViewModels\OutputViewModel\Common\DropdownOutputViewModel.cs" />
+    <Compile Include="Models\ViewModels\OutputViewModel\Common\DropdownStringOutputViewModel.cs" />
+    <Compile Include="Models\ViewModels\OutputViewModel\Common\NumberFieldOutputViewModel.cs" />
+    <Compile Include="Models\ViewModels\OutputViewModel\Common\OneFieldOutputViewModel.cs" />
+    <Compile Include="Models\ViewModels\OutputViewModel\Common\OneFieldSetupInputViewModel.cs" />
+    <Compile Include="Models\ViewModels\OutputViewModel\Common\OneFieldSetupOutputViewModel.cs" />
+    <Compile Include="Models\ViewModels\OutputViewModel\Common\ParentChildOutputViewModel.cs" />
+    <Compile Include="Models\ViewModels\OutputViewModel\Common\ProductTaxRateAccountHeadIDOutputViewModel.cs" />
+    <Compile Include="Models\ViewModels\OutputViewModel\Common\ResponseOutputDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -489,7 +554,6 @@
     <Folder Include="Areas\UserManagement\Data\" />
     <Folder Include="Areas\UserManagement\Views\Shared\" />
     <Folder Include="CompanyLogos\" />
-    <Folder Include="Models\" />
     <Folder Include="Scripts\FunctionalityJS\Accounts\CashPaymentVoucher\" />
     <Folder Include="UserPics\" />
   </ItemGroup>

@@ -25,7 +25,7 @@
             else
 
             {
-                Session["ModuleID"] = BHAERP.CommonClasses.URLcoding.Decode(NVC.Get(0).ToString());
+                Session["ModuleID"] = ePMS.Frontend.CommonClasses.URLcoding.Decode(NVC.Get(0).ToString());
             }
             moduleid = long.Parse(Session["ModuleID"].ToString());
         }

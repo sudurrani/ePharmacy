@@ -1,7 +1,7 @@
 ﻿@using System.Reflection;
 @using System.ComponentModel.DataAnnotations;
 
-@model BHAERP.Models.ViewModels.InputViewModel.Common.DateTablePartialViewInputViewModel
+@model ePMS.Frontend.Models.ViewModels.InputViewModel.Common.DateTablePartialViewInputViewModel
 @{
     var TableOutPutViewModel = Model.TableOutputViewModel;
     var type = ((object)TableOutPutViewModel).GetType();
@@ -37,7 +37,7 @@
                 foreach (var property in properties)
                 {
                     var displayAttr = property.GetCustomAttribute<DisplayAttribute>();
-                    var widthAttr = property.GetCustomAttribute<BHAERP.Models.ViewModels.InputViewModel.Common.ColumnWidthAttribute>();
+                    var widthAttr = property.GetCustomAttribute<ePMS.Frontend.Models.ViewModels.InputViewModel.Common.ColumnWidthAttribute>();
 
                     var displayName = displayAttr?.Name ?? property.Name;
                     var width = widthAttr?.Width;
