@@ -10,11 +10,11 @@ namespace ePMS.Frontend.Areas.Core.Models.Module
         public long ID { get; set; }                     
         public string Description { get; set; }           
         public string Detail { get; set; }               
-        public string ModuleUrl { get; set; }            // NULL
-        public string IconClass { get; set; }            // NULL
-        public int Priority { get; set; }                 // NOT NULL
-        public long CompanyID { get; set; }               // NOT NULL
-        public long? BranchID { get; set; }               // NULL
+        public string ModuleUrl { get; set; }            
+        public string IconClass { get; set; }            
+        public int Priority { get; set; }                 
+        public long CompanyID { get; set; }               
+        public long? BranchID { get; set; }               
         public long CreatedBy { get; set; }               
         public DateTime CreatedDate { get; set; }         
         public long? LastModifiedBy { get; set; }         
