@@ -50,7 +50,7 @@ namespace ePMS.Frontend.Areas.Core.Controllers
 
         [HttpPost]
 
-        public ActionResult GetByID(IDInputViewModel model)
+        public ActionResult GetByID()
         {
             return View();
         }
