@@ -120,7 +120,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Core\Controllers\ModuleController.cs" />
     <Compile Include="Areas\Core\CoreAreaRegistration.cs" />
+    <Compile Include="Areas\Core\Models\Module\ModuleGetByIDOutputViewModel.cs" />
+    <Compile Include="Areas\Core\Models\Module\ModuleSaveInputViewModel.cs" />
+    <Compile Include="Areas\Core\Models\Module\ModuleTableOutputViewModel.cs" />
     <Compile Include="Areas\UserManagement\Controllers\UserLoginController.cs" />
     <Compile Include="Areas\UserManagement\UserManagementAreaRegistration.cs" />
     <Compile Include="CommonClasses\URLcoding.cs" />
@@ -366,6 +370,10 @@
     <Content Include="Areas\UserManagement\Views\UserLogin\Index.cshtml" />
     <Content Include="Areas\Core\Views\web.config" />
     <Content Include="Areas\Core\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Core\Views\Module\List.cshtml" />
+    <Content Include="Areas\Core\Views\Module\Detail.cshtml" />
+    <Content Include="Areas\Core\Views\Module\Add.cshtml" />
+    <Content Include="Areas\Core\Views\Module\Update.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\FunctionalityJS\Accounts\BankReceiptVoucher\bankreceiptvoucher-list.js" />
     <Content Include="Scripts\FunctionalityJS\Accounts\common-dropdowns.js" />
@@ -483,12 +491,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Core\Controllers\" />
     <Folder Include="Areas\Core\Data\" />
     <Folder Include="Areas\Core\Views\Shared\" />
     <Folder Include="Areas\UserManagement\Data\" />
     <Folder Include="Areas\UserManagement\Views\Shared\" />
     <Folder Include="CompanyLogos\" />
+    <Folder Include="Data\" />
     <Folder Include="Models\" />
     <Folder Include="Scripts\FunctionalityJS\Accounts\CashPaymentVoucher\" />
     <Folder Include="UserPics\" />
