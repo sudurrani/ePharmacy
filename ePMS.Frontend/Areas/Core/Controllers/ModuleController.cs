@@ -59,7 +59,6 @@ namespace ePMS.Frontend.Areas.Core.Controllers
 
             return Json(_responseOutputDto, JsonRequestBehavior.AllowGet);
         }
-
         [HttpPost]
 
         public ActionResult GetByID()

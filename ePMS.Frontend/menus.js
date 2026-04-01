@@ -821,7 +821,7 @@
       "SubModuleID": 201222,
       "SubModule": "Sub Module",
       "SubModuleOrder": "10",
-      "Url": "/UserManagement/SubModule/List",
+        "Url": "/Core/SubModule/List",
       "IsParent": false,
       "ParentID": "130792"
     },
@@ -832,7 +832,7 @@
       "SubModuleID": 201223,
       "SubModule": "Module",
       "SubModuleOrder": "9",
-      "Url": "/UserManagement/Module/List",
+        "Url": "/Core/Module/List",
       "IsParent": false,
       "ParentID": "130792"
     },
