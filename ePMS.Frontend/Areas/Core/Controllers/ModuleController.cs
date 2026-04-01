@@ -1,7 +1,11 @@
 ﻿using ePMS.Frontend.Areas.Core.Models.Module;
+using ePMS.Frontend.CommonClasses;
+using ePMS.Frontend.Models.ViewModels.InputViewModel.Common;
+using ePMS.Frontend.Models.ViewModels.OutputViewModel.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -9,6 +13,11 @@ namespace ePMS.Frontend.Areas.Core.Controllers
 {
     public class ModuleController : Controller
     {
+        private Repository _respository = new Repository("ePharmacyConnection");
+        SqlDynamicParameters sqlDynamicParameters;
+        ResponseOutputDto _responseOutputDto = new ResponseOutputDto();
+
+
         [HttpGet]
         public ActionResult List()
         {
@@ -42,10 +51,13 @@ namespace ePMS.Frontend.Areas.Core.Controllers
         }
 
         [HttpPost]
-
-        public ActionResult GetAll(int id)
+        public async Task<JsonResult>  GetAll()
         {
-            return View();
+          //  sqlDynamicParameters  = new SqlDynamicParameters();
+           // sqlDynamicParameters = sqlDynamicParameters.GetSqlParameters<CompanyIDInputViewModel>(new CompanyIDInputViewModel());
+            _responseOutputDto = await _respository.GetMultipleAsync<ModuleTableOutputViewModel>("Module_GetAll", sqlDynamicParameters);
+
+            return Json(_responseOutputDto, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]

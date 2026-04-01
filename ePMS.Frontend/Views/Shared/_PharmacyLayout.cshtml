@@ -912,7 +912,8 @@
     </div>
 
     <script>
- localStorage.setItem('DefaultCurrencyID', (@Session["CurrencyID"] != null ? @Session["CurrencyID"].ToString() : null));
+       // localStorage.setItem('DefaultCurrencyID', (@Session["CurrencyID"] != null ? @Session["CurrencyID"].ToString() : null));
+          localStorage.setItem('DefaultCurrencyID', '@(Session["CurrencyID"] ?? "")');
         $(document).ready(function () {
 
 

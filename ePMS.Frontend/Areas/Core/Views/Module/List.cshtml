@@ -1,1 +1,117 @@
-﻿
+﻿@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_PharmacyLayout.cshtml";
+    var UID = Session["UserID"];
+    var PID = Session["ProjectID"];
+    var BranchID = Session["BranchID"];
+    var moduleTableOutputViewModel = new ePMS.Frontend.Areas.Core.Models.Module.ModuleTableOutputViewModel();
+    var dataTablePartialViewInputViewModel = new ePMS.Frontend.Models.ViewModels.InputViewModel.Common.DateTablePartialViewInputViewModel()
+    {
+        TableIdAttr = "ModuleTable",
+        TableOutputViewModel = moduleTableOutputViewModel,
+
+    };
+}
+@section Styles {
+    @Html.Partial("~/Views/Shared/PartialViews/Common/_StylesReferencesPartialView.cshtml")
+}
+<div class="page-content">
+    <!--================ braed crumbs content==================== -->
+    @{
+        Html.RenderPartial(
+                            "~/Views/Shared/PartialViews/Common/_BreadcrumbPartialView.cshtml",
+                            new List<ePMS.Frontend.Models.ViewModels.InputViewModel.Common.BreadcrumbInputViewModel>
+                            {
+                            new ePMS.Frontend.Models.ViewModels.InputViewModel.Common.BreadcrumbInputViewModel
+                            {
+                            Text = "Home",
+                            Url = "#",
+                            IsActive = false
+                            },
+                            new ePMS.Frontend.Models.ViewModels.InputViewModel.Common.BreadcrumbInputViewModel
+                            {
+                            Text = "Core",
+                            Url = "#",
+                            IsActive = false
+                            },
+                            new ePMS.Frontend.Models.ViewModels.InputViewModel.Common.BreadcrumbInputViewModel
+                            {
+                            Text = "Module",
+                            Url = "#",
+                            IsActive = false
+                            },
+                            new ePMS.Frontend.Models.ViewModels.InputViewModel.Common.BreadcrumbInputViewModel
+                            {
+                            Text = "List",
+                            Url = "#",
+                            IsActive = true
+                            },
+                                            }
+                            );
+    }
+    <!-- ===============braed crumbs content end====================== -->
+    <div class="bha-data-thead ps-0 ms-0 me-0">
+        <div class="dt-col1 h-bg">
+            <b class="tb-h">Module:</b>
+            <!-- Wrapper with input and icon (search) -->
+            <span class="search-box">
+                <!-- i tag with Bootstrap Icon -->
+                <i class="bi bi-search ps-1" style=" color: #007E87;"></i>
+                <input type="search" class="search-input" placeholder="Search Data">
+            </span>
+            @*search buuton........... //Pending work*@
+            @*<button onclick="openJournalVoucherModal(0)" class="authorizeOrNotInsert enabled pe-3" id="AddButton">
+                    <i class="bi bi-plus-lg tb-icon"></i>
+                    <b class="tb-text grey">New</b>
+                </button>*@
+        </div>
+        <!-- 1st colum -->
+        <div class="dt-col2 h-bg"></div>
+        <!-- Filter Modal Content -->
+        <div class="dt-col3 d-flex filter-col h-bg">
+            <span>
+                <div class="dropdown table-dp-down" id="filter-div">
+                    <button class="tb-text" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-funnel ps-2 pe-2" id="bha-filters-icon"></i>
+                    </button>
+                    @Html.Partial("~/Views/Shared/PartialViews/Common/_DataTableFilterModalPartialView.cshtml", moduleTableOutputViewModel)
+                </div>
+            </span>
+        </div>
+        <!-- Filter Modal Content Ends -->
+
+    </div>
+    <!-- Table Content -->
+    <div class="main-content-list">
+        <div class="table-responsive">
+            <table class="table">
+                @Html.Partial("~/Views/Shared/PartialViews/Common/_DataTablePartialView.cshtml", dataTablePartialViewInputViewModel)
+            </table>
+        </div>
+    </div>
+    <!-- Table Content Ends -->
+</div>
+<script src="~/NewContent/assets/js/real-estate/select2.min.js?v=@System.Configuration.ConfigurationManager.AppSettings["JSVersion"]"></script>
+
+<script>
+    $(document).ready(function () {
+            loadTableData();
+
+    });
+
+    function loadTableData() {;
+
+        ajaxRequest({ url: "/Core/Module/GetAll", type: 'POST', data: { }, callBack: loadTableDataCallBack });
+    }
+    var loadTableDataCallBack = function (responseJSON) {
+        if (responseJSON.IsSuccess) {
+           // alert("Ok");
+            generateTableRowsFromJSON(responseJSON.resultJSON, '@dataTablePartialViewInputViewModel.TableIdAttr');
+           tableWidth100Percent('@dataTablePartialViewInputViewModel.TableIdAttr');
+       
+    }
+    else {
+        errorToastr(responseJSON.Message, "error");
+    }
+    }
+</script>
