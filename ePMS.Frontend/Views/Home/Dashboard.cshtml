@@ -1,0 +1,330 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    string ProductName = Session["ProductName"] != null ? Session["ProductName"].ToString() : "";
+    var UserName = Session["Uname"];
+}
+
+<link href="~/NewContent/assets/css/bhadashboard.css" rel="stylesheet" />
+<link href="~/NewContent/assets/css/select2.css" rel="stylesheet" />
+<!-- style sheet of layout -->
+<style>
+
+    .col-2 {
+        width: 16.55535%;
+    }
+</style>
+
+<div class="row bhabackgroungimg">
+    <div class="col-lg-6 col-md-12 col-sm-12">
+        <p class="smtxt">Get started !</p>
+        <h3 class="leadpara">Hi, @UserName  Centerpoint</h3>
+        <p class="leadtxt">You're all set to explore @UserName Demo. Start navigating on your own, or take a quick tour to get familiar.</p>
+        @*  <button type="button" class="btn btn-light mainbtn">Show demo tours</button>*@
+    </div>
+    <div class="col-lg-6 col-md-12 col-sm-12">
+        <div class="dashboard-Rtext">
+            <p class="text-subtitle">Actions</p>
+            <hr class="action-row">
+            <!-- row 1 -->
+            <div class="row">
+                <!-- 1st column -->
+                <div class="col-4">
+                    <div class="d-flex align-items-center">
+                        <button type="button" class="btn btn-light icnbtn p-1">
+
+                            <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect y="0.5" width="18" height="18" rx="9" fill="#EBF4F5" />
+                                <g clip-path="url(#clip0_8953_16337)">
+                                    <path d="M13.6667 10.1668H9.66671V14.1668H8.33337V10.1668H4.33337V8.8335H8.33337V4.8335H9.66671V8.8335H13.6667V10.1668Z" fill="#046F76" stroke="#046F76" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_8953_16337">
+                                        <rect width="16" height="16" fill="white" transform="translate(1 1.5)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+
+                        </button>
+                        <span class="text-caption">
+                            <a class="text-black text-decoration-none dashboard-action"
+                               data-module="ProductManagement"
+                               data-form="SaleQuotation"
+                               href="/ProductManagement/SaleQuotation/Index?FID=KbbMCbo0mmwA74FJcs8f8w==&ModuleID=DRD2ryuwtYONswjrqvWfow==">
+                                Sales Quote
+                            </a>
+                            @*<a class="text-black text-decoration-none" href="/ProductManagement/SaleQuotation/Index?FID=KbbMCbo0mmwA74FJcs8f8w==&ModuleID=DRD2ryuwtYONswjrqvWfow==">
+                                    Sales Quote
+                                </a>*@
+
+                        </span>
+                    </div>
+                </div>
+                <!-- 2nd column -->
+                <div class="col-4" style="margin-left: -40px;">
+                    <div class="d-flex align-items-center">
+                        <button type="button" class="btn btn-light icnbtn p-1">
+
+                            <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect y="0.5" width="18" height="18" rx="9" fill="#EBF4F5" />
+                                <g clip-path="url(#clip0_8953_16337)">
+                                    <path d="M13.6667 10.1668H9.66671V14.1668H8.33337V10.1668H4.33337V8.8335H8.33337V4.8335H9.66671V8.8335H13.6667V10.1668Z" fill="#046F76" stroke="#046F76" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_8953_16337">
+                                        <rect width="16" height="16" fill="white" transform="translate(1 1.5)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+
+                        </button>
+                        <span class="text-caption">
+                            <a class="text-black text-decoration-none" href="/ProductManagement/PurchaseOrder/Index?FID=Fr85i0RVpI4l06xFb55e+A==&ModuleID=fnO1gMLVnwE67WnPLlnM+A==">
+                                Purchase Order
+                            </a>
+
+
+                        </span>
+                    </div>
+                </div>
+                <!-- 3rd column -->
+                <div class="col-4" style="margin-left: -11px; margin-top: -6px;">
+                    <div class="d-flex align-items-center">
+                        <button type="button" class="btn btn-light icnbtn p-1">
+
+                            <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect y="0.5" width="18" height="18" rx="9" fill="#EBF4F5" />
+                                <g clip-path="url(#clip0_8953_16337)">
+                                    <path d="M13.6667 10.1668H9.66671V14.1668H8.33337V10.1668H4.33337V8.8335H8.33337V4.8335H9.66671V8.8335H13.6667V10.1668Z" fill="#046F76" stroke="#046F76" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_8953_16337">
+                                        <rect width="16" height="16" fill="white" transform="translate(1 1.5)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+
+                        </button>
+                        <span>
+                            <div class="dropdown">
+                                <button class="btn text-caption dropbtn " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    New  &nbsp;&nbsp;<i class="bi bi-chevron-down"></i>
+                                </button>
+                                <ul class="dropdown-menu dropmenudash ">
+                                    <li class="dasboardmenu ">
+                                        <a class="dropdown-item svg-icn" href="/ProductManagement/Customer/Index?FID=HCdGzbJMCAK5hbFTuvxkSQ==&ModuleID=DRD2ryuwtYONswjrqvWfow==">
+                                            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M8.61331 7.69954C8.54248 7.69246 8.45748 7.69246 8.37956 7.69954C6.69373 7.64288 5.35498 6.26163 5.35498 4.56163C5.35498 2.82621 6.75748 1.41663 8.49998 1.41663C10.2354 1.41663 11.645 2.82621 11.645 4.56163C11.6379 6.26163 10.2991 7.64288 8.61331 7.69954Z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M5.07164 10.3134C3.35747 11.4609 3.35747 13.3309 5.07164 14.4713C7.01955 15.7746 10.2141 15.7746 12.1621 14.4713C13.8762 13.3238 13.8762 11.4538 12.1621 10.3134C10.2212 9.01712 7.02664 9.01712 5.07164 10.3134Z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>Customer
+                                        </a>
+                                    </li>
+                                    <li class="dasboardmenu">
+                                        <a class="dropdown-item  svg-icn" href="/ProductManagement/VendorCard/Index?FID=XfuKz4r6e6+wuqKTqj4J6Q==&ModuleID=fnO1gMLVnwE67WnPLlnM+A==">
+
+                                            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M8.61331 7.69954C8.54248 7.69246 8.45748 7.69246 8.37956 7.69954C6.69373 7.64288 5.35498 6.26163 5.35498 4.56163C5.35498 2.82621 6.75748 1.41663 8.49998 1.41663C10.2354 1.41663 11.645 2.82621 11.645 4.56163C11.6379 6.26163 10.2991 7.64288 8.61331 7.69954Z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M5.07164 10.3134C3.35747 11.4609 3.35747 13.3309 5.07164 14.4713C7.01955 15.7746 10.2141 15.7746 12.1621 14.4713C13.8762 13.3238 13.8762 11.4538 12.1621 10.3134C10.2212 9.01712 7.02664 9.01712 5.07164 10.3134Z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                            Vendor
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!-- row 2 -->
+            <div class="row" style="margin-top: 20px;">
+                <!-- 1st column -->
+                <div class="col-4">
+                    <div class="d-flex align-items-center">
+                        <button type="button" class="btn btn-light icnbtn p-1">
+
+                            <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect y="0.5" width="18" height="18" rx="9" fill="#EBF4F5" />
+                                <g clip-path="url(#clip0_8953_16337)">
+                                    <path d="M13.6667 10.1668H9.66671V14.1668H8.33337V10.1668H4.33337V8.8335H8.33337V4.8335H9.66671V8.8335H13.6667V10.1668Z" fill="#046F76" stroke="#046F76" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_8953_16337">
+                                        <rect width="16" height="16" fill="white" transform="translate(1 1.5)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+
+                        </button>
+                        <span class="text-caption">
+                            <a class="text-black text-decoration-none" href="/ProductManagement/SaleOrder/Index?FID=a4rlKJVn/B/ym4Yn2zANiw==&ModuleID=DRD2ryuwtYONswjrqvWfow==">
+                                Sales Order
+                            </a>
+
+                        </span>
+
+                    </div>
+                </div>
+                <!-- 2nd column -->
+                <div class="col-4" style="margin-left: -40px;">
+                    <div class="d-flex align-items-center">
+                        <button type="button" class="btn btn-light icnbtn p-1">
+
+                            <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect y="0.5" width="18" height="18" rx="9" fill="#EBF4F5" />
+                                <g clip-path="url(#clip0_8953_16337)">
+                                    <path d="M13.6667 10.1668H9.66671V14.1668H8.33337V10.1668H4.33337V8.8335H8.33337V4.8335H9.66671V8.8335H13.6667V10.1668Z" fill="#046F76" stroke="#046F76" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_8953_16337">
+                                        <rect width="16" height="16" fill="white" transform="translate(1 1.5)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+
+                        </button>
+                        <span class="text-caption">
+
+                            <a class="text-black text-decoration-none" href="/ProductManagement/PurchaseInvoice/Index?FID=Y/xTPj5LCxkFxYWCD7yrLg==&ModuleID=fnO1gMLVnwE67WnPLlnM+A==">
+                                Purchase Invoice
+                            </a>
+                        </span>
+                    </div>
+                </div>
+                <!-- 3rd column -->
+                <div class="col-4" style="margin-left: -11px; margin-top: -6px;">
+                    <div class="d-flex align-items-center">
+                        <button type="button" class="btn btn-light icnbtn p-1">
+
+                            <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.42493 13.25H13.5674C14.9924 13.25 15.7424 12.5 15.7424 11.075V2H2.24243V11.075C2.24993 12.5 2.99993 13.25 4.42493 13.25Z" stroke="#046F76" stroke-width="1.8" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M1.5 2H16.5" stroke="#046F76" stroke-width="1.8" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M6 17L9 15.5V13.25" stroke="#046F76" stroke-width="1.8" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M12 17L9 15.5" stroke="#046F76" stroke-width="1.8" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M5.625 8.75L7.9875 6.7775C8.175 6.62 8.4225 6.665 8.55 6.875L9.45 8.375C9.5775 8.585 9.825 8.6225 10.0125 8.4725L12.375 6.5" stroke="#046F76" stroke-width="1.8" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </button>
+                        <span>
+                            <div class="dropdown">
+                                <button class="btn text-caption dropbtn " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Reports &nbsp;&nbsp;<i class="bi bi-chevron-down"></i>
+                                </button>
+                                <ul class="dropdown-menu  bhadd">
+                                    <li class="dasboardmenu">
+                                        <a class="dropdown-item svg-icn" href="#">
+                                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M4.58679 12.6V11.22" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                                                <path d="M8 12.6001V9.84009" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                                                <path d="M11.4132 12.6V8.45337" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                                                <path d="M11.4135 4.40015L11.1068 4.76015C9.40679 6.74681 7.12679 8.15348 4.58679 8.78681" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                                                <path d="M9.46008 4.40015H11.4134V6.34681" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M6.00004 15.1666H10C13.3334 15.1666 14.6667 13.8333 14.6667 10.4999V6.49992C14.6667 3.16659 13.3334 1.83325 10 1.83325H6.00004C2.66671 1.83325 1.33337 3.16659 1.33337 6.49992V10.4999C1.33337 13.8333 2.66671 15.1666 6.00004 15.1666Z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg> &nbsp; &nbsp;Balance Sheet
+
+                                        </a>
+                                    </li>
+                                    <li class="dasboardmenu">
+                                        <a class="dropdown-item svg-icn" href="#">
+                                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M4.58679 12.6V11.22" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                                                <path d="M8 12.6001V9.84009" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                                                <path d="M11.4132 12.6V8.45337" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                                                <path d="M11.4135 4.40015L11.1068 4.76015C9.40679 6.74681 7.12679 8.15348 4.58679 8.78681" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                                                <path d="M9.46008 4.40015H11.4134V6.34681" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M6.00004 15.1666H10C13.3334 15.1666 14.6667 13.8333 14.6667 10.4999V6.49992C14.6667 3.16659 13.3334 1.83325 10 1.83325H6.00004C2.66671 1.83325 1.33337 3.16659 1.33337 6.49992V10.4999C1.33337 13.8333 2.66671 15.1666 6.00004 15.1666Z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg> &nbsp;&nbsp;Income Statement
+                                        </a>
+                                    </li>
+                                    <li class="dasboardmenu">
+                                        <a class="dropdown-item svg-icn" href="#">
+                                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M4.58679 12.6V11.22" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                                                <path d="M8 12.6001V9.84009" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                                                <path d="M11.4132 12.6V8.45337" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                                                <path d="M11.4135 4.40015L11.1068 4.76015C9.40679 6.74681 7.12679 8.15348 4.58679 8.78681" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                                                <path d="M9.46008 4.40015H11.4134V6.34681" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M6.00004 15.1666H10C13.3334 15.1666 14.6667 13.8333 14.6667 10.4999V6.49992C14.6667 3.16659 13.3334 1.83325 10 1.83325H6.00004C2.66671 1.83325 1.33337 3.16659 1.33337 6.49992V10.4999C1.33337 13.8333 2.66671 15.1666 6.00004 15.1666Z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg> &nbsp;&nbsp;Statement of Cash Flows
+                                        </a>
+                                    </li>
+                                    <li class="dasboardmenu">
+                                        <a class="dropdown-item svg-icn" href="#">
+                                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M4.58679 12.6V11.22" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                                                <path d="M8 12.6001V9.84009" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                                                <path d="M11.4132 12.6V8.45337" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                                                <path d="M11.4135 4.40015L11.1068 4.76015C9.40679 6.74681 7.12679 8.15348 4.58679 8.78681" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                                                <path d="M9.46008 4.40015H11.4134V6.34681" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M6.00004 15.1666H10C13.3334 15.1666 14.6667 13.8333 14.6667 10.4999V6.49992C14.6667 3.16659 13.3334 1.83325 10 1.83325H6.00004C2.66671 1.83325 1.33337 3.16659 1.33337 6.49992V10.4999C1.33337 13.8333 2.66671 15.1666 6.00004 15.1666Z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg> &nbsp;&nbsp;Statement of Retained Earnings
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!-- row 3 -->
+            <div class="row" style="margin-top: 20px;">
+                <!-- 1st column -->
+                <div class="col-4">
+                    <div class="d-flex align-items-center">
+                        <button type="button" class="btn btn-light icnbtn p-1">
+
+                            <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect y="0.5" width="18" height="18" rx="9" fill="#EBF4F5" />
+                                <g clip-path="url(#clip0_8953_16337)">
+                                    <path d="M13.6667 10.1668H9.66671V14.1668H8.33337V10.1668H4.33337V8.8335H8.33337V4.8335H9.66671V8.8335H13.6667V10.1668Z" fill="#046F76" stroke="#046F76" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_8953_16337">
+                                        <rect width="16" height="16" fill="white" transform="translate(1 1.5)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+
+                        </button>
+                        <span class="text-caption">
+                            <a class="text-black text-decoration-none" href="/ProductManagement/SalesInvoice/Index?FID=2QYvGyijCV3bhwFsKpR7Qw==&ModuleID=DRD2ryuwtYONswjrqvWfow==">
+                                Sales Invoices
+                            </a>
+
+                        </span>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+<!-- first row end -->
+<!-- second row start  -->
+<div class="dashboard-h">
+    <h6 class="text-highlight">
+        Dashboards
+    </h6>
+</div>
+<!-- second row end -->
+<!-- third row start -->
+<!-- row 1 -->
+<div class=main-sec-dashboard>
+    <div class="row" @*style="padding: 5px 40px;"*@ id="ModulesHTML">
+
+
+    </div>
+
+</div>
+<!-- Charts  -->
+<div class="container-fluid">
+    @{
+        Html.RenderPartial("~/Views/Shared/PartialViews/Charts/_DashboardPartialView.cshtml", "External");
+    }
+</div>
+
+<script src="~/NewContent/assets/js/real-estate/select2.min.js?v=@System.Configuration.ConfigurationManager.AppSettings["JSVersion"]"></script>

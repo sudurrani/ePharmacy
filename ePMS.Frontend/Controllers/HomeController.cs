@@ -26,6 +26,24 @@ namespace ePMS.Frontend.Controllers
 
             return View();
         }
+        public ActionResult Dashboard()
+        {
+            Session["CurrencyID"] = 3.ToString();
+            Session["CompanyID"] = 40155.ToString();
+            Session["UserID"] = 40122.ToString();
+
+            Session["ProjectID"] = 40122.ToString();
+
+            Session["UserName"] = "Shahid Ullah".ToString();
+
+            Session["Uname"] = "Shahid Ullah".ToString();
+
+            Session["UserID"] = 40122.ToString();
+
+            Session["UserID"] = 40122.ToString();
+
+            return View();
+        }
 
         public ActionResult About()
         {
