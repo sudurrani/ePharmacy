@@ -553,6 +553,7 @@
     <Content Include="Views\Shared\PartialViews\Common\_HomeViewsDropdownPartialView.cshtml" />
     <Content Include="Views\Shared\PartialViews\Common\_StylesReferencesPartialView.cshtml" />
     <Content Include="Views\Shared\PartialViews\Charts\_DashboardPartialView.cshtml" />
+    <Content Include="Views\Home\Dashboard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -562,7 +563,6 @@
     <Folder Include="Areas\UserManagement\Views\Shared\" />
     <Folder Include="CompanyLogos\" />
     <Folder Include="Data\" />
-    <Folder Include="Models\" />
     <Folder Include="Scripts\FunctionalityJS\Accounts\CashPaymentVoucher\" />
     <Folder Include="UserPics\" />
   </ItemGroup>
