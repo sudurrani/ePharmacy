@@ -155,6 +155,7 @@
     <Compile Include="CommonClasses\SqlDynamicParameters.cs" />
     <Compile Include="CommonClasses\Test.cs" />
     <Compile Include="CommonClasses\URLcoding.cs" />
+    <Compile Include="Controllers\DropdownsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -429,6 +430,7 @@
     <Content Include="NewContent\assets\img\erp-core" />
     <Content Include="NewContent\assets\img\filter-dp-down-pic" />
     <Content Include="NewContent\assets\img\values-img" />
+    <Content Include="Scripts\FunctionalityJS\ePharmacy\common-dropdowns.js" />
     <Content Include="Scripts\FunctionalityJS\JobRequestCenter\MaintenanceRequest\README.md" />
     <Content Include="menus.js" />
     <Content Include="Areas\UserManagement\Views\web.config" />
@@ -565,6 +567,7 @@
     <Folder Include="Data\" />
     <Folder Include="Scripts\FunctionalityJS\Accounts\CashPaymentVoucher\" />
     <Folder Include="UserPics\" />
+    <Folder Include="Views\Dropdowns\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
