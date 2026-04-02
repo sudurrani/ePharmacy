@@ -61,7 +61,7 @@
             </span>
 
             @*search buuton........... //Pending work*@
-            <button onclick="openModal()" class="authorizeOrNotInsert enabled pe-3" id="AddButton">
+            <button onclick="openModal()"class="authorizeOrNotInsert enabled pe-3" id="AddButton">
                 <i class="bi bi-plus-lg tb-icon"></i>
                 <b class="tb-text grey">New</b>
             </button>
@@ -181,11 +181,6 @@
 <script>
     $(document).ready(function () {
         loadTableData();
-
-
-        $('#saveData').on('click', function () {
-            saveRecord();
-        });
     });
 
     function loadTableData() {
@@ -240,7 +235,7 @@
     function closeModal() {
         $('#ServiceGroupModal').modal('hide');
 
-        document.getElementById("ModuleForm").reset();
+        
     }
 
     function saveRecord() {
@@ -262,6 +257,7 @@
         if (responseJSON.IsSuccess) {
             successToastr("The record has been saved successfully", 'success');
             loadTableData();
+            document.getElementById("ModuleForm").reset();
             closeModal();
         }
         else {
@@ -273,7 +269,6 @@
     }
     function modifyRecordCallBack(responseJSON) {
         if (responseJSON.IsSuccess) {
-            debugger;
             $('#ServiceGroupModal').modal('show');
             setResponseToFormInputs(responseJSON.resultJSON);
 
