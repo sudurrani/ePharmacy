@@ -239,6 +239,8 @@
 
     function closeModal() {
         $('#ServiceGroupModal').modal('hide');
+
+        document.getElementById("ModuleForm").reset();
     }
 
     function saveRecord() {
@@ -251,7 +253,6 @@
                 data: inputJSON,
                 callBack: saveRecordCallBack
             });
-            document.getElementById("ModuleForm").reset();
         }
 
     }
@@ -262,6 +263,21 @@
             successToastr("The record has been saved successfully", 'success');
             loadTableData();
             closeModal();
+        }
+        else {
+            errorToastr(responseJSON.Message, 'error');
+        }
+    }
+    function modifyRecord(id) {
+        ajaxRequest({ url: "/Core/Module/GetByID", type: 'POST', data: { ID: id }, callBack: modifyRecordCallBack });
+    }
+    function modifyRecordCallBack(responseJSON) {
+        if (responseJSON.IsSuccess) {
+            debugger;
+            $('#ServiceGroupModal').modal('show');
+            setResponseToFormInputs(responseJSON.resultJSON);
+
+            successToastr(responseJSON.Message, 'success');
         }
         else {
             errorToastr(responseJSON.Message, 'error');

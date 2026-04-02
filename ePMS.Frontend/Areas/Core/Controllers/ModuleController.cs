@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 
 namespace ePMS.Frontend.Areas.Core.Controllers
@@ -40,7 +41,7 @@ namespace ePMS.Frontend.Areas.Core.Controllers
 
 
         [HttpGet]
-        public ActionResult Update(int id)
+        public ActionResult Update()
         {
             return View();
         }
@@ -66,15 +67,20 @@ namespace ePMS.Frontend.Areas.Core.Controllers
         }
         [HttpPost]
 
-        public ActionResult GetByID()
+        public async Task<JsonResult> GetByID(IDInputViewModel iDInputViewModel)
         {
-            return View();
+             sqlDynamicParameters  = new SqlDynamicParameters();
+             sqlDynamicParameters = sqlDynamicParameters.GetSqlParameters<IDInputViewModel>(iDInputViewModel);
+            _responseOutputDto = await _respository.GetSingleAsync<ModuleGetByIDOutputViewModel>("Module_GetByID",sqlDynamicParameters);
+
+            return Json(_responseOutputDto, JsonRequestBehavior.AllowGet);
         }
 
 
         [HttpPost]
         
-        public async Task<ActionResult> Delete(RecordIdUserIdInputModel recordIdUserIdInputModel)
+
+         public async Task<ActionResult> Delete(RecordIdUserIdInputModel recordIdUserIdInputModel)
         {
             var sqlDynamicParameters = new SqlDynamicParameters().GetSqlParameters<object>(recordIdUserIdInputModel);
 
