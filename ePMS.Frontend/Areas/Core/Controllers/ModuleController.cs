@@ -1,5 +1,6 @@
 ﻿using ePMS.Frontend.Areas.Core.Models.Module;
 using ePMS.Frontend.CommonClasses;
+using ePMS.Frontend.Models.ViewModels;
 using ePMS.Frontend.Models.ViewModels.InputViewModel.Common;
 using ePMS.Frontend.Models.ViewModels.OutputViewModel.Common;
 using System;
@@ -45,9 +46,13 @@ namespace ePMS.Frontend.Areas.Core.Controllers
         }
 
         [HttpPost]
-        public ActionResult Save(ModuleSaveInputViewModel model)
+        public async Task<ActionResult> Save(ModuleSaveInputViewModel moduleSaveInputViewModel)
         {
-            return View();
+              sqlDynamicParameters  = new SqlDynamicParameters();
+             sqlDynamicParameters = sqlDynamicParameters.GetSqlParameters<ModuleSaveInputViewModel>(moduleSaveInputViewModel);
+            _responseOutputDto = await _respository.Execute<object>("Module_Save",sqlDynamicParameters);
+
+            return Json(_responseOutputDto, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
@@ -68,12 +73,15 @@ namespace ePMS.Frontend.Areas.Core.Controllers
 
 
         [HttpPost]
-
-        public ActionResult Delete( )
+        
+        public async Task<ActionResult> Delete(RecordIdUserIdInputModel recordIdUserIdInputModel)
         {
-            return View();
-        }
+            var sqlDynamicParameters = new SqlDynamicParameters().GetSqlParameters<object>(recordIdUserIdInputModel);
 
+            var _responseOutputDto = await _respository.Execute<object>("Module_Delete", sqlDynamicParameters);
+
+            return Json(_responseOutputDto, JsonRequestBehavior.AllowGet);
+        }
 
 
     }
