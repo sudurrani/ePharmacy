@@ -46,7 +46,7 @@
                             Url = "#",
                             IsActive = true
                             },
-                                            }
+                                                    }
                             );
     }
     <!-- ===============braed crumbs content end====================== -->
@@ -59,11 +59,12 @@
                 <i class="bi bi-search ps-1" style=" color: #007E87;"></i>
                 <input type="search" class="search-input" placeholder="Search Data">
             </span>
+
             @*search buuton........... //Pending work*@
-            @*<button onclick="openJournalVoucherModal(0)" class="authorizeOrNotInsert enabled pe-3" id="AddButton">
-                    <i class="bi bi-plus-lg tb-icon"></i>
-                    <b class="tb-text grey">New</b>
-                </button>*@
+            <button onclick="openModal()" class="authorizeOrNotInsert enabled pe-3" id="AddButton">
+                <i class="bi bi-plus-lg tb-icon"></i>
+                <b class="tb-text grey">New</b>
+            </button>
         </div>
         <!-- 1st colum -->
         <div class="dt-col2 h-bg"></div>
@@ -90,28 +91,180 @@
         </div>
     </div>
     <!-- Table Content Ends -->
+
 </div>
-<script src="~/NewContent/assets/js/real-estate/select2.min.js?v=@System.Configuration.ConfigurationManager.AppSettings["JSVersion"]"></script>
+<div class="modal fade" id="ServiceGroupModal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog" style="max-height:auto; max-width:450px;">
+        <div class="modal-content bha-modal-content" style="min-height: 230px !important;">
+            <div class="modal-header bha-modal-header">
+                <div class="card-header card-header-divider col-lg-11">
+                    <span id="modalHeadingDocument" class="caption-subject bold bha-modal-header-text">Service Group</span>
+                </div>
+                <div class="col-1 text-end">
+                    <i class="bi bi-x-circle-fill fs-3 green cursor-pointer" onclick="closeModal();"></i>
+                </div>
+            </div>
+            <div class="modal-body bha-modal-body">
+                <form id="ModuleForm">
+                    <input type="hidden" id="ID" value="0" />
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <div class="selector">
+                                <label class="bha-label">
+                                    Description
+                                    <span class="required">*</span>
+                                </label>
+                                <input class="js-states form-control bha-input w-100" id="Description" required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <div class="selector">
+                                <label class="bha-label">
+                                    Details
+                                    <span class="required">*</span>
+                                </label>
+                                <input class="js-states form-control bha-input w-100" id="Detail" required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <div class="selector">
+                                <label class="bha-label">
+                                    ModuleUrl
+                                    <span class="required">*</span>
+                                </label>
+                                <input class="js-states form-control bha-input w-100" id="ModuleUrl" required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <div class="selector">
+                                <label class="bha-label">
+                                    IconClass
+                                    <span class="required">*</span>
+                                </label>
+                                <input class="js-states form-control bha-input w-100" id="IconClass" required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <div class="selector">
+                                <label class="bha-label">
+                                    Priority
+                                    <span class="required">*</span>
+                                </label>
+                                <input class="js-states form-control bha-input w-100" id="Priority" required />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer d-flex justify-content-end pe-3">
+                <button type="button" onclick="saveRecord()" class="btn-green" id="saveData">
+                    <i class="bi bi-plus fs-6"></i>Save
+                </button>
+                <button type="button" class="btn btn-outline-secondary btn-bha-default" onclick="closeModal();">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+<script src="~/NewContent/assets/js/real-estate/select2.min.js?v=System.Configuration.ConfigurationManager.AppSettings[" JSVersion"]"></script>
 
 <script>
-    $(document).ready(function () {
-            loadTableData();
+    $(document).ready(function () {
+        loadTableData();
 
-    });
 
-    function loadTableData() {;
+        $('#saveData').on('click', function () {
+            saveRecord();
+        });
+    });
 
-        ajaxRequest({ url: "/Core/Module/GetAll", type: 'POST', data: { }, callBack: loadTableDataCallBack });
-    }
-    var loadTableDataCallBack = function (responseJSON) {
+    function loadTableData() {
+        ;
+
+        ajaxRequest({ url: "/Core/Module/GetAll", type: 'POST', data: {}, callBack: loadTableDataCallBack });
+    }
+    var loadTableDataCallBack = function (responseJSON) {
         if (responseJSON.IsSuccess) {
-           // alert("Ok");
-            generateTableRowsFromJSON(responseJSON.resultJSON, '@dataTablePartialViewInputViewModel.TableIdAttr');
-           tableWidth100Percent('@dataTablePartialViewInputViewModel.TableIdAttr');
-       
-    }
-    else {
-        errorToastr(responseJSON.Message, "error");
-    }
-    }
+
+            generateTableRowsFromJSON(responseJSON.resultJSON,'@dataTablePartialViewInputViewModel.TableIdAttr');
+            tableWidth100Percent('@dataTablePartialViewInputViewModel.TableIdAttr');
+
+        }
+        else {
+            errorToastr(responseJSON.Message, "error");
+        }
+    }
+
+    function deleteRecord(id = 0) {
+        swal.fire({
+            title: swalConfirmTitle,
+            type: "warning",
+            text: swalConfirmText,
+            showCancelButton: true,
+            confirmButtonText: swalConfirmButtonText,
+            cancelButtonText: swalConfirmCancelButtonText,
+            closeOnConfirm: false,
+            closeOnCancel: true
+        }).then(
+            function (isConfirm) {
+                if (isConfirm.value == true) {
+                    ajaxRequest({ url: "/Core/Module/Delete", type: 'POST', data: { ID: id }, callBack: deleteRecordCallBack });
+                } else {
+                    swal.fire("Cancelled", "Your operation Canceled :)", "error");
+                }
+            });
+    }
+    function deleteRecordCallBack(responseJSON) {
+        if (responseJSON.IsSuccess) {
+            loadTableData();
+            successToastr(responseJSON.Message, 'success');
+        }
+        else {
+            errorToastr(responseJSON.Message, 'error');
+        }
+    }
+    function openModal() {
+        $('#ServiceGroupModal').modal('show');
+    }
+
+    function closeModal() {
+        $('#ServiceGroupModal').modal('hide');
+    }
+
+    function saveRecord() {
+        if (customValidateForm('ModuleForm')) {
+            var inputJSON = getFormDataAsJSONObject("ModuleForm");
+
+            ajaxRequest({
+                url: "/Core/Module/Save",
+                type: 'POST',
+                data: inputJSON,
+                callBack: saveRecordCallBack
+            });
+            document.getElementById("ModuleForm").reset();
+        }
+
+    }
+
+
+    function saveRecordCallBack(responseJSON) {
+        if (responseJSON.IsSuccess) {
+            successToastr("The record has been saved successfully", 'success');
+            loadTableData();
+            closeModal();
+        }
+        else {
+            errorToastr(responseJSON.Message, 'error');
+        }
+    }
 </script>
