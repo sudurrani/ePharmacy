@@ -58,9 +58,13 @@ namespace ePMS.Frontend.Areas.Core.Controllers
             return Json(_responseOutputDto, JsonRequestBehavior.AllowGet);
         }
         [HttpPost]
-        public ActionResult GetById()
+        public async Task<JsonResult> GetByID(IDInputViewModel iDInputViewModel)
         {
-            return View();
+            sqlDynamicParameters = new SqlDynamicParameters();
+            sqlDynamicParameters = sqlDynamicParameters.GetSqlParameters<IDInputViewModel>(iDInputViewModel);
+            _responseOutputDto = await _respository.GetSingleAsync<SubModuleGetByIDOutputViewModel>("SubModule_GetByID", sqlDynamicParameters);
+
+            return Json(_responseOutputDto, JsonRequestBehavior.AllowGet);
         }
         [HttpPost]
         public async Task<ActionResult> Delete(RecordIdUserIdInputModel recordIdUserIdInputModel)

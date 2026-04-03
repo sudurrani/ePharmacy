@@ -203,10 +203,6 @@
 <script>
        $(document).ready(function () {
      loadTableData();
-
-           //$('#saveData').on('click', function () {
-           //    saveRecord();
-           //});
      
  });
 
@@ -228,6 +224,7 @@
  }
     function openModal() {
         $('#ServiceGroup').modal('show');
+        clearForm();
     }
 
     function closeModal() {
@@ -253,7 +250,6 @@
             successToastr("The record has been saved successfully", 'success');
             loadTableData();
             closeModal();
-            document.getElementById("SubModuleForm").reset();
         }
         else {
             errorToastr(responseJSON.Message, 'error');
@@ -287,5 +283,30 @@
         else {
             errorToastr(responseJSON.Message, 'error');
         }
+    }
+    function modifyRecord(id) {
+        ajaxRequest({ url: "/Core/SubModule/GetByID", type: 'POST', data: { ID: id }, callBack: modifyRecordCallBack });
+    }
+    function modifyRecordCallBack(responseJSON) {
+        if (responseJSON.IsSuccess) {
+            $('#ServiceGroup').modal('show');
+            setResponseToFormInputs(responseJSON.resultJSON);
+
+            successToastr(responseJSON.Message, 'success');
+        }
+        else {
+            errorToastr(responseJSON.Message, 'error');
+        }
+    }
+    function clearForm() {
+        $("#Description").val('');
+        $("#Url").val('');
+        $("#IsParent").val('');
+        $("#ParentID").val('');
+        $("#MenuOrder ").val('');
+        $("#IconClass ").val('');
+        $("#Priority").val('');
+        $("#ID").val('');
+
     }
 </script>
