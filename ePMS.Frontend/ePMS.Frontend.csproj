@@ -142,10 +142,14 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Core\Controllers\ModuleController.cs" />
+    <Compile Include="Areas\Core\Controllers\SubModuleController.cs" />
     <Compile Include="Areas\Core\CoreAreaRegistration.cs" />
     <Compile Include="Areas\Core\Models\Module\ModuleGetByIDOutputViewModel.cs" />
     <Compile Include="Areas\Core\Models\Module\ModuleSaveInputViewModel.cs" />
     <Compile Include="Areas\Core\Models\Module\ModuleTableOutputViewModel.cs" />
+    <Compile Include="Areas\Core\Models\SubModule\SubModuleGetByIDOutputViewModel.cs" />
+    <Compile Include="Areas\Core\Models\SubModule\SubModuleSaveInputViewModelcs.cs" />
+    <Compile Include="Areas\Core\Models\SubModule\SubModuleTableOutputViewModel.cs" />
     <Compile Include="Areas\UserManagement\Controllers\UserLoginController.cs" />
     <Compile Include="Areas\UserManagement\UserManagementAreaRegistration.cs" />
     <Compile Include="CommonClasses\BarcodeHelper.cs" />
@@ -441,6 +445,10 @@
     <Content Include="Areas\Core\Views\Module\Detail.cshtml" />
     <Content Include="Areas\Core\Views\Module\Add.cshtml" />
     <Content Include="Areas\Core\Views\Module\Update.cshtml" />
+    <Content Include="Areas\Core\Views\SubModule\List.cshtml" />
+    <Content Include="Areas\Core\Views\SubModule\Add.cshtml" />
+    <Content Include="Areas\Core\Views\SubModule\Update.cshtml" />
+    <Content Include="Areas\Core\Views\SubModule\Detial.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\FunctionalityJS\Accounts\BankReceiptVoucher\bankreceiptvoucher-list.js" />
     <Content Include="Scripts\FunctionalityJS\Accounts\common-dropdowns.js" />
