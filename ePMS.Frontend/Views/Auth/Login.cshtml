@@ -1,0 +1,589 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login – ePharmacy | InfoTech</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    <style>
+        :root {
+            --teal: #0D7377;
+            --teal-dark: #0A5557;
+            --teal-deep: #063B3D;
+            --teal-deeper: #031F20;
+            --mint: #14BDAC;
+            --mint-light: #7EE8DF;
+            --mint-pale: #E6F9F8;
+            --white: #ffffff;
+            --off-white: #F4FAFA;
+            --text-dark: #0D2B2C;
+            --text-mid: #2E6668;
+            --gray: #5C7A7B;
+            --border: #C5E8E8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--teal-deeper);
+            color: var(--text-dark);
+            min-height: 100vh;
+            display: flex;
+            align-items: stretch;
+        }
+
+        /* ── LEFT PANEL ── */
+        .auth-left {
+            background: linear-gradient(155deg, var(--teal-deep) 0%, var(--teal-dark) 50%, #0B8080 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 50px 48px;
+            min-height: 100vh;
+        }
+
+            .auth-left::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background-image: radial-gradient(circle at 20% 25%, rgba(20,189,172,0.22) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(126,232,223,0.08) 0%, transparent 45%);
+            }
+
+            .auth-left::after {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2314BDAC' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+            }
+
+        .left-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .left-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 60px;
+        }
+
+            .left-brand img {
+                height: 50px;
+                width: 50px;
+                border-radius: 50%;
+                background: var(--white);
+                padding: 3px;
+                object-fit: contain;
+            }
+
+        .left-brand-text .name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.35rem;
+            font-weight: 900;
+            color: var(--mint-light);
+            display: block;
+            line-height: 1;
+        }
+
+        .left-brand-text .sub {
+            font-size: 0.62rem;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.35);
+        }
+
+        .left-headline {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.9rem, 3vw, 2.8rem);
+            color: var(--white);
+            line-height: 1.2;
+            margin-bottom: 18px;
+        }
+
+            .left-headline span {
+                color: var(--mint-light);
+            }
+
+        .left-desc {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.55);
+            line-height: 1.75;
+            max-width: 340px;
+            margin-bottom: 44px;
+        }
+
+        .feature-bullet {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+            .feature-bullet .dot {
+                width: 28px;
+                height: 28px;
+                background: rgba(20,189,172,0.18);
+                border: 1px solid rgba(20,189,172,0.35);
+                border-radius: 6px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 0.8rem;
+                color: var(--mint-light);
+                flex-shrink: 0;
+            }
+
+            .feature-bullet span {
+                font-size: 0.88rem;
+                color: rgba(255,255,255,0.65);
+            }
+
+        .left-footer {
+            position: relative;
+            z-index: 1;
+        }
+
+            .left-footer p {
+                font-size: 0.78rem;
+                color: rgba(255,255,255,0.25);
+            }
+
+            .left-footer a {
+                color: var(--mint);
+                text-decoration: none;
+            }
+
+        /* ── RIGHT PANEL ── */
+        .auth-right {
+            background: var(--off-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 48px 40px;
+            min-height: 100vh;
+        }
+
+        .auth-card {
+            width: 100%;
+            max-width: 420px;
+            animation: slideUp 0.5s ease both;
+        }
+
+        keyframes slideUp {
+            from
+
+        {
+            opacity: 0;
+            transform: translateY(24px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        }
+
+        .auth-card-header {
+            margin-bottom: 32px;
+        }
+
+            .auth-card-header .eyebrow {
+                font-size: 0.7rem;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                color: var(--teal);
+                font-weight: 700;
+                margin-bottom: 8px;
+            }
+
+            .auth-card-header h2 {
+                font-family: 'Playfair Display', serif;
+                font-size: 2rem;
+                color: var(--text-dark);
+                margin-bottom: 6px;
+            }
+
+            .auth-card-header p {
+                font-size: 0.9rem;
+                color: var(--gray);
+            }
+
+        /* ── FORM ── */
+        .form-label {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-mid);
+            margin-bottom: 7px;
+            letter-spacing: 0.3px;
+        }
+
+        .input-wrap {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+            font-size: 1rem;
+            pointer-events: none;
+            transition: color 0.2s;
+        }
+
+        .form-control {
+            background: var(--white);
+            border: 1.5px solid var(--border);
+            border-radius: 8px;
+            padding: 12px 14px 12px 42px;
+            font-size: 0.92rem;
+            color: var(--text-dark);
+            font-family: 'DM Sans', sans-serif;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            height: auto;
+        }
+
+            .form-control:focus {
+                border-color: var(--mint);
+                box-shadow: 0 0 0 3px rgba(20,189,172,0.12);
+                outline: none;
+                background: var(--white);
+            }
+
+                .form-control:focus + .input-icon,
+                .input-wrap:focus-within .input-icon {
+                    color: var(--teal);
+                }
+
+        .toggle-password {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--gray);
+            cursor: pointer;
+            font-size: 1rem;
+            padding: 0;
+            transition: color 0.2s;
+        }
+
+            .toggle-password:hover {
+                color: var(--teal);
+            }
+
+        .form-check-input:checked {
+            background-color: var(--teal);
+            border-color: var(--teal);
+        }
+
+        .form-check-input:focus {
+            box-shadow: 0 0 0 3px rgba(20,189,172,0.15);
+        }
+
+        .form-check-label {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .forgot-link {
+            font-size: 0.85rem;
+            color: var(--teal);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+            .forgot-link:hover {
+                color: var(--mint);
+            }
+
+        .btn-auth {
+            width: 100%;
+            background: linear-gradient(135deg, var(--teal) 0%, var(--mint) 100%);
+            color: var(--white);
+            font-weight: 700;
+            font-size: 0.95rem;
+            padding: 13px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.25s;
+            letter-spacing: 0.3px;
+            margin-top: 8px;
+        }
+
+            .btn-auth:hover {
+                background: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal) 100%);
+                transform: translateY(-1px);
+                box-shadow: 0 6px 20px rgba(13,115,119,0.3);
+            }
+
+            .btn-auth:active {
+                transform: translateY(0);
+            }
+
+        .divider-text {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin: 22px 0;
+            color: var(--border);
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+
+            .divider-text::before, .divider-text::after {
+                content: '';
+                flex: 1;
+                height: 1px;
+                background: var(--border);
+            }
+
+        .register-link {
+            text-align: center;
+            font-size: 0.88rem;
+            color: var(--gray);
+            margin-top: 22px;
+        }
+
+            .register-link a {
+                color: var(--teal);
+                font-weight: 600;
+                text-decoration: none;
+                transition: color 0.2s;
+            }
+
+                .register-link a:hover {
+                    color: var(--mint);
+                }
+
+        .alert-error {
+            background: #FFF0F0;
+            border: 1.5px solid #FFCDD2;
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-size: 0.85rem;
+            color: #C62828;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 18px;
+            display: none;
+        }
+
+        /* Branch selector */
+        .branch-select {
+            background: var(--white);
+            border: 1.5px solid var(--border);
+            border-radius: 8px;
+            padding: 12px 14px 12px 42px;
+            font-size: 0.92rem;
+            color: var(--text-dark);
+            font-family: 'DM Sans', sans-serif;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            width: 100%;
+            appearance: none;
+            cursor: pointer;
+        }
+
+            .branch-select:focus {
+                border-color: var(--mint);
+                box-shadow: 0 0 0 3px rgba(20,189,172,0.12);
+                outline: none;
+            }
+
+        .select-wrap {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+            .select-wrap .input-icon {
+                pointer-events: none;
+            }
+
+        .select-arrow {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+            pointer-events: none;
+            font-size: 0.85rem;
+        }
+
+        /* ── RESPONSIVE ── */
+        media (max-width: 991px) {
+            .auth-left
+
+        {
+            display: none;
+        }
+
+        .auth-right {
+            padding: 40px 24px;
+        }
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid p-0 h-100">
+        <div class="row g-0 min-vh-100">
+
+            <!-- LEFT PANEL -->
+            <div class="col-lg-5 d-none d-lg-flex">
+                <div class="auth-left w-100">
+                    <div class="left-content">
+                        <!-- Brand -->
+                        <div class="left-brand">
+                            <img src="/CompanyLogos/bk-infotech.png" alt="BK Info Tech" />
+                            <div class="left-brand-text">
+                                <span class="name">PharmaPro</span>
+                                <span class="sub">by BK Info Tech</span>
+                            </div>
+                        </div>
+
+                        <!-- Headline -->
+                        <h1 class="left-headline">Welcome Back to<br /><span>Your Pharmacy</span><br />Dashboard</h1>
+                        <p class="left-desc">Log in to manage your stock, billing, employees, and reports — all in one secure place.</p>
+
+                        <!-- Feature bullets -->
+                        <div class="feature-bullet">
+                            <div class="dot"><i class="bi bi-boxes"></i></div>
+                            <span>Real-time stock &amp; expiry monitoring</span>
+                        </div>
+                        <div class="feature-bullet">
+                            <div class="dot"><i class="bi bi-upc-scan"></i></div>
+                            <span>Fast POS billing across all branches</span>
+                        </div>
+                        <div class="feature-bullet">
+                            <div class="dot"><i class="bi bi-bar-chart-line"></i></div>
+                            <span>Comprehensive sales &amp; financial reports</span>
+                        </div>
+                        <div class="feature-bullet">
+                            <div class="dot"><i class="bi bi-shield-check"></i></div>
+                            <span>Role-based secure access control</span>
+                        </div>
+                    </div>
+
+                    <div class="left-footer">
+                        <p>© @DateTime.Now.Year.ToString() <a href="#">BK Info Tech</a>. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- RIGHT PANEL -->
+            <div class="col-lg-7 auth-right">
+                <div class="auth-card">
+
+                    <!-- Mobile brand -->
+                    <div class="d-flex d-lg-none align-items-center gap-2 mb-4">
+                        <img src="favicon.png" alt="BK Info Tech" style="height:40px;width:40px;border-radius:50%;background:var(--teal-deep);padding:3px;object-fit:contain;" />
+                        <div>
+                            <div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:900;color:var(--text-dark);">PharmaPro</div>
+                            <div style="font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--gray);">by BK Info Tech</div>
+                        </div>
+                    </div>
+
+                    <div class="auth-card-header">
+                        <div class="eyebrow">Pharmacy Management System</div>
+                        <h2>Sign In</h2>
+                        <p>Enter your credentials to access your account</p>
+                    </div>
+
+                    <!-- Error alert -->
+                    <div class="alert-error" id="loginError">
+                        <i class="bi bi-exclamation-circle-fill"></i>
+                        <span>Invalid username or password. Please try again.</span>
+                    </div>
+
+                    <form onsubmit="handleLogin(event)">
+                        <!-- Branch -->
+                        <div class="select-wrap">
+                            <label class="form-label">Select Branch</label>
+                            <i class="bi bi-diagram-3 input-icon" style="top:calc(50% + 13px);"></i>
+                            <select class="branch-select">
+                                <option value="">Main Branch – Peshawar</option>
+                                <option value="b2">Branch 2 – Hayatabad</option>
+                                <option value="b3">Branch 3 – Saddar</option>
+                            </select>
+                            <i class="bi bi-chevron-down select-arrow" style="top:calc(50% + 13px);"></i>
+                        </div>
+
+                        <!-- Username -->
+                        <div>
+                            <label class="form-label">Email</label>
+                            <div class="input-wrap">
+                                <input type="text" class="form-control" placeholder="Enter your Email" id="username" />
+                                <i class="bi bi-person input-icon"></i>
+                            </div>
+                        </div>
+
+                        <!-- Password -->
+                        <div>
+                            <label class="form-label">Password</label>
+                            <div class="input-wrap">
+                                <input type="password" class="form-control" placeholder="Enter your password" id="password" />
+                                <i class="bi bi-lock input-icon"></i>
+                                <button type="button" class="toggle-password" onclick="togglePassword('password', this)">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Remember & Forgot -->
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="rememberMe" />
+                                <label class="form-check-label" for="rememberMe">Remember me</label>
+                            </div>
+                            <a href="#" class="forgot-link">Forgot password?</a>
+                        </div>
+
+                        <!-- Submit -->
+                        <button type="submit" class="btn-auth">
+                            <i class="bi bi-box-arrow-in-right me-2"></i>Sign In to PharmaPro
+                        </button>
+                    </form>
+
+                    <div class="divider-text">or</div>
+
+                    <div class="register-link">
+                        Don't have an account?
+                        <a href="@Url.Action("Register", "Auth")">Create account</a>
+                    </div>
+
+                    <!-- Version tag -->
+                    <div class="text-center mt-4">
+                        <span style="font-size:0.72rem;color:var(--border);letter-spacing:1px;">PharmaPro v2.5.1 &nbsp;|&nbsp; Secure Login</span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
