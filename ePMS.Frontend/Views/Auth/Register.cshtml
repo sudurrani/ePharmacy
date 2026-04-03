@@ -318,38 +318,43 @@
     <!-- LEFT PANEL -->
     <div class="col-lg-5 d-none d-lg-flex">
       <div class="auth-left w-100">
-        <div class="left-content">
-          <div class="left-brand">
-            <img src="/CompanyLogos/bk-infotech.png" alt="BK Info Tech"/>
-            <div class="left-brand-text">
-              <span class="name">PharmaPro</span>
-              <span class="sub">by BK Info Tech</span>
-            </div>
-          </div>
+          <div class="left-content">
+              <div class="left-brand">
+                  <img src="/CompanyLogos/bk-infotech.png" alt="BK Info Tech" />
+                  <div class="left-brand-text">
+                      <span class="name">PharmaPro</span>
+                      <span class="sub">by BK Info Tech</span>
+                  </div>
+              </div>
 
-          <h1 class="left-headline">Start Managing Your<br/><span>Pharmacy</span><br/>the Right Way</h1>
-          <p class="left-desc">Register your pharmacy in minutes and get full access to stock, billing, reports, and more.</p>
+              <h1 class="left-headline">Start Managing Your<br /><span>Pharmacy</span><br />the Right Way</h1>
+              <p class="left-desc">Register your pharmacy in minutes and get full access to stock, billing, reports, and more.</p>
 
-          <!-- Plan previews -->
-          <div class="plan-preview">
-            <div class="plan-preview-name">Starter Plan</div>
-            <div class="plan-preview-price">PKR 2,000 <span>/ month</span></div>
-            <div class="plan-preview-desc">Stock · POS · Sale &amp; Purchase · Reports · Branches</div>
+              <!-- Plan previews -->
+              <div class="plan-preview">
+                  <div class="plan-preview-name">Free Plan</div>
+                  <div class="plan-preview-price">PKR 0 <span>/ month</span></div>
+                  <div class="plan-preview-desc">Stock · POS · Sale &amp; Purchase · Reports · Branches</div>
+              </div>
+              <div class="plan-preview">
+                  <div class="plan-preview-name">Starter Plan</div>
+                  <div class="plan-preview-price">PKR 2,000 <span>/ month</span></div>
+                  <div class="plan-preview-desc">Stock · POS · Sale &amp; Purchase · Reports · Branches</div>
+              </div>
+              <div class="plan-preview">
+                  <div class="plan-preview-name">Professional Plan</div>
+                  <div class="plan-preview-price">PKR 3,000 <span>/ month</span></div>
+                  <div class="plan-preview-desc">Starter + Employee Management + Payroll</div>
+              </div>
+              <div class="plan-preview">
+                  <div class="plan-preview-name">Enterprise Plan</div>
+                  <div class="plan-preview-price">PKR 5,000 <span>/ month</span></div>
+                  <div class="plan-preview-desc">Professional + Financial Accounts</div>
+              </div>
           </div>
-          <div class="plan-preview">
-            <div class="plan-preview-name">Professional Plan</div>
-            <div class="plan-preview-price">PKR 3,000 <span>/ month</span></div>
-            <div class="plan-preview-desc">Starter + Employee Management + Payroll</div>
-          </div>
-          <div class="plan-preview">
-            <div class="plan-preview-name">Enterprise Plan</div>
-            <div class="plan-preview-price">PKR 5,000 <span>/ month</span></div>
-            <div class="plan-preview-desc">Professional + Financial Accounts</div>
-          </div>
-        </div>
 
         <div class="left-footer">
-            <p>© @DateTime.Now.Year.ToString() <a href="#">BK Info Tech</a>. All rights reserved.</p>
+            <p>© @DateTime.Now.Year.ToString() <a href="#">BK-Info-Tech</a>. All rights reserved.</p>
         </div>
       </div>
     </div>
@@ -383,124 +388,133 @@
 
         <form onsubmit="handleRegister(event)" novalidate>
 
-          <!-- PHARMACY INFO -->
-          <div class="section-label">Pharmacy Information</div>
+            <!-- PHARMACY INFO -->
+            <div class="section-label">Pharmacy Information</div>
 
-          <div class="row g-0">
-            <div class="col-12">
-              <label class="form-label">Pharmacy / Business Name <span style="color:#ef4444;">*</span></label>
-              <div class="input-wrap">
-                <input type="text" class="form-control" placeholder="e.g. Al-Shifa Medical Store" id="pharmacyName" required/>
-                <i class="bi bi-building input-icon"></i>
-              </div>
+            <div class="row g-0">
+                <div class="col-12">
+                    <label class="form-label">Pharmacy / Business Name <span style="color:#ef4444;">*</span></label>
+                    <div class="input-wrap">
+                        <input type="text" class="form-control" placeholder="e.g. Al-Shifa Medical Store" id="pharmacyName" required />
+                        <i class="bi bi-building input-icon"></i>
+                    </div>
+                </div>
             </div>
-          </div>
 
-          <div class="row g-2">
-            <div class="col-md-6">
-              <label class="form-label">City <span style="color:#ef4444;">*</span></label>
-              <div class="select-wrap">
-                <i class="bi bi-geo-alt input-icon" style="top:calc(50% + 0px);"></i>
-                <select class="form-select-custom" id="city" required>
-                  <option value="">Select city</option>
-                  <option>Peshawar</option>
-                  <option>Lahore</option>
-                  <option>Karachi</option>
-                  <option>Islamabad</option>
-                  <option>Rawalpindi</option>
-                  <option>Mardan</option>
-                  <option>Other</option>
-                </select>
-                <i class="bi bi-chevron-down select-arrow"></i>
-              </div>
+            <div class="row g-2">
+                <div class="col-md-6">
+                    <label class="form-label">City <span style="color:#ef4444;">*</span></label>
+                    <div class="select-wrap">
+                        <i class="bi bi-geo-alt input-icon" style="top:calc(50% + 0px);"></i>
+                        <select class="form-select-custom" id="city" required>
+                            <option value="">Select city</option>
+                            <option>Peshawar</option>
+                            <option>Lahore</option>
+                            <option>Karachi</option>
+                            <option>Islamabad</option>
+                            <option>Rawalpindi</option>
+                            <option>Mardan</option>
+                            <option>Other</option>
+                        </select>
+                        <i class="bi bi-chevron-down select-arrow"></i>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Phone Number <span style="color:#ef4444;">*</span></label>
+                    <div class="input-wrap">
+                        <input type="tel" class="form-control" placeholder="+92 300 0000000" id="phone" required />
+                        <i class="bi bi-telephone input-icon"></i>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-6">
-              <label class="form-label">Phone Number <span style="color:#ef4444;">*</span></label>
-              <div class="input-wrap">
-                <input type="tel" class="form-control" placeholder="+92 300 0000000" id="phone" required/>
-                <i class="bi bi-telephone input-icon"></i>
-              </div>
-            </div>
-          </div>
 
-          <!-- OWNER INFO -->
-          <div class="section-label" style="margin-top:6px;">Owner / Admin Details</div>
+            <!-- OWNER INFO -->
+            <div class="section-label" style="margin-top:6px;">Owner / Admin Details</div>
 
-          <div class="row g-2">
-            <div class="col-md-6">
-              <label class="form-label">Full Name <span style="color:#ef4444;">*</span></label>
-              <div class="input-wrap">
-                <input type="text" class="form-control" placeholder="Your full name" id="fullName" required/>
-                <i class="bi bi-person input-icon"></i>
-              </div>
+            <div class="row g-2">
+                <div class="col-md-6">
+                    <label class="form-label">Full Name <span style="color:#ef4444;">*</span></label>
+                    <div class="input-wrap">
+                        <input type="text" class="form-control" placeholder="Your full name" id="fullName" required />
+                        <i class="bi bi-person input-icon"></i>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Email Address <span style="color:#ef4444;">*</span></label>
+                    <div class="input-wrap">
+                        <input type="email" class="form-control" placeholder="you@example.com" id="email" required />
+                        <i class="bi bi-envelope input-icon"></i>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-6">
-              <label class="form-label">Email Address <span style="color:#ef4444;">*</span></label>
-              <div class="input-wrap">
-                <input type="email" class="form-control" placeholder="you@example.com" id="email" required/>
-                <i class="bi bi-envelope input-icon"></i>
-              </div>
-            </div>
-          </div>
 
-          <div class="row g-2">
-            <div class="col-md-6">
-                <label class="form-label">Email <span style="color:#ef4444;">*</span></label>
-              <div class="input-wrap">
-                <input type="text" class="form-control" placeholder="Create Email" id="Email" required/>
-                <i class="bi bi-at input-icon"></i>
-              </div>
+            <div class="row g-2">
+                <div class="col-md-6">
+                    <label class="form-label">Email <span style="color:#ef4444;">*</span></label>
+                    <div class="input-wrap">
+                        <input type="text" class="form-control" placeholder="Create Email" id="Email" required />
+                        <i class="bi bi-at input-icon"></i>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Password <span style="color:#ef4444;">*</span></label>
+                    <div class="input-wrap">
+                        <input type="password" class="form-control" placeholder="Min. 8 characters" id="password" oninput="checkStrength(this.value)" required />
+                        <i class="bi bi-lock input-icon"></i>
+                        <button type="button" class="toggle-password" onclick="togglePassword('password', this)"><i class="bi bi-eye"></i></button>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-6">
-              <label class="form-label">Password <span style="color:#ef4444;">*</span></label>
-              <div class="input-wrap">
-                <input type="password" class="form-control" placeholder="Min. 8 characters" id="password" oninput="checkStrength(this.value)" required/>
-                <i class="bi bi-lock input-icon"></i>
-                <button type="button" class="toggle-password" onclick="togglePassword('password', this)"><i class="bi bi-eye"></i></button>
-              </div>
-            </div>
-          </div>
 
-          <!-- Password strength -->
-          <div class="password-strength">
-            <div class="strength-bars">
-              <div class="strength-bar" id="sb1"></div>
-              <div class="strength-bar" id="sb2"></div>
-              <div class="strength-bar" id="sb3"></div>
-              <div class="strength-bar" id="sb4"></div>
+            <!-- Password strength -->
+            <div class="password-strength">
+                <div class="strength-bars">
+                    <div class="strength-bar" id="sb1"></div>
+                    <div class="strength-bar" id="sb2"></div>
+                    <div class="strength-bar" id="sb3"></div>
+                    <div class="strength-bar" id="sb4"></div>
+                </div>
+                <div class="strength-label" id="strengthLabel">Enter a password</div>
             </div>
-            <div class="strength-label" id="strengthLabel">Enter a password</div>
-          </div>
 
-          <!-- SELECT PLAN -->
-          <div class="section-label" style="margin-top:4px;">Select Your Plan</div>
+            <!-- SELECT PLAN -->
+            <div class="section-label" style="margin-top:4px;">Select Your Plan</div>
+            
+            
+                
+            
+            <div class="plan-select-cards" id="planCards">
+                <div class="plan-select-card selected" onclick="selectPlan(this, 'starter')">
+                    <div class="p-name">Free</div>
+                    <div class="p-price"> 0 <span>PKR/mo</span></div>
+                </div>
 
-          <div class="plan-select-cards" id="planCards">
-            <div class="plan-select-card selected" onclick="selectPlan(this, 'starter')">
-              <div class="p-name">Starter</div>
-              <div class="p-price">2,000 <span>PKR/mo</span></div>
-            </div>
-            <div class="plan-select-card" onclick="selectPlan(this, 'professional')">
-              <div class="p-name">Professional</div>
-              <div class="p-price">3,000 <span>PKR/mo</span></div>
-            </div>
-            <div class="plan-select-card" onclick="selectPlan(this, 'enterprise')">
-              <div class="p-name">Enterprise</div>
-              <div class="p-price">5,000 <span>PKR/mo</span></div>
-            </div>
-          </div>
+             <div class="plan-select-cards" id="planCards">
+                    <div class="plan-select-card " onclick="selectPlan(this, 'starter')">
+                        <div class="p-name">Starter</div>
+                        <div class="p-price">2,000 <span>PKR/mo</span></div>
+                    </div>
+                    <div class="plan-select-card" onclick="selectPlan(this, 'professional')">
+                        <div class="p-name">Professional</div>
+                        <div class="p-price">3,000 <span>PKR/mo</span></div>
+                    </div>
+                    <div class="plan-select-card" onclick="selectPlan(this, 'enterprise')">
+                        <div class="p-name">Enterprise</div>
+                        <div class="p-price">5,000 <span>PKR/mo</span></div>
+                    </div>
+                </div>
 
-          <!-- Terms -->
-          <div class="form-check mb-3" style="margin-top:4px;">
-            <input class="form-check-input" type="checkbox" id="terms" required/>
-            <label class="form-check-label" for="terms">
-              I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
-            </label>
-          </div>
+                <!-- Terms -->
+                <div class="form-check mb-3" style="margin-top:4px;">
+                    <input class="form-check-input" type="checkbox" id="terms" required />
+                    <label class="form-check-label" for="terms">
+                        I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                    </label>
+                </div>
 
-          <button type="submit" class="btn-auth">
-            <i class="bi bi-person-plus me-2"></i>Create PharmaPro Account
-          </button>
+                <button type="submit" class="btn-auth">
+                    <i class="bi bi-person-plus me-2"></i>Create ePharmacy Account
+                </button>
         </form>
 
         <div class="login-link">
