@@ -233,10 +233,21 @@
     }
 
     function closeModal() {
+
+       
+            $('#ID').val('0');
+            $('#Description').val('');
+            $('#Detail').val('');
+            $('#ModuleUrl').val('');
+            $('#IconClass').val('');
+            $('#Priority').val('');
+
+
         $('#ServiceGroupModal').modal('hide');
 
-        
+
     }
+
 
     function saveRecord() {
         if (customValidateForm('ModuleForm')) {
