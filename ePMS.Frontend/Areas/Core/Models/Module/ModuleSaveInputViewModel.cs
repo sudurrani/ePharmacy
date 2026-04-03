@@ -11,7 +11,7 @@ namespace ePMS.Frontend.Areas.Core.Models.Module
 
         public string Description { get; set; }
         public string Detail { get; set; }
-        public int ModuleUrl { get; set; }
+        public string ModuleUrl { get; set; }
         public string IconClass { get; set; }
         public string Priority { get; set; }
 

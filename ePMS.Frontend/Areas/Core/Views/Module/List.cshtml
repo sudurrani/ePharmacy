@@ -61,7 +61,7 @@
             </span>
 
             @*search buuton........... //Pending work*@
-            <button onclick="openModal()" class="authorizeOrNotInsert enabled pe-3" id="AddButton">
+            <button onclick="openModal()"class="authorizeOrNotInsert enabled pe-3" id="AddButton">
                 <i class="bi bi-plus-lg tb-icon"></i>
                 <b class="tb-text grey">New</b>
             </button>
@@ -181,11 +181,6 @@
 <script>
     $(document).ready(function () {
         loadTableData();
-
-
-        $('#saveData').on('click', function () {
-            saveRecord();
-        });
     });
 
     function loadTableData() {
@@ -239,6 +234,8 @@
 
     function closeModal() {
         $('#ServiceGroupModal').modal('hide');
+
+        
     }
 
     function saveRecord() {
@@ -251,7 +248,6 @@
                 data: inputJSON,
                 callBack: saveRecordCallBack
             });
-            document.getElementById("ModuleForm").reset();
         }
 
     }
@@ -261,7 +257,22 @@
         if (responseJSON.IsSuccess) {
             successToastr("The record has been saved successfully", 'success');
             loadTableData();
+            document.getElementById("ModuleForm").reset();
             closeModal();
+        }
+        else {
+            errorToastr(responseJSON.Message, 'error');
+        }
+    }
+    function modifyRecord(id) {
+        ajaxRequest({ url: "/Core/Module/GetByID", type: 'POST', data: { ID: id }, callBack: modifyRecordCallBack });
+    }
+    function modifyRecordCallBack(responseJSON) {
+        if (responseJSON.IsSuccess) {
+            $('#ServiceGroupModal').modal('show');
+            setResponseToFormInputs(responseJSON.resultJSON);
+
+            successToastr(responseJSON.Message, 'success');
         }
         else {
             errorToastr(responseJSON.Message, 'error');
