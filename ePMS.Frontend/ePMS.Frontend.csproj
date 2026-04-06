@@ -215,6 +215,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CompanyLogos\BHA-Logo%28132X55%29.png" />
+    <Content Include="CompanyLogos\BHA-Logo%2876X32%29.png" />
+    <Content Include="CompanyLogos\bk-infotech.ico" />
+    <Content Include="CompanyLogos\bk-infotech.png" />
+    <Content Include="CompanyLogos\DefaultLogo.png" />
+    <Content Include="CompanyLogos\DummyLogo.png" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -513,7 +519,6 @@
     <Folder Include="Areas\Core\Data\" />
     <Folder Include="Areas\Core\Views\Shared\" />
     <Folder Include="Areas\UserManagement\Data\" />
-    <Folder Include="CompanyLogos\" />
     <Folder Include="Data\" />
     <Folder Include="UserPics\" />
     <Folder Include="Views\Dropdowns\" />
