@@ -165,11 +165,15 @@
     <Compile Include="CommonClasses\SqlDynamicParameters.cs" />
     <Compile Include="CommonClasses\Test.cs" />
     <Compile Include="CommonClasses\URLcoding.cs" />
+    <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\DropdownsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Auth\Login\LoginInputViewModel.cs" />
+    <Compile Include="Models\Auth\Login\LoginOutputViewModel.cs" />
+    <Compile Include="Models\Auth\Register\UserRegistrationInputViewModel.cs" />
     <Compile Include="Models\Repository\Repository.cs" />
     <Compile Include="Models\ViewModels\InputViewModel\Common\AuditableInputModel.cs" />
     <Compile Include="Models\ViewModels\InputViewModel\Common\BreadcrumbInputViewModel.cs" />
@@ -576,6 +580,8 @@
     <Content Include="Views\Shared\PartialViews\Common\_StylesReferencesPartialView.cshtml" />
     <Content Include="Views\Shared\PartialViews\Charts\_DashboardPartialView.cshtml" />
     <Content Include="Views\Home\Dashboard.cshtml" />
+    <Content Include="Views\Auth\Login.cshtml" />
+    <Content Include="Views\Auth\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

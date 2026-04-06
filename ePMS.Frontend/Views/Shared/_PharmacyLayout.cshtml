@@ -550,7 +550,7 @@
 
 
                         <li>
-                            <a class="dropdown-item" href="~/UserManagement/LogOut/Index">
+                            <a class="dropdown-item" href="~/Auth/Login">
                                 <!-- svg image -->
                                 <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <rect width="25" height="25" rx="12.5" fill="currentColor" />
@@ -586,8 +586,17 @@
         <div class="bha-nav2 sticky-top">
 
             <div class="company-info">
-                <img src="/CompanyLogos/40155.png" class="Companylogo">
-                <span class="company-h">1W</span>
+                @{
+                    if (Session["LogoUrl"] == null || Session["LogoUrl"].ToString() == "")
+                    {
+                        <img src="~/NewContent/bhalogjn/images/bha-logo.png" class="Companylogo">
+                    }
+                    else
+                    {
+                        <img src="@Session["LogoUrl"]" class="Companylogo">
+                    }
+                }
+                <span class="company-h">@Session["CompanyName"]</span>
             </div>
 
 
@@ -771,7 +780,7 @@
     <script src="~/NewContent/assets/js/real-estate/crypto-js.min.js"></script>
     <script src="~/Scripts/FunctionalityJS/common-script.js?v=@System.Configuration.ConfigurationManager.AppSettings["JSVersion"]"></script>
     <script src="~/Scripts/FunctionalityJS/ePharmacy/common-dropdowns.js?v=@System.Configuration.ConfigurationManager.AppSettings["JSVersion"]"></script>
-    
+
 
     <div>
         <div class="modal fade item-type-m modal-1col" id="ModalChangePassword" tabindex="-1" aria-labelledby="ModalChangePasswordLabel"
@@ -905,10 +914,38 @@
     </div>
 
     <script>
-       //localStorage.setItem('DefaultCurrencyID', (@Session["CurrencyID"] != null ? @Session["CurrencyID"].ToString() : null));
+    $('#coverScreen').hide();
+
           localStorage.setItem('DefaultCurrencyID', '@(Session["CurrencyID"] ?? "")');
         $(document).ready(function () {
+            if ('@Session["UserID"]' == '') {
 
+                swal.fire({
+                    title: `Logout`,
+                    type: "info",
+                    text: `Your session has been expired, would you like to re-login`,
+                    showCancelButton: true,
+                    confirmButtonText: 'Yes Re-Login',
+                    cancelButtonText: 'No',
+                    closeOnConfirm: false,
+                    closeOnCancel: true
+                }).then(
+                    function (isConfirm) {
+                        if (isConfirm.value == true) {
+                            infoToastr('Staying is blessing &#128519;', 'Thanks &#x270B;');
+                            localStorage.clear();
+                            redirectToAction('/Auth/Login?ID=', 0, '_blank');
+
+                        } else {
+                            //swal.fire("Cancelled", "Your operation canceled :)", "error");
+                            infoToastr(`We'd love to have you back &#128519;', 'Thanks &#x270B;`);
+                        }
+                    });
+            }
+            else {
+                // GetAllBranch(sessionBranchID);
+                console.log('Branch Will Call Later');
+            }
 
             $(document).on("click", ".calendar-trigger i", function () {
                 $(this).siblings("input").trigger("click");
@@ -936,7 +973,7 @@
 
                 $('#coverScreen').hide();
             });
-            GetAllBranch(sessionBranchID);
+
 
             $('#BranchDropdown').on('change', function () {
                 var selectedBranchID = $(this).val();
@@ -1212,8 +1249,8 @@
 
 
 </html>
-<script>    
-    $(function () {        
+<script>
+    $(function () {
         const distinctModules = Object.values(
             menuJSON.reduce((acc, item) => {
                 acc[item.ModuleID] = {
@@ -1255,7 +1292,7 @@
 
 
                     let formsInParentMenu = '';
-                    $.each(forms, function (index, form) {                        
+                    $.each(forms, function (index, form) {
                         formsInParentMenu +=
                             `
                             <li class="menu-item active">
