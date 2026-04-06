@@ -61,7 +61,7 @@
             </span>
 
             @*search buuton........... //Pending work*@
-            <button onclick="openModal()"class="authorizeOrNotInsert enabled pe-3" id="AddButton">
+            <button onclick="openModuleModal()"class="authorizeOrNotInsert enabled pe-3" id="AddButton">
                 <i class="bi bi-plus-lg tb-icon"></i>
                 <b class="tb-text grey">New</b>
             </button>
@@ -93,7 +93,7 @@
     <!-- Table Content Ends -->
 
 </div>
-<div class="modal fade" id="ServiceGroupModal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false" data-bs-backdrop="static">
+<div class="modal fade" id="ServiceGroup" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false" data-bs-backdrop="static">
     <div class="modal-dialog" style="max-height:auto; max-width:450px;">
         <div class="modal-content bha-modal-content" style="min-height: 230px !important;">
             <div class="modal-header bha-modal-header">
@@ -101,7 +101,7 @@
                     <span id="modalHeadingDocument" class="caption-subject bold bha-modal-header-text">Service Group</span>
                 </div>
                 <div class="col-1 text-end">
-                    <i class="bi bi-x-circle-fill fs-3 green cursor-pointer" onclick="closeModal();"></i>
+                    <i class="bi bi-x-circle-fill fs-3 green cursor-pointer" onclick="closeModuleModal();"></i>
                 </div>
             </div>
             <div class="modal-body bha-modal-body">
@@ -168,7 +168,7 @@
                 <button type="button" onclick="saveRecord()" class="btn-green" id="saveData">
                     <i class="bi bi-plus fs-6"></i>Save
                 </button>
-                <button type="button" class="btn btn-outline-secondary btn-bha-default" onclick="closeModal();">
+                <button type="button" class="btn btn-outline-secondary btn-bha-default" onclick="closeModuleModal();">
                     Close
                 </button>
             </div>
@@ -186,7 +186,7 @@
    
 
     function loadTableData() {
-        ;
+        
 
         ajaxRequest({ url: "/Core/Module/GetAll", type: 'POST', data: {}, callBack: loadTableDataCallBack });
     }
@@ -230,14 +230,14 @@
             errorToastr(responseJSON.Message, 'error');
         }
     }
-    function openModal() {
-        $('#ServiceGroupModal').modal('show');
+    function openModuleModal() {
+        $('#ServiceGroup').modal('show');
     }
    
     
     
    
-    function closeModal() {
+    function closeModuleModal() {
 
             $('#ID').val('0');
             $('#Description').val('');
@@ -247,7 +247,7 @@
             $('#Priority').val('');
 
 
-        $('#ServiceGroupModal').modal('hide');
+        $('#ServiceGroup').modal('hide');
 
 
     }
@@ -272,7 +272,7 @@
         if (responseJSON.IsSuccess) {
             successToastr("The record has been saved successfully", 'success');
             loadTableData(); 
-            closeModal();
+            closeModuleModal();
         }
         else {
             errorToastr(responseJSON.Message, 'error');
@@ -285,7 +285,7 @@
     }
     function modifyRecordCallBack(responseJSON) {
         if (responseJSON.IsSuccess) {
-            $('#ServiceGroupModal').modal('show');
+            $('#ServiceGroup').modal('show');
             setResponseToFormInputs(responseJSON.resultJSON);   
         }
         else {
