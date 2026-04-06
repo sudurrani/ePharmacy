@@ -320,6 +320,7 @@
                 background: var(--mint);
             }
 
+
         /* Form */
         .form-label {
             font-size: 0.82rem;
@@ -357,6 +358,9 @@
             transition: border-color 0.2s, box-shadow 0.2s;
             /*height: auto;*/
             width: 100%;
+        }
+        .left-brand-text .sub {
+            text-transform: none;
         }
 
             .form-control:focus {
@@ -619,8 +623,8 @@
                         <div class="left-brand">
                             <img src="/CompanyLogos/bk-infotech.png" alt="BK Info Tech" />
                             <div class="left-brand-text">
-                                <span class="name">PharmaPro</span>
-                                <span class="sub">by BK Info Tech</span>
+                                <span class="name">ePharmacy</span>
+                                <span class="sub">By BK-InfoTech</span>
                             </div>
                         </div>
 
@@ -672,7 +676,7 @@
                     <!-- Header -->
                     <div class="auth-card-header text-center">
                         <div class="eyebrow">Create Your Account</div>
-                        <h2>Register Pharmacy</h2>
+                        <h2>Register ePharmacy</h2>
                         <p class="mb-0">Fill in the details below to set up your ePharmacy account</p>
                     </div>
 
@@ -828,11 +832,11 @@
                     </form>
 
                     <div class="login-link">
-                        Already have an account? <a href="login.html">Sign in</a>
+                        Already have an account? <a href='@Url.Action("Login", "Auth")'>Sign in</a>
                     </div>
 
                     <div class="text-center mt-3">
-                        <span style="font-size:0.72rem;color:var(--border);letter-spacing:1px;">PharmaPro v2.5.1 &nbsp;|&nbsp; Secure Registration</span>
+                        <span style="font-size:0.72rem;color:var(--border);letter-spacing:1px;">ePharmacy v2.5.1 &nbsp;|&nbsp; Secure Registration</span>
                     </div>
 
                 </div>

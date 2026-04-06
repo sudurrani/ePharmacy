@@ -33,7 +33,11 @@
             --gray: #5C7A7B;
             --border: #C5E8E8;
         }
-
+        .branch-select:disabled {
+            pointer-events: none;
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
         * {
             box-sizing: border-box;
             margin: 0;
@@ -64,6 +68,12 @@
             padding: 50px 48px;
             min-height: 100vh;
         }
+        .left-brand-text .sub {
+            font-size: 0.62rem;
+            letter-spacing: 2.5px;
+            text-transform: none; /* ✅ final */
+            color: rgba(255,255,255,0.35);
+        }
 
             .auth-left::before {
                 content: '';
@@ -79,6 +89,7 @@
                 background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2314BDAC' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
             }
 
+       
         .left-content {
             position: relative;
             z-index: 1;
@@ -109,12 +120,7 @@
             line-height: 1;
         }
 
-        .left-brand-text .sub {
-            font-size: 0.62rem;
-            letter-spacing: 2.5px;
-            text-transform: uppercase;
-            color: rgba(255,255,255,0.35);
-        }
+        
 
         .left-headline {
             font-family: 'Playfair Display', serif;
@@ -219,6 +225,7 @@
                 color: var(--teal);
                 font-weight: 700;
                 margin-bottom: 8px;
+                text-transform: none;
             }
 
             .auth-card-header h2 {
@@ -467,7 +474,7 @@
                             <img src="/CompanyLogos/bk-infotech.png" alt="BK Info Tech" />
                             <div class="left-brand-text">
                                 <span class="name">ePharmacy</span>
-                                <span class="sub">by BK-Info-Tech</span>
+                                <span class="sub">by BK-InfoTech</span>
                             </div>
                         </div>
 
@@ -495,7 +502,7 @@
                     </div>
 
                     <div class="left-footer">
-                        <p>© @DateTime.Now.Year.ToString() <a href="#">BK-Info-Tech</a>. All rights reserved.</p>
+                        <p>© @DateTime.Now.Year.ToString() <a href="#">BK-InfoTech</a>. All rights reserved.</p>
                     </div>
                 </div>
             </div>
@@ -513,7 +520,7 @@
                     </div>
 
                     <div class="auth-card-header">
-                        <div class="eyebrow">Pharmacy Management System</div>
+                        <div class="eyebrow">ePharmacy Management System</div>
                         <h2>Sign In</h2>
                         <p>Enter your credentials to access your account</p>
                     </div>
@@ -526,10 +533,10 @@
 
                     <form id="LoginForm">
                         <!-- Branch -->
-                        <div class="select-wrap">
+                        <div class="select-wrap" hidden>
                             <label class="form-label">Select Branch</label>
                             <i class="bi bi-diagram-3 input-icon" style="top:calc(50% + 13px);"></i>
-                            <select class="branch-select invisible">
+                            <select >
                                 <option value="">Main Branch – Peshawar</option>
                                 <option value="b2">Branch 2 – Hayatabad</option>
                                 <option value="b3">Branch 3 – Saddar</option>
@@ -570,7 +577,7 @@
                         <!-- Submit -->
 
                         <button type="button" class="btn-auth" onclick="login()">
-                            <i class="bi bi-box-arrow-in-right me-2"></i>Sign In to PharmaPro
+                            <i class="bi bi-box-arrow-in-right me-2"></i>Sign In to ePharmacy
                         </button>
                     </form>
 
@@ -583,7 +590,7 @@
 
                     <!-- Version tag -->
                     <div class="text-center mt-4">
-                        <span style="font-size:0.72rem;color:var(--border);letter-spacing:1px;">PharmaPro v2.5.1 &nbsp;|&nbsp; Secure Login</span>
+                        <span style="font-size:0.72rem;color:var(--border);letter-spacing:1px;">ePharmacy v2.5.1 &nbsp;|&nbsp; Secure Login</span>
                     </div>
 
                 </div>
