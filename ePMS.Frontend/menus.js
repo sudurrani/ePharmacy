@@ -777,7 +777,7 @@
             "SubModuleID": 140943,
             "SubModule": "Company Setup",
             "SubModuleOrder": "1",
-            "Url": "/CompanyManagement/CompanyList/Index",
+            "Url": "/Core/Company/List",
             "IsParent": false,
             "ParentID": "140942"
         },
