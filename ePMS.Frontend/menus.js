@@ -788,7 +788,7 @@
             "SubModuleID": 181184,
             "SubModule": "Role Right",
             "SubModuleOrder": "1",
-            "Url": "/UserManagement/Role/Rights",
+            "Url": "/UserManagement/RoleRight/List",
             "IsParent": false,
             "ParentID": "1"
         },

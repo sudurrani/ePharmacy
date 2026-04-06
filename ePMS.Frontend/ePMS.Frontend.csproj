@@ -156,7 +156,7 @@
     <Compile Include="Areas\UserManagement\Controllers\RoleRightController.cs" />
     <Compile Include="Areas\UserManagement\Controllers\UserLoginController.cs" />
     <Compile Include="Areas\UserManagement\Models\RoleRight\RoleRightGetByIDOutputViewModel.cs" />
-    <Compile Include="Areas\UserManagement\Models\RoleRight\RoleRightSaveInputViewModel.cs" />
+    <Compile Include="Areas\UserManagement\Models\RoleRight\RoleRightTableInputViewModel.cs" />
     <Compile Include="Areas\UserManagement\Models\RoleRight\RoleRightTableOutputViewModel.cs" />
     <Compile Include="Areas\UserManagement\Models\Role\RoleGetByIDOutputViewModel.cs" />
     <Compile Include="Areas\UserManagement\Models\Role\RoleSaveInputViewModel.cs" />

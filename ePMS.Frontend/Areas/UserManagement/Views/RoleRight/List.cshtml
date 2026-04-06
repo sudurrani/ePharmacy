@@ -1,7 +1,334 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_PharmacyLayout.cshtml";
+    var UID = Session["UserID"];
+    var PID = Session["ProjectID"];
+    var BranchID = Session["BranchID"];
+    var moduleTableOutputViewModel = new ePMS.Frontend.Areas.Core.Models.Module.ModuleTableOutputViewModel();
+    var dataTablePartialViewInputViewModel = new ePMS.Frontend.Models.ViewModels.InputViewModel.Common.DateTablePartialViewInputViewModel()
+    {
+        TableIdAttr = "ModuleTable",
+        TableOutputViewModel = moduleTableOutputViewModel,
+
+    };
 }
+@section Styles {
+    @Html.Partial("~/Views/Shared/PartialViews/Common/_StylesReferencesPartialView.cshtml")
+}
+<div class="page-content">
+    @{
+        Html.RenderPartial(
+                            "~/Views/Shared/PartialViews/Common/_BreadcrumbPartialView.cshtml",
+                            new List<ePMS.Frontend.Models.ViewModels.InputViewModel.Common.BreadcrumbInputViewModel>
+                            {
+                            new ePMS.Frontend.Models.ViewModels.InputViewModel.Common.BreadcrumbInputViewModel
+                            {
+                            Text = "Home",
+                            Url = "#",
+                            IsActive = false
+                            },
+                            new ePMS.Frontend.Models.ViewModels.InputViewModel.Common.BreadcrumbInputViewModel
+                            {
+                            Text = "Core",
+                            Url = "#",
+                            IsActive = false
+                            },
+                            new ePMS.Frontend.Models.ViewModels.InputViewModel.Common.BreadcrumbInputViewModel
+                            {
+                            Text = "Module",
+                            Url = "#",
+                            IsActive = false
+                            },
+                            new ePMS.Frontend.Models.ViewModels.InputViewModel.Common.BreadcrumbInputViewModel
+                            {
+                            Text = "List",
+                            Url = "#",
+                            IsActive = true
+                            },
+                                                                                                        }
+                            );
+    }
+    <div class="bha-data-thead ps-0 ms-0 me-0">
+        <div class="dt-col1 h-bg">
+            <b class="tb-h">Module:</b>
+            <span class="search-box">
+                <i class="bi bi-search ps-1" style=" color: #007E87;"></i>
+                <input type="search" class="search-input" placeholder="Search Data">
+            </span>
 
-<h2>List</h2>
+            @*search button........... //Pending work*@
+            <button onclick="openModuleModal()" class="authorizeOrNotInsert enabled pe-3" id="AddButton">
+                <i class="bi bi-plus-lg tb-icon"></i>
+                <b class="tb-text grey">New</b>
+            </button>
+        </div>
+        <div class="dt-col2 h-bg"></div>
+        <div class="dt-col3 d-flex filter-col h-bg">
+            <span>
+                <div class="dropdown table-dp-down" id="filter-div">
+                    <button class="tb-text" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-funnel ps-2 pe-2" id="bha-filters-icon"></i>
+                    </button>
+                    @Html.Partial("~/Views/Shared/PartialViews/Common/_DataTableFilterModalPartialView.cshtml", moduleTableOutputViewModel)
+                </div>
+            </span>
+        </div>
+    </div>
+    <div>
+        <div class="selector">
+            <label class="bha-label">
+                Module
+                <span class="required">*</span>
+            </label>
+            <select class="js-states form-control selector_2 w-100" id="ModuleID" required>
+            </select>
+        </div>
+        <div class="selector">
+            <label class="bha-label">
+                Role
+                <span class="required">*</span>
+            </label>
+            <select class="js-states form-control selector_3 w-100" id="RoleID" required>
+            </select>
+        </div>
+    </div>
+    <div class="main-content-list">
+        <div class="table-responsive">
+            <table class="table">
+                @Html.Partial("~/Views/Shared/PartialViews/Common/_DataTablePartialView.cshtml", dataTablePartialViewInputViewModel)
+            </table>
+        </div>
+    </div>
+</div>
 
+<div class="modal fade" id="ServiceGroup" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" data-keyboard="false" data-bs-backdrop="static">
+    <div class="modal-dialog" style="max-height:auto; max-width:450px;">
+        <div class="modal-content bha-modal-content" style="min-height: 230px !important;">
+            <div class="modal-header bha-modal-header">
+                <div class="card-header card-header-divider col-lg-11">
+                    <span id="modalHeadingDocument" class="caption-subject bold bha-modal-header-text">Service Group</span>
+                </div>
+                <div class="col-1 text-end">
+                    <i class="bi bi-x-circle-fill fs-3 green cursor-pointer" onclick="closeModuleModal();"></i>
+                </div>
+            </div>
+            <div class="modal-body bha-modal-body">
+                <form id="ModuleForm">
+                    <input type="hidden" id="ID" value="0" />
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <div class="selector">
+                                <label class="bha-label">
+                                    Description
+                                    <span class="required">*</span>
+                                </label>
+                                <input class="js-states form-control bha-input w-100" id="Description" required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <div class="selector">
+                                <label class="bha-label">
+                                    Details
+                                    <span class="required">*</span>
+                                </label>
+                                <input class="js-states form-control bha-input w-100" id="Detail" required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <div class="selector">
+                                <label class="bha-label">
+                                    ModuleUrl
+                                    <span class="required">*</span>
+                                </label>
+                                <input class="js-states form-control bha-input w-100" id="ModuleUrl" required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <div class="selector">
+                                <label class="bha-label">
+                                    IconClass
+                                    <span class="required">*</span>
+                                </label>
+                                <input class="js-states form-control bha-input w-100" id="IconClass" required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <div class="selector">
+                                <label class="bha-label">
+                                    Priority
+                                    <span class="required">*</span>
+                                </label>
+                                <input class="js-states form-control bha-input w-100" id="Priority" required />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <div class="selector">
+                                <label class="bha-label">
+                                    Select
+                                    <span class="required">*</span>
+                                </label>
+                                <input class="js-states form-control bha-input w-100" id="Select" required />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer d-flex justify-content-end pe-3">
+                <button type="button" onclick="saveRecord()" class="btn-green" id="saveData">
+                    <i class="bi bi-plus fs-6"></i>Save
+                </button>
+                <button type="button" class="btn btn-outline-secondary btn-bha-default" onclick="closeModuleModal();">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/NewContent/assets/js/real-estate/select2.min.js?v=@System.Configuration.ConfigurationManager.AppSettings["JSVersion"]"></script>
+
+<script>
+    // Storing the ID in a localized JS variable to prevent Razor syntax issues inside JS strings
+    var tableIdAttr = '@dataTablePartialViewInputViewModel.TableIdAttr';
+
+    $(document).ready(function () {
+        $("select.selector_2").select2({
+            width: "100%",
+            placeholder: "Select an option",
+            minimumResultsForSearch: 0,
+        });
+        $("select.selector_3").select2({
+            width: "100%",
+            placeholder: "Select an option",
+            minimumResultsForSearch: 0,
+        });
+        $(".mutiple_sel").select2({ width: "style" });
+        loadModuleDropdownList("ModuleID", 0);
+        loadRoleDropdownList("RoleID", 0);
+
+        $('#RoleID, #ModuleID').on('select2:select', function (e) {
+            loadTableData();
+        });
+    });
+
+    function loadTableData() {
+        var roleID = parseInt($('#RoleID').val()) || 0;
+        var moduleID = parseInt($('#ModuleID').val()) || 0;
+
+        ajaxRequest({
+            url: "/UserManagement/RoleRight/GetAll",
+            type: 'POST',
+            data: {
+                RoleID: roleID,
+                ModuleID: moduleID
+            },
+            callBack: loadTableDataCallBack
+        });
+    }
+
+  
+
+    var loadTableDataCallBack = function (responseJSON) {
+        if (responseJSON.IsSuccess) {
+            generateTableRowsFromJSON(responseJSON.resultJSON, tableIdAttr);
+            tableWidth100Percent(tableIdAttr);
+        }
+        else {
+            errorToastr(responseJSON.Message, "error");
+        }
+    }
+
+    function deleteRecord(id = 0) {
+        swal.fire({
+            title: swalConfirmTitle,
+            type: "warning",
+            text: swalConfirmText,
+            showCancelButton: true,
+            confirmButtonText: swalConfirmButtonText,
+            cancelButtonText: swalConfirmCancelButtonText,
+            closeOnConfirm: false,
+            closeOnCancel: true
+        }).then(
+            function (isConfirm) {
+                if (isConfirm.value == true) {
+                    ajaxRequest({ url: "/Core/Module/Delete", type: 'POST', data: { ID: id }, callBack: deleteRecordCallBack });
+                } else {
+                    swal.fire("Cancelled", "Your operation Canceled :)", "error");
+                }
+            });
+    }
+
+    function deleteRecordCallBack(responseJSON) {
+        if (responseJSON.IsSuccess) {
+            loadTableData();
+            successToastr(responseJSON.Message, 'success');
+        }
+        else {
+            errorToastr(responseJSON.Message, 'error');
+        }
+    }
+
+    function openModuleModal() {
+        $('#ServiceGroup').modal('show');
+    }
+
+    function closeModuleModal() {
+        $('#ID').val('0');
+        $('#Description').val('');
+        $('#Detail').val('');
+        $('#ModuleUrl').val('');
+        $('#IconClass').val('');
+        $('#Priority').val('');
+        $('#Select').val(''); // Added reset for the newly named Select field
+
+        $('#ServiceGroup').modal('hide');
+    }
+
+    function saveRecord() {
+        if (customValidateForm('ModuleForm')) {
+            var inputJSON = getFormDataAsJSONObject("ModuleForm");
+
+            ajaxRequest({
+                url: "/Core/Module/Save",
+                type: 'POST',
+                data: inputJSON,
+                callBack: saveRecordCallBack
+            });
+        }
+    }
+
+    function saveRecordCallBack(responseJSON) {
+        if (responseJSON.IsSuccess) {
+            successToastr("The record has been saved successfully", 'success');
+            loadTableData();
+            closeModuleModal();
+        }
+        else {
+            errorToastr(responseJSON.Message, 'error');
+        }
+    }
+
+    function modifyRecord(id) {
+        ajaxRequest({ url: "/Core/Module/GetByID", type: 'POST', data: { ID: id }, callBack: modifyRecordCallBack });
+    }
+
+    function modifyRecordCallBack(responseJSON) {
+        if (responseJSON.IsSuccess) {
+            $('#ServiceGroup').modal('show');
+            setResponseToFormInputs(responseJSON.resultJSON);
+        }
+        else {
+            errorToastr(responseJSON.Message, 'error');
+        }
+    }
+</script>
