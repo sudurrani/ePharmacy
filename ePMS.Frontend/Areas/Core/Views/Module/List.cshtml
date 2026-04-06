@@ -46,7 +46,7 @@
                             Url = "#",
                             IsActive = true
                             },
-                                                    }
+                                                        }
                             );
     }
     <!-- ===============braed crumbs content end====================== -->
@@ -182,14 +182,14 @@
     $(document).ready(function () {
         loadTableData();
     });
-
-   
-
     function loadTableData() {
-        
+
 
         ajaxRequest({ url: "/Core/Module/GetAll", type: 'POST', data: {}, callBack: loadTableDataCallBack });
     }
+
+    
+}
     var loadTableDataCallBack = function (responseJSON) {
         if (responseJSON.IsSuccess) {
 
@@ -233,10 +233,7 @@
     function openModuleModal() {
         $('#ServiceGroup').modal('show');
     }
-   
-    
-    
-   
+
     function closeModuleModal() {
 
             $('#ID').val('0');
@@ -251,8 +248,6 @@
 
 
     }
-
-
     function saveRecord() {
         if (customValidateForm('ModuleForm')) {
             var inputJSON = getFormDataAsJSONObject("ModuleForm");
@@ -266,27 +261,23 @@
         }
 
     }
-
-
     function saveRecordCallBack(responseJSON) {
         if (responseJSON.IsSuccess) {
             successToastr("The record has been saved successfully", 'success');
-            loadTableData(); 
+            loadTableData();
             closeModuleModal();
         }
         else {
             errorToastr(responseJSON.Message, 'error');
         }
     }
-
-
     function modifyRecord(id) {
         ajaxRequest({ url: "/Core/Module/GetByID", type: 'POST', data: { ID: id }, callBack: modifyRecordCallBack });
     }
     function modifyRecordCallBack(responseJSON) {
         if (responseJSON.IsSuccess) {
             $('#ServiceGroup').modal('show');
-            setResponseToFormInputs(responseJSON.resultJSON);   
+            setResponseToFormInputs(responseJSON.resultJSON);
         }
         else {
             errorToastr(responseJSON.Message, 'error');

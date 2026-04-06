@@ -153,7 +153,11 @@
     <Compile Include="Areas\Core\Models\SubModule\SubModuleSaveInputViewModelcs.cs" />
     <Compile Include="Areas\Core\Models\SubModule\SubModuleTableOutputViewModel.cs" />
     <Compile Include="Areas\UserManagement\Controllers\RoleController.cs" />
+    <Compile Include="Areas\UserManagement\Controllers\RoleRightController.cs" />
     <Compile Include="Areas\UserManagement\Controllers\UserLoginController.cs" />
+    <Compile Include="Areas\UserManagement\Models\RoleRight\RoleRightGetByIDOutputViewModel.cs" />
+    <Compile Include="Areas\UserManagement\Models\RoleRight\RoleRightSaveInputViewModel.cs" />
+    <Compile Include="Areas\UserManagement\Models\RoleRight\RoleRightTableOutputViewModel.cs" />
     <Compile Include="Areas\UserManagement\Models\Role\RoleGetByIDOutputViewModel.cs" />
     <Compile Include="Areas\UserManagement\Models\Role\RoleSaveInputViewModel.cs" />
     <Compile Include="Areas\UserManagement\Models\Role\RoleTableOutputViewModel.cs" />
@@ -472,6 +476,7 @@
     <Content Include="Areas\UserManagement\Views\Role\Add.cshtml" />
     <Content Include="Areas\UserManagement\Views\Role\Update.cshtml" />
     <Content Include="Areas\UserManagement\Views\Role\Detial.cshtml" />
+    <Content Include="Areas\UserManagement\Views\RoleRight\List.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\FunctionalityJS\common-script.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
