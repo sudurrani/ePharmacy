@@ -1,18 +1,18 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "List";
     Layout = "~/Views/Shared/_PharmacyLayout.cshtml";
     var UID = Session["UserID"];
     var PID = Session["ProjectID"];
     var BranchID = Session["BranchID"];
-    var submoduleTableOutputViewModel = new ePMS.Frontend.Areas.Core.Models.SubModule.SubModuleTableOutputViewModel();
+    var roleTableOutputViewModel = new ePMS.Frontend.Areas.UserManagement.Models.Role.RoleTableOutputViewModel();
     var dataTablePartialViewInputViewModel = new ePMS.Frontend.Models.ViewModels.InputViewModel.Common.DateTablePartialViewInputViewModel()
     {
-        TableIdAttr = "SubModuleTable",
-        TableOutputViewModel = submoduleTableOutputViewModel,
+        TableIdAttr = "RoleTable",
+        TableOutputViewModel = roleTableOutputViewModel,
 
     };
 }
+
 @section Styles {
     @Html.Partial("~/Views/Shared/PartialViews/Common/_StylesReferencesPartialView.cshtml")
 }
@@ -31,13 +31,13 @@
                             },
                             new ePMS.Frontend.Models.ViewModels.InputViewModel.Common.BreadcrumbInputViewModel
                             {
-                            Text = "Core",
+                            Text = "Areas",
                             Url = "#",
                             IsActive = false
                             },
                             new ePMS.Frontend.Models.ViewModels.InputViewModel.Common.BreadcrumbInputViewModel
                             {
-                            Text = "Sub Modules",
+                            Text = "Roles",
                             Url = "#",
                             IsActive = false
                             },
@@ -47,13 +47,13 @@
                             Url = "#",
                             IsActive = true
                             },
-                                                                }
+                                                                        }
                             );
     }
     <!-- ===============braed crumbs content end====================== -->
     <div class="bha-data-thead ps-0 ms-0 me-0">
         <div class="dt-col1 h-bg">
-            <b class="tb-h">SubModules:</b>
+            <b class="tb-h">Roles:</b>
             <!-- Wrapper with input and icon (search) -->
             <span class="search-box">
                 <!-- i tag with Bootstrap Icon -->
@@ -62,9 +62,9 @@
             </span>
             @*search buuton........... //Pending work*@
             <button onclick="openModal()" class="authorizeOrNotInsert enabled pe-3" id="AddButton">
-                    <i class="bi bi-plus-lg tb-icon"></i>
-                    <b class="tb-text grey">New</b>
-                </button>
+                <i class="bi bi-plus-lg tb-icon"></i>
+                <b class="tb-text grey">New</b>
+            </button>
         </div>
         <!-- 1st colum -->
         <div class="dt-col2 h-bg"></div>
@@ -75,7 +75,7 @@
                     <button class="tb-text" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi bi-funnel ps-2 pe-2" id="bha-filters-icon"></i>
                     </button>
-                    @Html.Partial("~/Views/Shared/PartialViews/Common/_DataTableFilterModalPartialView.cshtml", submoduleTableOutputViewModel)
+                    @Html.Partial("~/Views/Shared/PartialViews/Common/_DataTableFilterModalPartialView.cshtml", roleTableOutputViewModel)
                 </div>
             </span>
         </div>
@@ -97,16 +97,16 @@
         <div class="modal-content bha-modal-content" style="min-height: 230px !important;">
             <div class="modal-header bha-modal-header">
                 <div class="card-header card-header-divider col-lg-11">
-                    <span id="modalHeadingDocument" class="caption-subject bold bha-modal-header-text">Service Group</span>
+                    <span id="modalHeadingDocument" class="caption-subject bold bha-modal-header-text">Role</span>
                 </div>
                 <div class="col-1 text-end">
                     <i class="bi bi-x-circle-fill fs-3 green cursor-pointer" onclick="closeModal();"></i>
                 </div>
             </div>
             <div class="modal-body bha-modal-body">
-                <form id="SubModuleForm">
+                <form id="RoleForm">
                     <input type="hidden" id="ID" value="0" />
-                   
+
                     <div class="row">
                         <div class="col-12 mb-3">
                             <div class="selector">
@@ -118,72 +118,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-12 mb-3">
-                            <div class="selector">
-                                <label class="bha-label">
-                                    Url
-                                    <span class="required">*</span>
-                                </label>
-                                <input class="js-states form-control bha-input w-100" id="Url" required />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 mb-3">
-                            <div class="selector">
-                                <label class="bha-label">
-                                    Is Parent
-                                    <span class="required">*</span>
-                                </label>
-                                <input class="js-states form-control bha-input w-100" id="IsParent" required />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 mb-3">
-                            <div class="selector">
-                                <label class="bha-label">
-                                    Parent
-                                    <span class="required">*</span>
-                                </label>
-                                <input class="js-states form-control bha-input w-100" id="ParentID" required />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 mb-3">
-                            <div class="selector">
-                                <label class="bha-label">
-                                    Menu Order
-                                    <span class="required">*</span>
-                                </label>
-                                <input class="js-states form-control bha-input w-100" id="MenuOrder" required />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 mb-3">
-                            <div class="selector">
-                                <label class="bha-label">
-                                    Icon Class
-                                    <span class="required">*</span>
-                                </label>
-                                <input class="js-states form-control bha-input w-100" id="IconClass" required />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 mb-3">
-                            <div class="selector">
-                                <label class="bha-label">
-                                    Module
-                                    <span class="required">*</span>
-                                </label>
-                                <input class="js-states form-control bha-input w-100" id="ModuleID" required />
-                            </div>
-                        </div>
-                    </div>
+                    
                 </form>
             </div>
             <div class="modal-footer d-flex justify-content-end pe-3">
@@ -201,64 +136,52 @@
 <script src="~/NewContent/assets/js/real-estate/select2.min.js?v=@System.Configuration.ConfigurationManager.AppSettings["JSVersion"]"></script>
 
 <script>
-       $(document).ready(function () {
-     loadTableData();
-     
- });
+          $(document).ready(function () {
+    loadTableData();
 
- function loadTableData() {
-     
+});
 
-     ajaxRequest({ url: "/Core/SubModule/GetAll", type: 'POST', data: {}, callBack: loadTableDataCallBack });
- }
- var loadTableDataCallBack = function (responseJSON) {
-     if (responseJSON.IsSuccess) {
+function loadTableData() {
 
-         generateTableRowsFromJSON(responseJSON.resultJSON,'@dataTablePartialViewInputViewModel.TableIdAttr');
-         tableWidth100Percent('@dataTablePartialViewInputViewModel.TableIdAttr');
 
-     }
-     else {
-         errorToastr(responseJSON.Message, "error");
-     }
- }
-    function openModal() {
-        $('#ServiceGroup').modal('show');
-        clearForm();
+    ajaxRequest({ url: "/UserManagement/Role/GetAll", type: 'POST', data: {}, callBack: loadTableDataCallBack });
+}
+var loadTableDataCallBack = function (responseJSON) {
+    if (responseJSON.IsSuccess) {
+
+        generateTableRowsFromJSON(responseJSON.resultJSON,'@dataTablePartialViewInputViewModel.TableIdAttr');
+        tableWidth100Percent('@dataTablePartialViewInputViewModel.TableIdAttr');
+
     }
+    else {
+        errorToastr(responseJSON.Message, "error");
+    }
+}
+   function openModal() {
+       $('#ServiceGroup').modal('show');
+       clearForm();
+   }
 
-    function closeModal() {
-        $('#ServiceGroup').modal('hide');
+   function closeModal() {
+       $('#ServiceGroup').modal('hide');
     }
     function saveRecord() {
-        if (customValidateForm('SubModuleForm')) {
-            var inputJSON = getFormDataAsJSONObject("SubModuleForm");
+        if (customValidateForm('RoleForm')) {
+            var inputJSON = getFormDataAsJSONObject("RoleForm");
 
             ajaxRequest({
-                url: "/Core/SubModule/Save",
+                url: "/UserManagement/Role/Save",
                 type: 'POST',
                 data: inputJSON,
                 callBack: saveRecordCallBack
             });
-          
+
         }
 
     }
-
-    function saveRecordCallBack(responseJSON) {
-        if (responseJSON.IsSuccess) {
-            successToastr("The record has been saved successfully", 'success');
-            loadTableData();
-            closeModal();
-        }
-        else {
-            errorToastr(responseJSON.Message, 'error');  
-        }
-    }  
-
     function deleteRecord(id = 0) {
         swal.fire({
-            title: swalConfirmTitle,  
+            title: swalConfirmTitle,
             type: "warning",
             text: swalConfirmText,
             showCancelButton: true,
@@ -269,7 +192,7 @@
         }).then(
             function (isConfirm) {
                 if (isConfirm.value == true) {
-                    ajaxRequest({ url: "/Core/SubModule/Delete", type: 'POST', data: { ID: id }, callBack: deleteRecordCallBack });
+                    ajaxRequest({ url: "/UserManagement/Role/Delete", type: 'POST', data: { ID: id }, callBack: deleteRecordCallBack });
                 } else {
                     swal.fire("Cancelled", "Your operation Canceled :)", "error");
                 }
@@ -284,8 +207,19 @@
             errorToastr(responseJSON.Message, 'error');
         }
     }
+
+    function saveRecordCallBack(responseJSON) {
+        if (responseJSON.IsSuccess) {
+            successToastr("The record has been saved successfully", 'success');
+            loadTableData();
+            closeModal();
+        }
+        else {
+            errorToastr(responseJSON.Message, 'error');
+        }
+    }  
     function modifyRecord(id) {
-        ajaxRequest({ url: "/Core/SubModule/GetByID", type: 'POST', data: { ID: id }, callBack: modifyRecordCallBack });
+        ajaxRequest({ url: "/UserManagement/Role/GetByID", type: 'POST', data: { ID: id }, callBack: modifyRecordCallBack });
     }
     function modifyRecordCallBack(responseJSON) {
         if (responseJSON.IsSuccess) {

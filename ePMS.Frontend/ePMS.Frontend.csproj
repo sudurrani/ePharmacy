@@ -55,6 +55,7 @@
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.9.0.1\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualStudio.DebuggerVisualizers, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -70,6 +71,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -150,7 +152,11 @@
     <Compile Include="Areas\Core\Models\SubModule\SubModuleGetByIDOutputViewModel.cs" />
     <Compile Include="Areas\Core\Models\SubModule\SubModuleSaveInputViewModelcs.cs" />
     <Compile Include="Areas\Core\Models\SubModule\SubModuleTableOutputViewModel.cs" />
+    <Compile Include="Areas\UserManagement\Controllers\RoleController.cs" />
     <Compile Include="Areas\UserManagement\Controllers\UserLoginController.cs" />
+    <Compile Include="Areas\UserManagement\Models\Role\RoleGetByIDOutputViewModel.cs" />
+    <Compile Include="Areas\UserManagement\Models\Role\RoleSaveInputViewModel.cs" />
+    <Compile Include="Areas\UserManagement\Models\Role\RoleTableOutputViewModel.cs" />
     <Compile Include="Areas\UserManagement\UserManagementAreaRegistration.cs" />
     <Compile Include="CommonClasses\BarcodeHelper.cs" />
     <Compile Include="CommonClasses\BHAExceptionFilter.cs" />
@@ -449,6 +455,12 @@
     <Content Include="Areas\Core\Views\SubModule\Add.cshtml" />
     <Content Include="Areas\Core\Views\SubModule\Update.cshtml" />
     <Content Include="Areas\Core\Views\SubModule\Detial.cshtml" />
+    <Content Include="Areas\UserManagement\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\UserManagement\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\UserManagement\Views\Role\List.cshtml" />
+    <Content Include="Areas\UserManagement\Views\Role\Add.cshtml" />
+    <Content Include="Areas\UserManagement\Views\Role\Update.cshtml" />
+    <Content Include="Areas\UserManagement\Views\Role\Detial.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\FunctionalityJS\Accounts\BankReceiptVoucher\bankreceiptvoucher-list.js" />
     <Content Include="Scripts\FunctionalityJS\Accounts\common-dropdowns.js" />
@@ -570,7 +582,6 @@
     <Folder Include="Areas\Core\Data\" />
     <Folder Include="Areas\Core\Views\Shared\" />
     <Folder Include="Areas\UserManagement\Data\" />
-    <Folder Include="Areas\UserManagement\Views\Shared\" />
     <Folder Include="CompanyLogos\" />
     <Folder Include="Data\" />
     <Folder Include="Scripts\FunctionalityJS\Accounts\CashPaymentVoucher\" />
