@@ -165,6 +165,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Auth\Login\LoginInputViewModel.cs" />
+    <Compile Include="Models\Auth\Login\LoginOutputViewModel.cs" />
+    <Compile Include="Models\Auth\Register\UserRegistrationInputViewModel.cs" />
     <Compile Include="Models\Repository\Repository.cs" />
     <Compile Include="Models\ViewModels\InputViewModel\Common\AuditableInputModel.cs" />
     <Compile Include="Models\ViewModels\InputViewModel\Common\BreadcrumbInputViewModel.cs" />
